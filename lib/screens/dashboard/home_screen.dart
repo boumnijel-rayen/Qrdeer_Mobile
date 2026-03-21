@@ -21,18 +21,18 @@ class HomeScreen extends StatelessWidget {
                 width: 40,
                 height: 40,
                 decoration: BoxDecoration(
-                  color: AppTheme.primaryColor.withOpacity(0.1),
+                  color: AppTheme.primaryColor,
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: const Icon(Icons.restaurant, color: AppTheme.primaryColor, size: 24),
+                child: Icon(Icons.restaurant, color: Theme.of(context).cardColor, size: 24),
               ),
               const SizedBox(width: 12),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Dashboard', style: GoogleFonts.inter(textStyle: Theme.of(context).textTheme.titleMedium).copyWith(fontWeight: FontWeight.w900, fontSize: 18)),
-                  Text('Main Street Bistro', style: GoogleFonts.inter(textStyle: Theme.of(context).textTheme.bodySmall).copyWith(color: Colors.grey, fontWeight: FontWeight.bold)),
+                  Text('Dashboard', style: GoogleFonts.inter(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black)),
+                  Text('Main Street Bistro', style: GoogleFonts.inter(fontSize: 12, color: Colors.grey, fontWeight: FontWeight.w700)),
                 ],
               ),
             ],
@@ -43,7 +43,7 @@ class HomeScreen extends StatelessWidget {
             alignment: Alignment.center,
             children: [
               IconButton(
-                icon: const Icon(Icons.notifications_none, color: Colors.grey),
+                icon: const Icon(Icons.notifications, color: AppTheme.secondColorLight),
                 onPressed: () {
                   _showNotificationPopup(context);
                 },
@@ -52,8 +52,8 @@ class HomeScreen extends StatelessWidget {
                 top: 12,
                 right: 12,
                 child: Container(
-                  width: 8,
-                  height: 8,
+                  width: 10,
+                  height: 10,
                   decoration: BoxDecoration(
                     color: Colors.red,
                     shape: BoxShape.circle,
@@ -110,7 +110,7 @@ class HomeScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Weekly Revenue', style: GoogleFonts.inter(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.grey)),
+                    Text('Weekly Revenue', style: GoogleFonts.inter(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.grey[600])),
                     const SizedBox(height: 4),
                     Text('12,450 TND', style: GoogleFonts.inter(fontSize: 24, fontWeight: FontWeight.w800)),
                     const SizedBox(height: 4),
@@ -145,7 +145,7 @@ class HomeScreen extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN']
-                .map((d) => Text(d, style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.grey)))
+                .map((d) => Text(d, style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.grey[600])))
                 .toList(),
           ),
         ],
@@ -164,7 +164,7 @@ class HomeScreen extends StatelessWidget {
         label,
         style: GoogleFonts.inter(
           fontSize: 10,
-          fontWeight: FontWeight.bold,
+          fontWeight: FontWeight.w800,
           color: isSelected ? Colors.white : Colors.grey,
         ),
       ),
@@ -190,12 +190,12 @@ class HomeScreen extends StatelessWidget {
             children: [
               Text('Peak Hour Statistics', style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold)),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2.5),
                 decoration: BoxDecoration(
                   color: AppTheme.primaryColor.withOpacity(0.1),
                   borderRadius: BorderRadius.circular(4),
                 ),
-                child: Text('LIVE', style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.bold, color: AppTheme.primaryColor)),
+                child: Text('LIVE', style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.w800, color: AppTheme.primaryColor)),
               ),
             ],
           ),
@@ -261,9 +261,9 @@ class HomeScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('KITCHEN LOAD', style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.grey)),
+                      Text('KITCHEN LOAD', style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.grey[600])),
                       const SizedBox(height: 4),
-                      Text('82% High', style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold, color: AppTheme.primaryColor)),
+                      Text('82% High', style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.w800, color: AppTheme.primaryColor)),
                     ],
                   ),
                 ),
@@ -336,9 +336,9 @@ class HomeScreen extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(title, style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w500, color: Colors.grey)),
+              Text(title, style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.w600, color: Colors.grey[600])),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2.5),
                 decoration: BoxDecoration(
                   color: isLive ? AppTheme.primaryColor.withOpacity(0.1) : Colors.green.withOpacity(0.1),
                   borderRadius: BorderRadius.circular(4),
@@ -355,7 +355,7 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 8),
-          Text(value, style: GoogleFonts.inter(fontSize: 24, fontWeight: FontWeight.bold, letterSpacing: -0.5)),
+          Text(value, style: GoogleFonts.inter(fontSize: 24, fontWeight: FontWeight.w700, letterSpacing: -0.5)),
           const SizedBox(height: 16),
           Container(
             height: 4,
@@ -413,7 +413,7 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     Text('Current Active Orders', style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold)),
                     const SizedBox(height: 4),
-                    Text('8 orders are currently in preparation.', style: GoogleFonts.inter(fontSize: 14, color: Colors.grey)),
+                    Text('8 orders are currently in preparation.', style: GoogleFonts.inter(fontSize: 14, color: Colors.grey[600], fontWeight: FontWeight.w500)),
                     const SizedBox(height: 16),
                     Row(
                       children: [
@@ -425,7 +425,7 @@ class HomeScreen extends StatelessWidget {
                     const SizedBox(height: 24),
                     ElevatedButton.icon(
                       onPressed: () {},
-                      icon: const Text('View Kitchen Display'),
+                      icon: Text('View Kitchen Display', style: GoogleFonts.inter(fontWeight: FontWeight.bold, color: Colors.white)),
                       label: const Icon(Icons.arrow_forward, size: 18),
                       // Quick flip for row direction icon at end
                       style: ElevatedButton.styleFrom(
@@ -461,7 +461,7 @@ class HomeScreen extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text('75%', style: GoogleFonts.inter(fontSize: 24, fontWeight: FontWeight.bold)),
-                              Text('Efficiency', style: GoogleFonts.inter(fontSize: 10, color: Colors.grey, fontWeight: FontWeight.w500)),
+                              Text('Efficiency', style: GoogleFonts.inter(fontSize: 10, color: Colors.grey[600], fontWeight: FontWeight.w600)),
                             ],
                           ),
                         ],
@@ -489,7 +489,7 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
         const SizedBox(width: 8),
-        Text(text, style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w500)),
+        Text(text, style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600)),
       ],
     );
   }
@@ -517,9 +517,9 @@ class HomeScreen extends StatelessWidget {
                 iconColor: AppTheme.primaryColor,
                 title: 'Table 4 scanned',
                 time: '2 minutes ago',
-                trailingWidget: _buildActivityBadge('Active', Colors.grey),
+                trailingWidget: _buildActivityBadge('Active', AppTheme.thirdColorLight),
               ),
-              Divider(height: 1, color: Colors.grey.withOpacity(0.1)),
+              Divider(height: 1, color: Colors.grey.withOpacity(0.2)),
               _buildActivityItem(
                 context,
                 icon: Icons.payments,
@@ -528,14 +528,14 @@ class HomeScreen extends StatelessWidget {
                 time: '15 minutes ago',
                 trailingWidget: Text('64.20 TND', style: GoogleFonts.inter(fontWeight: FontWeight.bold, color: AppTheme.primaryColor)),
               ),
-              Divider(height: 1, color: Colors.grey.withOpacity(0.1)),
+              Divider(height: 1, color: Colors.grey.withOpacity(0.2)),
               _buildActivityItem(
                 context,
                 icon: Icons.shopping_cart,
                 iconColor: Colors.orange,
                 title: 'New order - Table 7',
                 time: '22 minutes ago',
-                trailingWidget: _buildActivityBadge('Pending', Colors.grey),
+                trailingWidget: _buildActivityBadge('Pending', AppTheme.thirdColorLight),
               ),
             ],
           ),
@@ -566,7 +566,7 @@ class HomeScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(title, style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.bold)),
-                  Text(time, style: GoogleFonts.inter(fontSize: 12, color: Colors.grey)),
+                  Text(time, style: GoogleFonts.inter(fontSize: 12, color: Colors.grey, fontWeight: FontWeight.w600)),
                 ],
               ),
             ],
@@ -581,14 +581,14 @@ class HomeScreen extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.1),
+        color: color.withOpacity(0.08),
         borderRadius: BorderRadius.circular(4),
       ),
       child: Text(
         text,
         style: GoogleFonts.inter(
           fontSize: 12,
-          fontWeight: FontWeight.w600,
+          fontWeight: FontWeight.w800,
           color: color,
         ),
       ),

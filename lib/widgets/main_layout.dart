@@ -51,7 +51,7 @@ class MainLayout extends StatelessWidget {
   }
 
   Widget _buildNavItem(BuildContext context, {required IconData icon, required String label, required String route, required bool isSelected}) {
-    final color = isSelected ? AppTheme.primaryColor : Colors.grey;
+    final color = isSelected ? AppTheme.primaryColor : AppTheme.secondColorLight;
     return InkWell(
       onTap: () {
         if (!isSelected) {
@@ -72,7 +72,7 @@ class MainLayout extends StatelessWidget {
             label,
             style: GoogleFonts.inter(
               fontSize: 10,
-              fontWeight: isSelected ? FontWeight.bold : FontWeight.w500,
+              fontWeight: isSelected ? FontWeight.w800 : FontWeight.w700,
               color: color,
             ),
           ),
