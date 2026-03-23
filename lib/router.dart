@@ -134,7 +134,6 @@ final GoRouter appRouter = GoRouter(
           routes: [
             GoRoute(
               path: 'view-qr',
-              parentNavigatorKey: _rootNavigatorKey,
               builder: (context, state) => const ViewQrCodeScreen(),
             ),
           ],

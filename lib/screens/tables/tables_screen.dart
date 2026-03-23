@@ -10,18 +10,35 @@ class TablesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Container(
-            decoration: BoxDecoration(
-              color: AppTheme.primaryColor.withOpacity(0.1),
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: const Icon(Icons.restaurant, color: AppTheme.primaryColor),
+        titleSpacing: 0,
+        backgroundColor: Colors.white,
+        elevation: 0,
+        toolbarHeight: 72,
+        title: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          child: Row(
+            children: [
+              Container(
+                width: 40,
+                height: 40,
+                decoration: BoxDecoration(
+                  color: AppTheme.primaryColor,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Icon(Icons.restaurant, color: Theme.of(context).cardColor, size: 24),
+              ),
+              const SizedBox(width: 12),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('Tables Management', style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
+                  Text('Main Street Bistro', style: GoogleFonts.inter(fontSize: 12, color: Colors.grey, fontWeight: FontWeight.w700)),
+                ],
+              ),
+            ],
           ),
         ),
-        title: const Text('Tables & QR'),
-        centerTitle: true,
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 8.0),
@@ -29,18 +46,25 @@ class TablesScreen extends StatelessWidget {
               onPressed: () {
                 context.push('/tables/view-qr');
               },
-              icon: const Icon(Icons.add, size: 16),
+              icon: const Icon(Icons.add, size: 16,),
               label: const Text('Add Table'),
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppTheme.primaryColor,
                 foregroundColor: Colors.white,
-                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 0),
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-                textStyle: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.bold),
+                textStyle: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.bold),
               ),
             ),
           ),
         ],
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(3),
+          child: Column(
+              children: [
+              Divider(height: 1, color: Colors.grey.withOpacity(0.2), thickness: 1),
+          ])
+        )
       ),
       body: Column(
         children: [
@@ -66,11 +90,11 @@ class TablesScreen extends StatelessWidget {
               mainAxisSpacing: 16,
               childAspectRatio: 0.75, // Adjust height based on content
               children: [
-                _buildTableCard(context, 'Table 01', '4 Seats', 'ID: QR_T01_NORTH', true, 'https://lh3.googleusercontent.com/aida-public/AB6AXuAHhCulD1eMmnLnh_Qu2dliRECu4meOuAAjd99A7RUb1mUhCFSUlhM1sWdlOt89NsLrpbie_hUzmt-1XLT7jUfSAuu-wUv-mjyguj5wc8UVdjSt9TJvMn5kv4RTBToRetO1yAMfXoyc3KnnIW04HF0UH-tOoxWPxqDkVlnKopfvFc-_mZoTiq_8epPWWscGiF7mG7cFCQmqsdbui4LkvVQ_WJPxSBJT6URJgkHvQEIMLiwepV6vhtq3Y2RV82On2gvJZ6xElyihnok'),
+                _buildTableCard(context, 'Table 01', '4 Seats', 'ID: QR_T01_NORTH', true, 'https://lh3.googleusercontent.com/aida-public/AB6AXuCM8JwlTgew9S9SpxcDQyjTeaxW17tp0HAY8a7iz-cMul_2fU4vx0GtJb3bYUbfZg6IBVSYTpNKOjkLU6ioSBt4x_SxgdvlkuAsBJOlsQc2cyvWhLaFLOHsGxKL0bOo9Ukmh_ToFPnBhxOmtxWDl8--S60UwnpSCqB7qK4865JHIysaBTq9H53nE_j04xJSk06_H-xySCWsUpT2Iiyjmradds5yO4teRAGz9VOls5VSCfqw5MzfDB8sednsz6w-75S5R_nx3Svj3lE'),
                 _buildTableCard(context, 'Table 02', '2 Seats', 'ID: QR_T02_WINDOW', false, 'https://lh3.googleusercontent.com/aida-public/AB6AXuCM8JwlTgew9S9SpxcDQyjTeaxW17tp0HAY8a7iz-cMul_2fU4vx0GtJb3bYUbfZg6IBVSYTpNKOjkLU6ioSBt4x_SxgdvlkuAsBJOlsQc2cyvWhLaFLOHsGxKL0bOo9Ukmh_ToFPnBhxOmtxWDl8--S60UwnpSCqB7qK4865JHIysaBTq9H53nE_j04xJSk06_H-xySCWsUpT2Iiyjmradds5yO4teRAGz9VOls5VSCfqw5MzfDB8sednsz6w-75S5R_nx3Svj3lE'),
-                _buildTableCard(context, 'Table 03', '6 Seats', 'ID: QR_T03_CENTER', false, 'https://lh3.googleusercontent.com/aida-public/AB6AXuD5OE1HC40GcTyy1xwH8VDo8PflWrxalicxuKEDCF3SiDpvaThT4KvLUUhcW2PTSxIU_HAxP2lmJijRIr3Qaz0vXhqRWFx8CPO9i1JzdnBzk3oC6YHYzmH9W34utyrCwRm22w8rPl4YDo0z5cvLVL0wHtvEVY4Hn1oTxfWzWnIEf4knaVNfXZgQ6ZEsjB47xwHJ3G4cYbHLfxR1TEOwVUKeE8HfaZwKwbrANtrwxwMP6RcfrhVsUqyhKlkzndnVL1LsupG_WgHNnPU'),
-                _buildTableCard(context, 'Table 04', '4 Seats', 'ID: QR_T04_PATIO', true, 'https://lh3.googleusercontent.com/aida-public/AB6AXuDLl6G9bgY2_9ps9b3c0OSo8YGwqypzlpwoTYAax705eOtTpw9rifkrSqY_LTzm6KSWpm2xMGQy1vDlq1BolDv5L4gJG4g7srHHdbQ5l9P8E_zWuEKb2WxcEr_YKW-bsKsLp-hWWwWtnQuHiZ4ckhnrQ5cbVTEyKdz-ZrIRz_1CULb6p-MtPNGBo1g53sJxokPCDeLhIL1iF5y-wgFa4NztmyVZnfaK5H2idoZJe7Ah7A1pDcNkpqbknG_cgv9a-mBsrMoumQP6XWM'),
-                _buildTableCard(context, 'Table 05', '2 Seats', 'ID: QR_T05_BAR', false, 'https://lh3.googleusercontent.com/aida-public/AB6AXuApitQCwb06JBj33b_yulSUNXfIliigPpdyamLfLHjvVSDQ6xpiPF3m0yQuGHraFJ4NfTrLyj9xWbSiRW9QYBwOovE0wN0TnCDhdyFZdKn6eysFDwQLzd6XXngAVYwFUfUayCU3aiQCH8iP6FQD5eguGZwrY56oLxwCtNXTVBuAL1kR5Skt8FMoeZslwy8W6xvDPYhjozmPwIVJ3Zz62HtksnLkm4UvkQ85K62_K12u13dk7B9x7Xwh0VzY-B6rPjdqEIamW_BV9_M'),
+                _buildTableCard(context, 'Table 03', '6 Seats', 'ID: QR_T03_CENTER', false, 'https://lh3.googleusercontent.com/aida-public/AB6AXuCM8JwlTgew9S9SpxcDQyjTeaxW17tp0HAY8a7iz-cMul_2fU4vx0GtJb3bYUbfZg6IBVSYTpNKOjkLU6ioSBt4x_SxgdvlkuAsBJOlsQc2cyvWhLaFLOHsGxKL0bOo9Ukmh_ToFPnBhxOmtxWDl8--S60UwnpSCqB7qK4865JHIysaBTq9H53nE_j04xJSk06_H-xySCWsUpT2Iiyjmradds5yO4teRAGz9VOls5VSCfqw5MzfDB8sednsz6w-75S5R_nx3Svj3lE'),
+                _buildTableCard(context, 'Table 04', '4 Seats', 'ID: QR_T04_PATIO', true, 'https://lh3.googleusercontent.com/aida-public/AB6AXuCM8JwlTgew9S9SpxcDQyjTeaxW17tp0HAY8a7iz-cMul_2fU4vx0GtJb3bYUbfZg6IBVSYTpNKOjkLU6ioSBt4x_SxgdvlkuAsBJOlsQc2cyvWhLaFLOHsGxKL0bOo9Ukmh_ToFPnBhxOmtxWDl8--S60UwnpSCqB7qK4865JHIysaBTq9H53nE_j04xJSk06_H-xySCWsUpT2Iiyjmradds5yO4teRAGz9VOls5VSCfqw5MzfDB8sednsz6w-75S5R_nx3Svj3lE'),
+                _buildTableCard(context, 'Table 05', '2 Seats', 'ID: QR_T05_BAR', false, 'https://lh3.googleusercontent.com/aida-public/AB6AXuCM8JwlTgew9S9SpxcDQyjTeaxW17tp0HAY8a7iz-cMul_2fU4vx0GtJb3bYUbfZg6IBVSYTpNKOjkLU6ioSBt4x_SxgdvlkuAsBJOlsQc2cyvWhLaFLOHsGxKL0bOo9Ukmh_ToFPnBhxOmtxWDl8--S60UwnpSCqB7qK4865JHIysaBTq9H53nE_j04xJSk06_H-xySCWsUpT2Iiyjmradds5yO4teRAGz9VOls5VSCfqw5MzfDB8sednsz6w-75S5R_nx3Svj3lE'),
               ],
             ),
           ),
@@ -142,16 +166,15 @@ class TablesScreen extends StatelessWidget {
                   child: Container(
                     padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                     decoration: BoxDecoration(
-                      color: isAvailable ? Colors.green.withOpacity(0.1) : Colors.grey.withOpacity(0.2),
+                      color: isAvailable ? Color(0xFFD4F3DF) : Color(0xFFE2E8F0),
                       borderRadius: BorderRadius.circular(4),
                     ),
                     child: Text(
                       isAvailable ? 'AVAILABLE' : 'DISABLED',
                       style: GoogleFonts.inter(
                         fontSize: 10,
-                        fontWeight: FontWeight.bold,
-                        color: isAvailable ? Colors.green[700] : Colors.red[700],
-                        letterSpacing: 0.5,
+                        fontWeight: FontWeight.w800,
+                        color: isAvailable ? Colors.green[700] : AppTheme.thirdColorLight,
                       ),
                     ),
                   ),
@@ -168,12 +191,9 @@ class TablesScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(title, style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold)),
-                    Text(seats, style: GoogleFonts.inter(fontSize: 12, color: Colors.grey)),
                   ],
                 ),
                 const SizedBox(height: 4),
-                Text(id, style: GoogleFonts.inter(fontSize: 12, color: Colors.grey)),
-                const SizedBox(height: 12),
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
@@ -186,7 +206,7 @@ class TablesScreen extends StatelessWidget {
                       elevation: 0,
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                     ),
-                    child: Text('View QR Code', style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.bold)),
+                    child: Text('View QR Code', style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.w700)),
                   ),
                 ),
               ],

@@ -36,7 +36,7 @@ class OrderDetailsScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(16),
               ),
               child: Text(
-                'PREPARING',
+                'NEW ORDER',
                 style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.bold, color: Color(0xFF1E4FD8), letterSpacing: 1),
               ),
             ),

@@ -25,13 +25,8 @@ class _ViewQrCodeScreenState extends State<ViewQrCodeScreen> {
             }
           },
         ),
-        title: const Text('Table 04'),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.more_vert),
-            onPressed: () {},
-          ),
-        ],
+        toolbarHeight: 68,
+        title: Text('Table 04', style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
       ),
       body: Column(
         children: [
@@ -112,14 +107,14 @@ class _ViewQrCodeScreenState extends State<ViewQrCodeScreen> {
                     child: Text(
                       'When disabled, customers cannot scan to order.',
                       textAlign: TextAlign.center,
-                      style: GoogleFonts.inter(fontSize: 12, color: Colors.grey[600]),
+                      style: GoogleFonts.inter(fontSize: 12, color: AppTheme.secondColorLight, fontWeight: FontWeight.w600),
                     ),
                   ),
 
                   // QR Code Display
                   Container(
-                    margin: const EdgeInsets.all(24),
-                    padding: const EdgeInsets.all(32),
+                    margin: const EdgeInsets.all(34),
+                    padding: const EdgeInsets.all(22),
                     decoration: BoxDecoration(
                       color: Theme.of(context).cardColor,
                       borderRadius: BorderRadius.circular(16),
@@ -135,7 +130,7 @@ class _ViewQrCodeScreenState extends State<ViewQrCodeScreen> {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(12),
                             child: Image.network(
-                              'https://lh3.googleusercontent.com/aida-public/AB6AXuBSisLnvyRAXkbmbYv3UuF82ZJgSmOGrepBQi5Kk3tcwNyj0JOofjyrBlBncw5riT_Sfa9oAOrLLrcHEaL44Q9xobhsVjeGM2C1W02LVTWzg9xl059sTu0wtlyC87W17tS6HgJqNgaJJvO8RsfC1tx6GEUiUCCDusCftZIxMK1qg89FxiLqh7j7D9Dc3gaubCbEfKCpFWGPfN1ZMZx_b_ktQruh2KZfe6j7wlaXbdYOGzuC7tHNETbYCxh8lPU2zUItaxsQj_IOI5w',
+                              'https://fragrant.mobiletransaction.org/wp-content/uploads/2019/09/qr-code-for-wikipedia.png.webp',
                               width: 200,
                               height: 200,
                               fit: BoxFit.contain,
@@ -166,24 +161,7 @@ class _ViewQrCodeScreenState extends State<ViewQrCodeScreen> {
                   ),
 
                   // Table Info
-                  Text('Table 04', style: GoogleFonts.inter(fontSize: 32, fontWeight: FontWeight.w900)),
-                  const SizedBox(height: 8),
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-                    decoration: BoxDecoration(
-                      color: AppTheme.primaryColor.withOpacity(0.1),
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        const Icon(Icons.layers, size: 16, color: AppTheme.primaryColor),
-                        const SizedBox(width: 4),
-                        Text('Floor 1', style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.bold, color: AppTheme.primaryColor)),
-                      ],
-                    ),
-                  ),
-
+                  Text('Table 04', style: GoogleFonts.inter(fontSize: 32, fontWeight: FontWeight.w800)),
                   Container(
                     margin: const EdgeInsets.all(24),
                     padding: const EdgeInsets.all(16),
@@ -199,7 +177,7 @@ class _ViewQrCodeScreenState extends State<ViewQrCodeScreen> {
                         Expanded(
                           child: Text(
                             'Present this code to customers for instant ordering and contactless payment.',
-                            style: GoogleFonts.inter(fontSize: 14, color: Colors.grey[800], fontWeight: FontWeight.w500),
+                            style: GoogleFonts.inter(fontSize: 14, color: AppTheme.thirdColorLight, fontWeight: FontWeight.w600),
                           ),
                         ),
                       ],
@@ -226,12 +204,6 @@ class _ViewQrCodeScreenState extends State<ViewQrCodeScreen> {
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                     textStyle: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
-                ),
-                const SizedBox(height: 16),
-                TextButton(
-                  onPressed: () {},
-                  style: TextButton.styleFrom(foregroundColor: Colors.grey[600]),
-                  child: const Text('Print Table Sticker Pack'),
                 ),
               ],
             ),
