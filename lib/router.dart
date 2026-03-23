@@ -112,7 +112,6 @@ final GoRouter appRouter = GoRouter(
           routes: [
             GoRoute(
               path: 'details',
-              parentNavigatorKey: _rootNavigatorKey,
               builder: (context, state) => const OrderDetailsScreen(),
             ),
             GoRoute(

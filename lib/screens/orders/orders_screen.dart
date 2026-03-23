@@ -10,35 +10,49 @@ class OrdersScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        titleSpacing: 0,
         backgroundColor: Colors.white,
         elevation: 0,
-        scrolledUnderElevation: 0,
-        leading: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Container(
-            decoration: BoxDecoration(
-              color: AppTheme.primaryColor.withOpacity(0.1),
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: const Icon(Icons.restaurant_menu, color: AppTheme.primaryColor),
+        toolbarHeight: 72,
+        title: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          child: Row(
+            children: [
+              Container(
+                width: 40,
+                height: 40,
+                decoration: BoxDecoration(
+                  color: AppTheme.primaryColor,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Icon(Icons.restaurant, color: Theme.of(context).cardColor, size: 24),
+              ),
+              const SizedBox(width: 12),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('Orders Management', style: GoogleFonts.inter(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black)),
+                  Text('Main Street Bistro', style: GoogleFonts.inter(fontSize: 12, color: Colors.grey, fontWeight: FontWeight.w700)),
+                ],
+              ),
+            ],
           ),
         ),
-        title: const Text('Orders Management'),
-        centerTitle: true,
         actions: [
           Stack(
             alignment: Alignment.center,
             children: [
               IconButton(
-                icon: const Icon(Icons.notifications, color: Colors.grey),
+                icon: const Icon(Icons.notifications, color: AppTheme.secondColorLight),
                 onPressed: () {},
               ),
               Positioned(
                 top: 12,
                 right: 12,
                 child: Container(
-                  width: 8,
-                  height: 8,
+                  width: 10,
+                  height: 10,
                   decoration: BoxDecoration(
                     color: Colors.red,
                     shape: BoxShape.circle,
@@ -51,31 +65,36 @@ class OrdersScreen extends StatelessWidget {
           const SizedBox(width: 8),
         ],
         bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(130),
+          preferredSize: const Size.fromHeight(115),
           child: Column(
             children: [
               Divider(height: 1, color: Colors.grey.withOpacity(0.2), thickness: 1),
               // Search Bar
               Padding(
-                padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
-                child: TextField(
-                  decoration: InputDecoration(
-                    hintText: 'Search by order ID, table...',
-                    prefixIcon: const Icon(Icons.search, color: Colors.grey),
-                    filled: true,
-                    fillColor: Theme.of(context).cardColor,
-                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide.none),
-                    contentPadding: const EdgeInsets.symmetric(vertical: 0),
+                padding: const EdgeInsets.fromLTRB(18, 16, 18, 0),
+                child: SizedBox(
+                  height: 42,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: 'Search by order ID, table...',
+                      hintStyle: GoogleFonts.inter(fontSize: 14, color: Colors.grey[600], fontWeight: FontWeight.w500),
+                      prefixIcon: const Icon(Icons.search, color: Colors.grey),
+                      filled: true,
+                      fillColor: Color(0xFFF1F5F9),
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(20), borderSide: BorderSide.none),
+                      contentPadding: const EdgeInsets.symmetric(vertical: 0),
+                    ),
                   ),
                 ),
               ),
               // Filters
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
-                padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
                 child: Row(
                   children: [
-                    _buildFilterChip('New Order', true),
+                    _buildFilterChip('All', true),
+                    _buildFilterChip('New Order', false),
                     _buildFilterChip('Preparing', false),
                     _buildFilterChip('Ready', false),
                     _buildFilterChip('Cancelled', false),
@@ -96,47 +115,62 @@ class OrdersScreen extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.only(bottom: 8.0),
-                child: Text('ORDERS (4)', style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.grey, letterSpacing: 1.2)),
+                child: Text('ORDERS (4)', style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w800, color: AppTheme.secondColorLight, letterSpacing: 1.2)),
               ),
               _buildOrderCard(
                 context,
                 orderId: '#ORD-8942',
-                time: '12:45 PM',
+                time: '12:45:02',
                 table: 'Table 04',
                 items: '3 items',
                 status: 'Preparing',
-                statusColor: Colors.orange,
+                statusColor: Color(0xFFE65B18),
+                statusBackgroundColor: Colors.orange.withOpacity(0.2),
                 total: '42.500 TND',
               ),
               _buildOrderCard(
                 context,
                 orderId: '#ORD-8941',
-                time: '12:30 PM',
+                time: '12:30:15',
                 table: 'Table 12',
                 items: '5 items',
                 status: 'Ready',
-                statusColor: Colors.green,
+                statusColor: Color(0xFF17A34B),
+                statusBackgroundColor: Colors.green.withOpacity(0.2),
+                total: '128.000 TND',
+              ),
+              _buildOrderCard(
+                context,
+                orderId: '#ORD-8939',
+                time: '15:40:45',
+                table: 'Table 01',
+                items: '4 items',
+                status: 'New Order',
+                statusColor: Color(0xFF1E4FD8),
+                statusBackgroundColor: Colors.blueAccent.withOpacity(0.2),
+                total: '55.250 TND',
+              ),
+              _buildOrderCard(
+                context,
+                orderId: '#ORD-8941',
+                time: '12:30:15',
+                table: 'Table 12',
+                items: '5 items',
+                status: 'Cancelled',
+                statusColor: Color(0xFFBE123C),
+                statusBackgroundColor: Colors.red.withOpacity(0.2),
                 total: '128.000 TND',
               ),
               _buildOrderCard(
                 context,
                 orderId: '#ORD-8940',
-                time: '12:55 PM',
+                time: '05:55:06',
                 table: 'Table 08',
                 items: '2 items',
-                status: 'New Order',
-                statusColor: Colors.grey,
+                status: 'Paid',
+                statusColor: Color(0xFF64748B),
+                statusBackgroundColor: Colors.grey.withOpacity(0.2),
                 total: '18.900 TND',
-              ),
-              _buildOrderCard(
-                context,
-                orderId: '#ORD-8939',
-                time: '12:40 PM',
-                table: 'Table 01',
-                items: '4 items',
-                status: 'Preparing',
-                statusColor: Colors.orange,
-                total: '55.250 TND',
               ),
             ],
           ),
@@ -151,7 +185,7 @@ Widget _buildFilterChip(String label, bool isSelected) {
     margin: const EdgeInsets.only(right: 8),
     padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
     decoration: BoxDecoration(
-      color: isSelected ? AppTheme.primaryColor : Colors.grey.withOpacity(0.1),
+      color: isSelected ? AppTheme.primaryColor : Color(0xFFF1F5F9),
       borderRadius: BorderRadius.circular(20),
     ),
     child: Text(
@@ -159,7 +193,7 @@ Widget _buildFilterChip(String label, bool isSelected) {
       style: GoogleFonts.inter(
         fontSize: 10,
         fontWeight: FontWeight.bold,
-        color: isSelected ? Colors.white : Colors.grey[600],
+        color: isSelected ? Colors.white : AppTheme.secondColorLight,
         letterSpacing: 0.5,
       ),
     ),
@@ -174,6 +208,7 @@ Widget _buildOrderCard(
   required String items,
   required String status,
   required Color statusColor,
+  required Color statusBackgroundColor,
   required String total,
 }) {
   return GestureDetector(
@@ -202,18 +237,18 @@ Widget _buildOrderCard(
                 children: [
                   Text(orderId, style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.bold)),
                   const SizedBox(height: 2),
-                  Text('Ordered $time', style: GoogleFonts.inter(fontSize: 12, color: Colors.grey)),
+                  Text('Ordered $time', style: GoogleFonts.inter(fontSize: 12, color: AppTheme.primaryColor, fontWeight: FontWeight.w600)),
                 ],
               ),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                 decoration: BoxDecoration(
-                  color: statusColor.withOpacity(0.1),
+                  color: statusBackgroundColor,
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Text(
                   status.toUpperCase(),
-                  style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.bold, color: statusColor, letterSpacing: 0.5),
+                  style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.w800, color: statusColor, letterSpacing: 0.5),
                 ),
               ),
             ],
@@ -248,7 +283,7 @@ Widget _buildOrderCard(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text('TOTAL', style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.grey, letterSpacing: 1)),
-                  Text(total, style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold, color: AppTheme.primaryColor)),
+                  Text(total, style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black)),
                 ],
               ),
             ],

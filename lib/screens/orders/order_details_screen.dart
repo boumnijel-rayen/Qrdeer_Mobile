@@ -9,6 +9,7 @@ class OrderDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
@@ -22,7 +23,7 @@ class OrderDetailsScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text('Order #ORD-8942', style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold)),
-            Text('Placed at 12:45 PM', style: GoogleFonts.inter(fontSize: 12, color: Colors.grey[600], fontWeight: FontWeight.normal)),
+            Text('Placed at 12:45:22', style: GoogleFonts.inter(fontSize: 12, color: Colors.grey[600], fontWeight: FontWeight.w600)),
           ],
         ),
         actions: [
@@ -31,12 +32,12 @@ class OrderDetailsScreen extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
               decoration: BoxDecoration(
-                color: AppTheme.primaryColor.withOpacity(0.1),
+                color: Colors.blueAccent.withOpacity(0.2),
                 borderRadius: BorderRadius.circular(16),
               ),
               child: Text(
                 'PREPARING',
-                style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.bold, color: AppTheme.primaryColor, letterSpacing: 1),
+                style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.bold, color: Color(0xFF1E4FD8), letterSpacing: 1),
               ),
             ),
           ),
@@ -67,13 +68,13 @@ class OrderDetailsScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text('Table 04', style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold)),
-                          Text('Dining Area - Main Floor', style: GoogleFonts.inter(fontSize: 14, color: Colors.grey)),
+                          Text('Dining Area - Main Floor', style: GoogleFonts.inter(fontSize: 14, color: Colors.grey[600], fontWeight: FontWeight.w600)),
                         ],
                       ),
                     ],
                   ),
                 ),
-                const Divider(height: 1),
+                const Divider(height: 0.6, color: AppTheme.backgroundLight),
 
                 // Order Items Section
                 Padding(
@@ -89,9 +90,9 @@ class OrderDetailsScreen extends StatelessWidget {
                         ],
                       ),
                       const SizedBox(height: 16),
-                      _buildOrderItem(context, 'Bruschetta', 'Quantity: 2x', '25.000 TND', '12.500 / unit', 'https://lh3.googleusercontent.com/aida-public/AB6AXuBR7KH0_caWfuCIxkhUBxAhLjLVNWm_yBk8taKaqHKurlyLLoqrFAwF0SJkof_oRdHMi29kSnHsO2VhGAk8t6UXtB7Ux1eEe8dH6x0Nu0plab9SXeq4-llt0qU7Nqp2oHk-WrHLjbhqS-tn_ZJOugJJqv99TW7NDzYh4H6P6ozdHe2aJYjU9D0GFA5ZypUcfGh4TSvs0pfbdWBzpvXVzUU5yfKLt-k42CL6vfe8wLCAOhMeAyuOAyickemGmhPzRKlwTA3LQJQhREQ'),
-                      _buildOrderItem(context, 'Margherita Pizza', 'Quantity: 1x', '18.500 TND', null, 'https://lh3.googleusercontent.com/aida-public/AB6AXuCAw2GvnPImjgLZKWftFGbkCSAJ1FQUq4TlbBFdIcJZI02biwcxbGOfXE5-rcE007er-TvT7nDGVDq6LHkKUngZNg7x0Dq99epCTKjweBJVw2kwLE1txTja9LigdZvXaQ3YBvFk_AXmx2SKVq3umyH5vSUoeD6rXp1t2fBt_9SZiLw-_myDp4PEVN_wONu7GoULrJpvWC9xcVJnTNsx6B_yq1mf_exkEQihyknokTNdM0anMpa7Orp0JHjBmsbg_MvSBqbu6ogFMzk'),
-                      _buildOrderItem(context, 'Mint Lemonade', 'Quantity: 1x', '7.500 TND', null, 'https://lh3.googleusercontent.com/aida-public/AB6AXuDIwi2VscDFy7gnHIJaFMP4JEJN2OxMIn77zcC2dYwxDqf7pmeO7AUYwusHe6xnZ3JNf9SF1rAiVTZqEl033kEw1RScoVspWSnEmbmH_-KZeCy9XNJWxdn-Tjs_9diV4CEYBm5yjGSk15Ue6K_gQjbCTG5MOjH9nXOtTFh3TBckGGUWa8sg_cJmqD3fTXD3cIhfeUrN41bZZ5ZjjcAmSBnUhXSbIoGPFOzvNzdZ7TrvfD4PH_aySyUlgC-lIcDewv116GwYSft49_g'),
+                      _buildOrderItem(context, 'Bruschetta', 'Quantity: 2x', '25.000 TND', 'https://lh3.googleusercontent.com/aida-public/AB6AXuBR7KH0_caWfuCIxkhUBxAhLjLVNWm_yBk8taKaqHKurlyLLoqrFAwF0SJkof_oRdHMi29kSnHsO2VhGAk8t6UXtB7Ux1eEe8dH6x0Nu0plab9SXeq4-llt0qU7Nqp2oHk-WrHLjbhqS-tn_ZJOugJJqv99TW7NDzYh4H6P6ozdHe2aJYjU9D0GFA5ZypUcfGh4TSvs0pfbdWBzpvXVzUU5yfKLt-k42CL6vfe8wLCAOhMeAyuOAyickemGmhPzRKlwTA3LQJQhREQ'),
+                      _buildOrderItem(context, 'Margherita Pizza', 'Quantity: 1x', '18.500 TND', 'https://lh3.googleusercontent.com/aida-public/AB6AXuCAw2GvnPImjgLZKWftFGbkCSAJ1FQUq4TlbBFdIcJZI02biwcxbGOfXE5-rcE007er-TvT7nDGVDq6LHkKUngZNg7x0Dq99epCTKjweBJVw2kwLE1txTja9LigdZvXaQ3YBvFk_AXmx2SKVq3umyH5vSUoeD6rXp1t2fBt_9SZiLw-_myDp4PEVN_wONu7GoULrJpvWC9xcVJnTNsx6B_yq1mf_exkEQihyknokTNdM0anMpa7Orp0JHjBmsbg_MvSBqbu6ogFMzk'),
+                      _buildOrderItem(context, 'Mint Lemonade', 'Quantity: 1x', '7.500 TND', 'https://lh3.googleusercontent.com/aida-public/AB6AXuDIwi2VscDFy7gnHIJaFMP4JEJN2OxMIn77zcC2dYwxDqf7pmeO7AUYwusHe6xnZ3JNf9SF1rAiVTZqEl033kEw1RScoVspWSnEmbmH_-KZeCy9XNJWxdn-Tjs_9diV4CEYBm5yjGSk15Ue6K_gQjbCTG5MOjH9nXOtTFh3TBckGGUWa8sg_cJmqD3fTXD3cIhfeUrN41bZZ5ZjjcAmSBnUhXSbIoGPFOzvNzdZ7TrvfD4PH_aySyUlgC-lIcDewv116GwYSft49_g'),
                     ],
                   ),
                 ),
@@ -101,7 +102,7 @@ class OrderDetailsScreen extends StatelessWidget {
                   margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                   padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
-                    color: Theme.of(context).cardColor,
+                    color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.7),
                     borderRadius: BorderRadius.circular(16),
                     border: Border.all(color: Colors.grey.withOpacity(0.1)),
                   ),
@@ -112,13 +113,13 @@ class OrderDetailsScreen extends StatelessWidget {
                       _buildSummaryRow('Tax (7%)', '3.570 TND'),
                       const Padding(
                         padding: EdgeInsets.symmetric(vertical: 12.0),
-                        child: Divider(height: 1),
+                        child: Divider(height: 0.02, color: Colors.grey),
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text('Total', style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold)),
-                          Text('54.570 TND', style: GoogleFonts.inter(fontSize: 20, fontWeight: FontWeight.bold, color: AppTheme.primaryColor)),
+                          Text('54.570 TND', style: GoogleFonts.inter(fontSize: 20, fontWeight: FontWeight.w800, color: AppTheme.primaryColor)),
                         ],
                       ),
                     ],
@@ -133,8 +134,8 @@ class OrderDetailsScreen extends StatelessWidget {
                     children: [
                       Text('ORDER TIMELINE', style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.bold, letterSpacing: 1)),
                       const SizedBox(height: 16),
-                      _buildTimelineItem(Icons.check, 'Order Received', '12:45 PM', true, AppTheme.primaryColor),
-                      _buildTimelineItem(Icons.restaurant, 'Preparing in Kitchen', '12:48 PM', true, AppTheme.primaryColor.withOpacity(0.5)),
+                      _buildTimelineItem(Icons.check, 'Order Received', '12:45:22', true, AppTheme.primaryColor),
+                      _buildTimelineItem(Icons.restaurant, 'Preparing in Kitchen', '12:48:00', true, AppTheme.primaryColor.withOpacity(0.5)),
                       _buildTimelineItem(Icons.delivery_dining, 'Ready for Serving', 'Pending', false, Colors.grey),
                       _buildTimelineItem(Icons.payments, 'Paid', 'Pending', false, Colors.grey, isLast: true),
                     ],
@@ -152,7 +153,7 @@ class OrderDetailsScreen extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.95),
+                color: Colors.white,
                 border: Border(top: BorderSide(color: Colors.grey.withOpacity(0.2))),
                 boxShadow: [
                   BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 10, offset: const Offset(0, -5)),
@@ -164,7 +165,7 @@ class OrderDetailsScreen extends StatelessWidget {
                   ElevatedButton.icon(
                     onPressed: () {},
                     icon: const Icon(Icons.play_arrow),
-                    label: const Text('Next Step'),
+                    label: Text('Next Step'),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppTheme.primaryColor,
                       foregroundColor: Colors.white,
@@ -181,7 +182,7 @@ class OrderDetailsScreen extends StatelessWidget {
                         child: OutlinedButton.icon(
                           onPressed: () {},
                           icon: const Icon(Icons.undo, size: 20),
-                          label: const Text('Previous Step'),
+                          label: Text('Previous Step', style: GoogleFonts.inter(fontSize: 15, fontWeight: FontWeight.bold, color: AppTheme.thirdColorLight)),
                           style: OutlinedButton.styleFrom(
                             foregroundColor: Colors.grey[800],
                             minimumSize: const Size(double.infinity, 48),
@@ -195,7 +196,7 @@ class OrderDetailsScreen extends StatelessWidget {
                         child: TextButton.icon(
                           onPressed: () {},
                           icon: const Icon(Icons.cancel, size: 20),
-                          label: const Text('Cancel Order'),
+                          label: Text('Cancel Order', style: GoogleFonts.inter(fontSize: 15, fontWeight: FontWeight.bold)),
                           style: TextButton.styleFrom(
                             foregroundColor: Colors.red,
                             minimumSize: const Size(double.infinity, 48),
@@ -214,7 +215,7 @@ class OrderDetailsScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildOrderItem(BuildContext context, String title, String quantity, String price, String? unitPrice, String imageUrl) {
+  Widget _buildOrderItem(BuildContext context, String title, String quantity, String price, String imageUrl) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Row(
@@ -253,8 +254,6 @@ class OrderDetailsScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Text(price, style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold)),
-              if (unitPrice != null)
-                Text(unitPrice, style: GoogleFonts.inter(fontSize: 12, color: Colors.grey)),
             ],
           ),
         ],
@@ -266,8 +265,8 @@ class OrderDetailsScreen extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(label, style: GoogleFonts.inter(fontSize: 14, color: Colors.grey, fontWeight: FontWeight.w500)),
-        Text(value, style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w500)),
+        Text(label, style: GoogleFonts.inter(fontSize: 14, color: AppTheme.secondColorLight, fontWeight: FontWeight.w600)),
+        Text(value, style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.bold)),
       ],
     );
   }
@@ -300,7 +299,7 @@ class OrderDetailsScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(title, style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.bold, color: isCompleted ? null : Colors.grey)),
-            Text(time, style: GoogleFonts.inter(fontSize: 12, color: isCompleted ? Colors.grey[600] : Colors.grey)),
+            Text(time, style: GoogleFonts.inter(fontSize: 12, color: isCompleted ? Colors.grey[600] : Colors.grey, fontWeight: isCompleted ? FontWeight.w600 : FontWeight.normal)),
           ],
         ),
       ],
