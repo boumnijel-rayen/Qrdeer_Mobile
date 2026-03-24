@@ -10,56 +10,59 @@ class OrderHistoryScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        titleSpacing: 0,
         backgroundColor: Colors.white,
         elevation: 0,
-        scrolledUnderElevation: 0,
-        leading: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Container(
-            decoration: BoxDecoration(
-              color: AppTheme.primaryColor.withOpacity(0.1),
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: const Icon(Icons.receipt_long, color: AppTheme.primaryColor),
+        toolbarHeight: 92.5,
+        title: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          child: Row(
+            children: [
+              Container(
+                width: 40,
+                height: 40,
+                decoration: BoxDecoration(
+                  color: AppTheme.primaryColor,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Icon(Icons.restaurant, color: Theme.of(context).cardColor, size: 24),
+              ),
+              const SizedBox(width: 12),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('Orders History', style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
+                  Text('Main Street Bistro', style: GoogleFonts.inter(fontSize: 12, color: Colors.grey, fontWeight: FontWeight.w700)),
+                ],
+              ),
+            ],
           ),
         ),
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('Order History', style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold)),
-            Text('RestoDash • Sales Search', style: GoogleFonts.inter(fontSize: 12, color: Colors.grey[600], fontWeight: FontWeight.normal)),
-          ],
-        ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.download),
-            onPressed: () {},
-            style: IconButton.styleFrom(
-              side: BorderSide(color: Colors.grey.withOpacity(0.3)),
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-            ),
-          ),
-          const SizedBox(width: 8),
-        ],
         bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(81),
+          preferredSize: const Size.fromHeight(55),
           child: Column(
             children: [
               Divider(height: 1, color: Colors.grey.withOpacity(0.2), thickness: 1),
+              // Search Bar
               Padding(
-                padding: const EdgeInsets.fromLTRB(16, 16, 16, 16),
-                child: TextField(
-                  decoration: InputDecoration(
-                    hintText: 'Search Order ID, Table #, or Customer...',
-                    prefixIcon: const Icon(Icons.search, color: Colors.grey),
-                    filled: true,
-                    fillColor: Theme.of(context).cardColor,
-                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide(color: Colors.grey.withOpacity(0.3))),
-                    enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide(color: Colors.grey.withOpacity(0.3))),
-                    contentPadding: const EdgeInsets.symmetric(vertical: 0),
+                padding: const EdgeInsets.fromLTRB(18, 16, 18, 0),
+                child: SizedBox(
+                  height: 42,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: 'Search by order ID, table...',
+                      hintStyle: GoogleFonts.inter(fontSize: 14, color: Colors.grey[600], fontWeight: FontWeight.w500),
+                      prefixIcon: const Icon(Icons.search, color: Colors.grey),
+                      filled: true,
+                      fillColor: Color(0xFFF1F5F9),
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(20), borderSide: BorderSide.none),
+                      contentPadding: const EdgeInsets.symmetric(vertical: 0),
+                    ),
                   ),
                 ),
               ),
+              const SizedBox(height: 14),
             ],
           ),
         ),
@@ -157,10 +160,50 @@ class OrderHistoryScreen extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 12),
-                _buildHistoryCard(context, '#ORD-8942', 'Today, 2:45 PM', 'Completed', Colors.green, 'T-14', '4 items', '112.50 TND'),
-                _buildHistoryCard(context, '#ORD-8941', 'Today, 2:32 PM', 'In Progress', Colors.blue, 'T-08', '2 items', '45.00 TND'),
-                _buildHistoryCard(context, '#ORD-8940', 'Today, 2:15 PM', 'Cancelled', Colors.red, 'T-22', '1 item', '18.50 TND'),
-                _buildHistoryCard(context, '#ORD-8939', 'Today, 1:55 PM', 'Completed', Colors.green, 'T-04', '6 items', '156.20 TND'),
+                _buildHistoryCard(
+                  context,
+                  orderId: '#ORD-8941',
+                  time: '12:30:15',
+                  table: 'Table 12',
+                  items: '5 items',
+                  status: 'Completed',
+                  statusColor: Color(0xFF17A34B),
+                  statusBackgroundColor: Colors.green.withOpacity(0.2),
+                  total: '128.000 TND',
+                ),
+                _buildHistoryCard(
+                  context,
+                  orderId: '#ORD-8941',
+                  time: '12:30:15',
+                  table: 'Table 12',
+                  items: '5 items',
+                  status: 'Cancelled',
+                  statusColor: Color(0xFFBE123C),
+                  statusBackgroundColor: Colors.red.withOpacity(0.2),
+                  total: '128.000 TND',
+                ),
+                _buildHistoryCard(
+                  context,
+                  orderId: '#ORD-8941',
+                  time: '12:30:15',
+                  table: 'Table 12',
+                  items: '5 items',
+                  status: 'Completed',
+                  statusColor: Color(0xFF17A34B),
+                  statusBackgroundColor: Colors.green.withOpacity(0.2),
+                  total: '128.000 TND',
+                ),
+                _buildHistoryCard(
+                  context,
+                  orderId: '#ORD-8941',
+                  time: '12:30:15',
+                  table: 'Table 12',
+                  items: '5 items',
+                  status: 'Cancelled',
+                  statusColor: Color(0xFFBE123C),
+                  statusBackgroundColor: Colors.red.withOpacity(0.2),
+                  total: '128.000 TND',
+                ),
               ],
             ),
           ),
@@ -198,10 +241,20 @@ class OrderHistoryScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildHistoryCard(BuildContext context, String orderId, String time, String status, Color statusColor, String table, String items, String total) {
+  Widget _buildHistoryCard(
+  BuildContext context,{
+    required String orderId,
+    required String time,
+    required String table,
+    required String items,
+    required String status,
+    required Color statusColor,
+    required Color statusBackgroundColor,
+    required String total,
+  }) {
     return GestureDetector(
       onTap: () {
-        context.push('/orders/history/details'); // Order history details screen
+        context.push('/sales/details'); // Order history details screen
       },
       child: Container(
         margin: const EdgeInsets.only(bottom: 12),
@@ -210,6 +263,9 @@ class OrderHistoryScreen extends StatelessWidget {
           color: Theme.of(context).cardColor,
           borderRadius: BorderRadius.circular(12),
           border: Border.all(color: Colors.grey.withOpacity(0.2)),
+          boxShadow: [
+            BoxShadow(color: Colors.black.withOpacity(0.02), blurRadius: 4, offset: const Offset(0, 2)),
+          ],
         ),
         child: Column(
           children: [
@@ -222,18 +278,18 @@ class OrderHistoryScreen extends StatelessWidget {
                   children: [
                     Text(orderId, style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.bold)),
                     const SizedBox(height: 2),
-                    Text(time, style: GoogleFonts.inter(fontSize: 12, color: Colors.grey)),
+                    Text('Ordered $time', style: GoogleFonts.inter(fontSize: 12, color: AppTheme.primaryColor, fontWeight: FontWeight.w600)),
                   ],
                 ),
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                   decoration: BoxDecoration(
-                    color: statusColor.withOpacity(0.1),
+                    color: statusBackgroundColor,
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Text(
                     status.toUpperCase(),
-                    style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.bold, color: statusColor, letterSpacing: 0.5),
+                    style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.w800, color: statusColor, letterSpacing: 0.5),
                   ),
                 ),
               ],
@@ -268,7 +324,7 @@ class OrderHistoryScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Text('TOTAL', style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.grey, letterSpacing: 1)),
-                    Text(total, style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold, color: AppTheme.primaryColor)),
+                    Text(total, style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black)),
                   ],
                 ),
               ],

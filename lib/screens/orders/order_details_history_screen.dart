@@ -18,12 +18,12 @@ class OrderDetailsHistoryScreen extends StatelessWidget {
             }
           },
         ),
-        title: Text('Order Details #ORD-8939', style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold)),
+        toolbarHeight: 68,
+        title: Text('Order Details #ORD-8939', style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
       ),
       body: Stack(
         children: [
           SingleChildScrollView(
-            padding: const EdgeInsets.only(bottom: 90), // Space for bottom action bar
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -74,13 +74,11 @@ class OrderDetailsHistoryScreen extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('ORDER INFORMATION', style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.grey, letterSpacing: 1)),
+                        Text('ORDER INFORMATION', style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.bold, color: AppTheme.secondColorLight, letterSpacing: 1)),
                         const SizedBox(height: 16),
                         _buildInfoRow(Icons.table_restaurant, 'Table Number', 'Table 04'),
                         const SizedBox(height: 12),
                         _buildInfoRow(Icons.schedule, 'Date & Time', 'Oct 24, 2023, 14:30', isNormalValue: true),
-                        const SizedBox(height: 12),
-                        _buildInfoRow(Icons.person, 'Server Name', 'Ahmed K.', isNormalValue: true),
                       ],
                     ),
                   ),
@@ -135,45 +133,19 @@ class OrderDetailsHistoryScreen extends StatelessWidget {
                       ),
                       const Padding(
                         padding: EdgeInsets.symmetric(vertical: 12.0),
-                        child: Divider(height: 1),
+                        child: Divider(height: 0.2, color: Colors.grey,),
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text('Total Amount', style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold)),
-                          Text('58.300 TND', style: GoogleFonts.inter(fontSize: 20, fontWeight: FontWeight.w900, color: AppTheme.primaryColor)),
+                          Text('58.300 TND', style: GoogleFonts.inter(fontSize: 20, fontWeight: FontWeight.w700, color: AppTheme.primaryColor)),
                         ],
                       ),
                     ],
                   ),
                 ),
               ],
-            ),
-          ),
-
-          // Bottom Action Bar
-          Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
-            child: Container(
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: Theme.of(context).scaffoldBackgroundColor,
-              ),
-              child: OutlinedButton.icon(
-                onPressed: () {},
-                icon: const Icon(Icons.print, size: 20),
-                label: const Text('Print Receipt'),
-                style: OutlinedButton.styleFrom(
-                  foregroundColor: AppTheme.primaryColor,
-                  backgroundColor: AppTheme.primaryColor.withOpacity(0.05),
-                  minimumSize: const Size(double.infinity, 52),
-                  side: BorderSide(color: AppTheme.primaryColor.withOpacity(0.2)),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                  textStyle: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.bold),
-                ),
-              ),
             ),
           ),
         ],
@@ -200,7 +172,7 @@ class OrderDetailsHistoryScreen extends StatelessWidget {
       children: [
         Row(
           children: [
-            Icon(icon, size: 20, color: AppTheme.primaryColor.withOpacity(0.7)),
+            Icon(icon, size: 20, color: AppTheme.primaryColor),
             const SizedBox(width: 12),
             Text(label, style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w500)),
           ],
@@ -243,7 +215,7 @@ class OrderDetailsHistoryScreen extends StatelessWidget {
                   children: [
                     Text(title, style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.bold)),
                     const SizedBox(height: 4),
-                    Text(qty, style: GoogleFonts.inter(fontSize: 12, color: Colors.grey[600])),
+                    Text(qty, style: GoogleFonts.inter(fontSize: 12, color: AppTheme.secondColorLight, fontWeight: FontWeight.w500)),
                   ],
                 ),
               ),

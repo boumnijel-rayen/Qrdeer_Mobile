@@ -114,14 +114,15 @@ final GoRouter appRouter = GoRouter(
               path: 'details',
               builder: (context, state) => const OrderDetailsScreen(),
             ),
+          ],
+        ),
+
+        GoRoute(
+          path: '/sales',
+          pageBuilder: (context, state) => const NoTransitionPage(child: OrderHistoryScreen()),
+          routes: [
             GoRoute(
-              path: 'history',
-              parentNavigatorKey: _rootNavigatorKey,
-              builder: (context, state) => const OrderHistoryScreen(),
-            ),
-            GoRoute(
-              path: 'history/details',
-              parentNavigatorKey: _rootNavigatorKey,
+              path: 'details',
               builder: (context, state) => const OrderDetailsHistoryScreen(),
             ),
           ],
@@ -137,12 +138,6 @@ final GoRouter appRouter = GoRouter(
               builder: (context, state) => const ViewQrCodeScreen(),
             ),
           ],
-        ),
-
-        // Sales (In Bottom Nav)
-        GoRoute(
-          path: '/sales',
-          pageBuilder: (context, state) => const NoTransitionPage(child: OrderHistoryScreen()),
         ),
 
         // 7. Settings & Staff (Account)
