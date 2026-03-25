@@ -10,15 +10,35 @@ class AccountScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: AppTheme.primaryColor),
-          onPressed: () {
-            if (context.canPop()) {
-              context.pop();
-            }
-          },
+        titleSpacing: 0,
+        backgroundColor: Colors.white,
+        elevation: 0,
+        toolbarHeight: 72,
+        title: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          child: Row(
+            children: [
+              Container(
+                width: 40,
+                height: 40,
+                decoration: BoxDecoration(
+                  color: AppTheme.primaryColor,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Icon(Icons.restaurant, color: Theme.of(context).cardColor, size: 24),
+              ),
+              const SizedBox(width: 12),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('Settings', style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
+                  Text('Main Street Bistro', style: GoogleFonts.inter(fontSize: 12, color: Colors.grey, fontWeight: FontWeight.w700)),
+                ],
+              ),
+            ],
+          ),
         ),
-        title: const Text('Settings'),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
@@ -76,7 +96,7 @@ class AccountScreen extends StatelessWidget {
                           children: [
                             Text('Alex Johnson', style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold)),
                             const SizedBox(height: 4),
-                            Text('General Manager', style: GoogleFonts.inter(fontSize: 14, color: Colors.grey)),
+                            Text('General Manager', style: GoogleFonts.inter(fontSize: 14, color: AppTheme.secondColorLight, fontWeight: FontWeight.w500)),
                             const SizedBox(height: 8),
                             Container(
                               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
@@ -98,7 +118,7 @@ class AccountScreen extends StatelessWidget {
                       style: TextButton.styleFrom(
                         backgroundColor: AppTheme.primaryColor.withOpacity(0.05),
                         foregroundColor: AppTheme.primaryColor,
-                        padding: const EdgeInsets.symmetric(vertical: 12),
+                        padding: const EdgeInsets.symmetric(vertical: 10),
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                       ),
                       onPressed: () {
@@ -164,7 +184,6 @@ class AccountScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text('CURRENT PLAN', style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.w500, color: Colors.white.withOpacity(0.6), letterSpacing: 1)),
-                          const SizedBox(height: 4),
                           Text('Premium Pro', style: GoogleFonts.inter(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white)),
                         ],
                       ),
@@ -274,7 +293,7 @@ class AccountScreen extends StatelessWidget {
       padding: const EdgeInsets.only(left: 4, bottom: 12),
       child: Text(
         title,
-        style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.grey, letterSpacing: 1),
+        style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.bold, color: AppTheme.secondColorLight, letterSpacing: 1.2),
       ),
     );
   }
@@ -292,7 +311,7 @@ class AccountScreen extends StatelessWidget {
         ),
         child: Icon(icon, color: AppTheme.primaryColor),
       ),
-      title: Text(title, style: GoogleFonts.inter(fontSize: 14, color: Colors.grey)),
+      title: Text(title, style: GoogleFonts.inter(fontSize: 14, color: Colors.grey[600], fontWeight: FontWeight.w500)),
       subtitle: Text(subtitle, style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.black)),
       trailing: const Icon(Icons.chevron_right, color: Colors.grey),
     );
@@ -301,7 +320,7 @@ class AccountScreen extends StatelessWidget {
   Widget _buildSettingTile({required IconData icon, required String title, required String subtitle, required VoidCallback onTap}) {
     return ListTile(
       onTap: onTap,
-      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
       leading: Container(
         width: 40,
         height: 40,
@@ -312,7 +331,7 @@ class AccountScreen extends StatelessWidget {
         child: Icon(icon, color: AppTheme.primaryColor, size: 20),
       ),
       title: Text(title, style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.bold)),
-      subtitle: Text(subtitle, style: GoogleFonts.inter(fontSize: 12, color: Colors.grey)),
+      subtitle: Text(subtitle, style: GoogleFonts.inter(fontSize: 12, color: AppTheme.secondColorLight, fontWeight: FontWeight.w500)),
       trailing: const Icon(Icons.chevron_right, color: Colors.grey),
     );
   }
