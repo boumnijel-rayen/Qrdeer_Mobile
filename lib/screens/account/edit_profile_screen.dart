@@ -18,8 +18,8 @@ class EditProfileScreen extends StatelessWidget {
             }
           },
         ),
-        title: const Text('Edit Profile'),
-        centerTitle: true,
+        toolbarHeight: 68,
+        title: Text('Edit Profile', style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.only(bottom: 24),
@@ -67,7 +67,7 @@ class EditProfileScreen extends StatelessWidget {
                   const SizedBox(height: 16),
                   Text('Admin Account', style: GoogleFonts.inter(fontSize: 22, fontWeight: FontWeight.bold)),
                   const SizedBox(height: 4),
-                  Text('Update your profile settings', style: GoogleFonts.inter(fontSize: 16, color: Colors.grey)),
+                  Text('Update your profile settings', style: GoogleFonts.inter(fontSize: 16, color: AppTheme.secondColorLight, fontWeight: FontWeight.w600)),
                 ],
               ),
             ),
@@ -154,8 +154,8 @@ class EditProfileScreen extends StatelessWidget {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text('Change Password', style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w500)),
-                                Text('Last updated 3 months ago', style: GoogleFonts.inter(fontSize: 12, color: Colors.grey[400])),
+                                Text('Change Password', style: GoogleFonts.inter(fontSize: 15, fontWeight: FontWeight.bold)),
+                                Text('Last updated 3 months ago', style: GoogleFonts.inter(fontSize: 12, color: AppTheme.secondColorLight, fontWeight: FontWeight.w500)),
                               ],
                             ),
                           ),
@@ -177,13 +177,14 @@ class EditProfileScreen extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(label, style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.black87)),
+        Text(label, style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.black)),
         const SizedBox(height: 8),
         TextFormField(
-          initialValue: value,
           keyboardType: type,
           enabled: !isDisabled,
           decoration: InputDecoration(
+            hintText: value,
+            hintStyle: GoogleFonts.inter(fontSize: 16, color: Colors.grey),
             prefixIcon: Icon(icon, color: Colors.grey),
             filled: true,
             fillColor: isDisabled ? Colors.grey.withOpacity(0.1) : Colors.white,
@@ -200,7 +201,7 @@ class EditProfileScreen extends StatelessWidget {
               borderSide: BorderSide(color: Colors.grey.withOpacity(0.1)),
             ),
           ),
-          style: GoogleFonts.inter(color: isDisabled ? Colors.grey : Colors.black),
+          style: GoogleFonts.inter(color: Colors.black, fontSize: 16, fontWeight: FontWeight.w500),
         ),
       ],
     );

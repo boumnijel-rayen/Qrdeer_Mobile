@@ -18,8 +18,8 @@ class BillingInvoicesScreen extends StatelessWidget {
             }
           },
         ),
-        title: const Text('Billing & Invoices'),
-        centerTitle: true,
+        toolbarHeight: 68,
+        title: Text('Billing & Invoices', style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
       ),
       body: Column(
         children: [
@@ -30,14 +30,7 @@ class BillingInvoicesScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text('Invoice History', style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold)),
-                TextButton(
-                  onPressed: () {},
-                  style: TextButton.styleFrom(
-                    foregroundColor: AppTheme.primaryColor,
-                    textStyle: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600),
-                  ),
-                  child: const Text('Filter'),
-                ),
+                const SizedBox(height: 50),
               ],
             ),
           ),
@@ -85,7 +78,7 @@ class BillingInvoicesScreen extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Text(id, style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.w600)),
+                      Text(id, style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold)),
                       const SizedBox(width: 8),
                       Container(
                         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
@@ -106,7 +99,7 @@ class BillingInvoicesScreen extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 4),
-                  Text(details, style: GoogleFonts.inter(fontSize: 14, color: Colors.grey[600])),
+                  Text(details, style: GoogleFonts.inter(fontSize: 14, color: AppTheme.secondColorLight, fontWeight: FontWeight.w500)),
                 ],
               ),
             ),

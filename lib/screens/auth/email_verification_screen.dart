@@ -15,13 +15,11 @@ class EmailVerificationScreen extends StatelessWidget {
           onPressed: () {
             if (context.canPop()) {
               context.pop();
-            } else {
-              context.go('/login');
             }
           },
         ),
-        title: const Text('Verify Email'),
-        centerTitle: true,
+        toolbarHeight: 68,
+        title: Text('Verify Email', style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -62,7 +60,8 @@ class EmailVerificationScreen extends StatelessWidget {
                         color: Colors.grey[600],
                       ),
                   children: [
-                    const TextSpan(text: 'We\'ve sent a verification code to\n'),
+                    TextSpan(text: 'We\'ve sent a verification code to\n',
+                    style: GoogleFonts.inter(fontWeight: FontWeight.w500, color: AppTheme.secondColorLight)),
                     TextSpan(
                       text: 'admin@restaurant-app.com',
                       style: GoogleFonts.inter(fontWeight: FontWeight.bold, color: Colors.black), // Dark mode needs proper handling, usually just using Theme text color
@@ -128,7 +127,7 @@ class EmailVerificationScreen extends StatelessWidget {
               const SizedBox(height: 24),
 
               // Resend Code
-              Text('Didn\'t receive the code?', style: GoogleFonts.inter(color: Colors.grey, fontSize: 14)),
+              Text('Didn\'t receive the code?', style: GoogleFonts.inter(color: Colors.grey[600], fontSize: 14, fontWeight: FontWeight.w500)),
               const SizedBox(height: 8),
               TextButton.icon(
                 onPressed: () {},

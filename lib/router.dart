@@ -147,7 +147,6 @@ final GoRouter appRouter = GoRouter(
           routes: [
             GoRoute(
               path: 'edit-profile',
-              parentNavigatorKey: _rootNavigatorKey,
               builder: (context, state) => const EditProfileScreen(),
             ),
             GoRoute(
@@ -172,7 +171,6 @@ final GoRouter appRouter = GoRouter(
             ),
             GoRoute(
               path: 'contact',
-              parentNavigatorKey: _rootNavigatorKey,
               builder: (context, state) => const ContactScreen(),
             ),
           ],

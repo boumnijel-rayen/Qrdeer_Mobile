@@ -27,10 +27,8 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
             }
           },
         ),
-        title: const Text('Change Password'),
-        actions: const [
-          SizedBox(width: 48), // Padding equivalent for centering
-        ],
+        toolbarHeight: 68,
+        title: Text('Change Password', style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -51,7 +49,8 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                 'Please enter your current password to verify your identity, then choose a new strong password.',
                 style: GoogleFonts.inter(
                       fontSize: 14, // BodyMedium default
-                      color: Colors.grey[600],
+                      color: AppTheme.secondColorLight,
+                      fontWeight: FontWeight.w500,
                     ),
               ),
               const SizedBox(height: 32),
@@ -87,7 +86,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
               const SizedBox(height: 8),
               Text(
                 'Include numbers and symbols for better security.',
-                style: GoogleFonts.inter(fontSize: 12, color: Colors.grey),
+                style: GoogleFonts.inter(fontSize: 12, color: Colors.grey[600], fontWeight: FontWeight.w500),
               ),
               const SizedBox(height: 24),
 
@@ -126,7 +125,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Forgot your password? ', style: GoogleFonts.inter(color: Colors.grey, fontSize: 14)),
+                  Text('Forgot your password? ', style: GoogleFonts.inter(color: AppTheme.secondColorLight, fontWeight: FontWeight.w600)),
                   InkWell(
                     onTap: () {},
                     child: Text('Reset it via email', style: GoogleFonts.inter(color: AppTheme.primaryColor, fontWeight: FontWeight.w500, fontSize: 14)),
@@ -143,7 +142,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
   Widget _buildLabel(String text) {
     return Text(
       text,
-      style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w500),
+      style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.black),
     );
   }
 
@@ -156,6 +155,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
       obscureText: obscureText,
       decoration: InputDecoration(
         hintText: hint,
+        hintStyle: GoogleFonts.inter(fontSize: 16, color: Colors.grey),
         suffixIcon: IconButton(
           icon: Icon(obscureText ? Icons.visibility_off : Icons.visibility, color: Colors.grey),
           onPressed: onToggle,

@@ -18,7 +18,8 @@ class ContactScreen extends StatelessWidget {
             }
           },
         ),
-        title: const Text('Contact Support'),
+        toolbarHeight: 68,
+        title: Text('Contact Support', style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 16.0),
@@ -46,16 +47,17 @@ class ContactScreen extends StatelessWidget {
               const SizedBox(height: 8),
               Text(
                 'Send us a message and our team will get back to you as soon as possible.',
-                style: GoogleFonts.inter(fontSize: 14, color: Colors.grey[600], height: 1.5),
+                style: GoogleFonts.inter(fontSize: 14, color: AppTheme.secondColorLight, height: 1.5, fontWeight: FontWeight.w500),
               ),
               const SizedBox(height: 32),
 
               // Subject Field
-              Text('Subject', style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w500, color: Colors.black87)),
+              Text('Subject', style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.black)),
               const SizedBox(height: 8),
               TextFormField(
                 decoration: InputDecoration(
                   hintText: 'What is this regarding?',
+                  hintStyle: GoogleFonts.inter(fontSize: 16, color: Colors.grey),
                   filled: true,
                   fillColor: Colors.white,
                   border: OutlineInputBorder(
@@ -71,12 +73,13 @@ class ContactScreen extends StatelessWidget {
               const SizedBox(height: 24),
 
               // Message Field
-              Text('Message', style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w500, color: Colors.black87)),
+              Text('Message', style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.black)),
               const SizedBox(height: 8),
               TextFormField(
                 maxLines: 6,
                 decoration: InputDecoration(
                   hintText: 'Explain your issue or question in detail...',
+                  hintStyle: GoogleFonts.inter(fontSize: 16, color: Colors.grey),
                   filled: true,
                   fillColor: Colors.white,
                   border: OutlineInputBorder(
@@ -111,11 +114,11 @@ class ContactScreen extends StatelessWidget {
                 child: Text.rich(
                   TextSpan(
                     text: 'Expected response time: ',
-                    style: GoogleFonts.inter(fontSize: 14, color: Colors.grey[600]),
+                    style: GoogleFonts.inter(fontSize: 14, color: Colors.grey[600], fontWeight: FontWeight.w500),
                     children: [
                       TextSpan(
                         text: 'within 24 hours',
-                        style: GoogleFonts.inter(fontWeight: FontWeight.w500, color: Colors.black87),
+                        style: GoogleFonts.inter(fontWeight: FontWeight.w600, color: Colors.black),
                       ),
                     ],
                   ),
