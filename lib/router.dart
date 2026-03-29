@@ -152,7 +152,6 @@ final GoRouter appRouter = GoRouter(
             ),
             GoRoute(
               path: 'edit-restaurant',
-              parentNavigatorKey: _rootNavigatorKey,
               builder: (context, state) => const EditRestaurantScreen(),
             ),
             GoRoute(
@@ -169,7 +168,6 @@ final GoRouter appRouter = GoRouter(
             ),
             GoRoute(
               path: 'billing',
-              parentNavigatorKey: _rootNavigatorKey,
               builder: (context, state) => const BillingInvoicesScreen(),
             ),
             GoRoute(

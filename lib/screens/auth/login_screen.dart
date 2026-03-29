@@ -16,6 +16,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Stack(
         children: [
           // Background Decorative Element (fork & knife icon, subtle)
@@ -61,10 +62,10 @@ class _LoginScreenState extends State<LoginScreen> {
                               fontWeight: FontWeight.bold,
                             ),
                         children: [
-                          const TextSpan(text: 'Welcome to Qrdee'),
+                          TextSpan(text: 'Welcome to Qrdee', style: GoogleFonts.inter(color: Colors.black, fontWeight: FontWeight.w800)),
                           TextSpan(
                             text: 'r',
-                            style: GoogleFonts.inter(color: AppTheme.primaryColor),
+                            style: GoogleFonts.inter(color: AppTheme.primaryColor, fontWeight: FontWeight.w800),
                           ),
                         ],
                         ),
@@ -75,7 +76,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         textAlign: TextAlign.center,
                         style: GoogleFonts.inter(
                               fontSize: 14, // BodyMedium default
-                              color: Colors.grey,
+                              color: AppTheme.secondColorLight,
+                              fontWeight: FontWeight.w600,
                             ),
                       ),
                       const SizedBox(height: 48),
@@ -84,11 +86,14 @@ class _LoginScreenState extends State<LoginScreen> {
                       _buildLabel('Email Address'),
                       const SizedBox(height: 8),
                       TextField(
+                        style: GoogleFonts.inter(color: Colors.black, fontWeight: FontWeight.w600),
+                        keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
-                          hintText: 'admin@restaurant.com',
-                          prefixIcon: const Icon(Icons.mail_outline),
+                          hintText: 'admin@qrdeer.com',
+                          hintStyle: GoogleFonts.inter(color: Colors.grey, fontWeight: FontWeight.w600),
+                          prefixIcon: const Icon(Icons.mail, color: AppTheme.primaryColor),
                           filled: true,
-                          fillColor: Theme.of(context).cardColor,
+                          fillColor: Theme.of(context).scaffoldBackgroundColor,
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
                             borderSide: BorderSide(color: Colors.grey.withOpacity(0.2)),
@@ -117,16 +122,19 @@ class _LoginScreenState extends State<LoginScreen> {
                               padding: EdgeInsets.zero,
                               tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                             ),
-                            child: Text('Forgot Password?', style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.bold)),
+                            child: Text('Forgot Password?', style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.w800)),
                           ),
                         ],
                       ),
                       const SizedBox(height: 8),
                       TextField(
+                        style: GoogleFonts.inter(color: Colors.black, fontWeight: FontWeight.w600),
+                        keyboardType: TextInputType.visiblePassword,
                         obscureText: _obscurePassword,
                         decoration: InputDecoration(
                           hintText: '••••••••',
-                          prefixIcon: const Icon(Icons.lock_outline),
+                          hintStyle: GoogleFonts.inter(color: Colors.grey, fontWeight: FontWeight.w600),
+                          prefixIcon: const Icon(Icons.lock_outline, color: AppTheme.primaryColor),
                           suffixIcon: IconButton(
                             icon: Icon(_obscurePassword ? Icons.visibility_off : Icons.visibility),
                             onPressed: () {
@@ -136,7 +144,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             },
                           ),
                           filled: true,
-                          fillColor: Theme.of(context).cardColor,
+                          fillColor: Theme.of(context).scaffoldBackgroundColor,
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
                             borderSide: BorderSide(color: Colors.grey.withOpacity(0.2)),
@@ -188,7 +196,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             padding: const EdgeInsets.symmetric(horizontal: 16),
                             child: Text(
                               'OR LOGIN WITH',
-                              style: GoogleFonts.inter(fontSize: 10, color: Colors.grey, fontWeight: FontWeight.bold, letterSpacing: 1.5),
+                              style: GoogleFonts.inter(fontSize: 12, color: Colors.grey, fontWeight: FontWeight.bold, letterSpacing: 1.5),
                             ),
                           ),
                           Expanded(child: Divider(color: Colors.grey.withOpacity(0.3))),
@@ -197,16 +205,21 @@ class _LoginScreenState extends State<LoginScreen> {
                       const SizedBox(height: 32),
 
                       // Biometric Button
-                      OutlinedButton.icon(
-                        onPressed: () {},
-                        icon: const Icon(Icons.fingerprint, color: AppTheme.primaryColor, size: 28),
-                        label: Text('Staff Bio-ID', style: GoogleFonts.inter(color: Colors.black, fontWeight: FontWeight.bold)),
-                        style: OutlinedButton.styleFrom(
-                          padding: const EdgeInsets.symmetric(vertical: 16),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30),
+                      Center(
+                        child: SizedBox(
+                          width: 180,
+                          child: OutlinedButton.icon(
+                            onPressed: () {},
+                            icon: const Icon(Icons.fingerprint, color: AppTheme.primaryColor, size: 28),
+                            label: Text('Staff Bio-ID', style: GoogleFonts.inter(color: AppTheme.thirdColorLight, fontWeight: FontWeight.bold)),
+                            style: OutlinedButton.styleFrom(
+                              padding: const EdgeInsets.symmetric(vertical: 16),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30),
+                              ),
+                              side: BorderSide(color: Colors.grey.withOpacity(0.3)),
+                            ),
                           ),
-                          side: BorderSide(color: Colors.grey.withOpacity(0.3)),
                         ),
                       ),
 
@@ -215,7 +228,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text('New staff member? ', style: GoogleFonts.inter(color: Colors.grey)),
+                          Text('New staff member? ', style: GoogleFonts.inter(color: AppTheme.secondColorLight, fontWeight: FontWeight.w600)),
                           InkWell(
                             onTap: () {},
                             child: Text(
@@ -241,7 +254,7 @@ class _LoginScreenState extends State<LoginScreen> {
       padding: const EdgeInsets.only(left: 4),
       child: Text(
         text,
-        style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600),
+        style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w700, color: AppTheme.thirdColorLight),
       ),
     );
   }

@@ -109,10 +109,10 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                                   fontWeight: FontWeight.bold,
                                 ),
                             children: [
-                              const TextSpan(text: 'Qrdee'),
+                              const TextSpan(text: 'Qrdee', style: TextStyle(color: Colors.black, fontWeight: FontWeight.w800)),
                               TextSpan(
                                 text: 'r',
-                                style: GoogleFonts.inter(color: AppTheme.primaryColor),
+                                style: GoogleFonts.inter(color: AppTheme.primaryColor, fontWeight: FontWeight.w800),
                               ),
                             ],
                           ),
