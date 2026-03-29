@@ -18,7 +18,8 @@ class EditRestaurantScreen extends StatelessWidget {
             }
           },
         ),
-        title: const Text('Settings'),
+        toolbarHeight: 68,
+        title: Text('Settings', style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
       ),
       body: Column(
         children: [
@@ -32,17 +33,18 @@ class EditRestaurantScreen extends StatelessWidget {
                   const SizedBox(height: 8),
                   Text(
                     'Update your public-facing business identity. This name will appear on receipts and the customer app.',
-                    style: GoogleFonts.inter(fontSize: 14, color: Colors.grey),
+                    style: GoogleFonts.inter(fontSize: 14, color: AppTheme.secondColorLight, fontWeight: FontWeight.w500),
                   ),
                   const SizedBox(height: 32),
 
                   // Form Section
-                  Text('Restaurant Name', style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.black87)),
+                  Text('Restaurant Name', style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.black)),
                   const SizedBox(height: 8),
                   TextFormField(
-                    initialValue: 'The Crimson Bistro',
+                    initialValue: 'The Golden Fork',
                     decoration: InputDecoration(
                       hintText: 'e.g. The Golden Fork',
+                      hintStyle: GoogleFonts.inter(fontSize: 16, color: Colors.grey),
                       filled: true,
                       fillColor: Colors.white,
                       border: OutlineInputBorder(
@@ -58,6 +60,7 @@ class EditRestaurantScreen extends StatelessWidget {
                         borderSide: const BorderSide(color: AppTheme.primaryColor, width: 2),
                       ),
                     ),
+                    style: GoogleFonts.inter(color: Colors.black, fontSize: 16, fontWeight: FontWeight.w500),
                   ),
                   const SizedBox(height: 24),
                   
