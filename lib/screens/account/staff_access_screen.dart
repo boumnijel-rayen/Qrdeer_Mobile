@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:qrdeer_app/theme.dart';
+import 'package:qrdeer_app/l10n/app_localizations.dart';
 
 class StaffAccessScreen extends StatelessWidget {
   const StaffAccessScreen({super.key});
@@ -18,7 +19,7 @@ class StaffAccessScreen extends StatelessWidget {
             }
           },
         ),
-        title: const Text('Staff Access'),
+        title: Text(AppLocalizations.of(context)!.staffAccess),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 16.0),
@@ -27,7 +28,7 @@ class StaffAccessScreen extends StatelessWidget {
                 context.push('/account/staff/add');
               },
               icon: const Icon(Icons.add, size: 18),
-              label: const Text('Add Staff'),
+              label: Text(AppLocalizations.of(context)!.addStaff),
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppTheme.primaryColor,
                 foregroundColor: Colors.white,
@@ -50,10 +51,10 @@ class StaffAccessScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 24.0),
             child: Row(
               children: [
-                _buildFilterChip('All', true),
-                _buildFilterChip('Manager', false),
-                _buildFilterChip('Senior Waiter', false),
-                _buildFilterChip('Waiter', false),
+                _buildFilterChip(AppLocalizations.of(context)!.filterAll, true),
+                _buildFilterChip(AppLocalizations.of(context)!.roleManager, false),
+                _buildFilterChip(AppLocalizations.of(context)!.seniorWaiter, false),
+                _buildFilterChip(AppLocalizations.of(context)!.waiter, false),
               ],
             ),
           ),
@@ -61,7 +62,7 @@ class StaffAccessScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24.0),
             child: Text(
-              '5 Active members',
+              AppLocalizations.of(context)!.activeMembersCount('5'),
               style: GoogleFonts.inter(
                 fontSize: 14,
                 fontWeight: FontWeight.bold,
@@ -76,11 +77,11 @@ class StaffAccessScreen extends StatelessWidget {
             child: ListView(
               padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 8.0),
               children: [
-                _buildStaffCard(context, 'Johnathan Doe', 'Manager', true, imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD6m8ez-DHVyccs_OxoxR319qc5ceb13z4NRaqZTILgD0T1J_vmxQZdwf8s-gTwEq-4eayKoj20_dYhPmgdD8gTcLxYaZY0mA16B0wN7f_dUspBiecoi7-t0PlTc5atulB4jcoxxbUy3y6lba3nglLYY5FW1cwveiZae3e409AVjICX_W-jkCnV2gmLI5rJou9vidL2ngpXo3jyVnKnFU4xyxSRhHMAywXO1BC3NCSmo0HhykpAY1KUhNa2B_t6iVZGHIrPtwaiT_g'),
-                _buildStaffCard(context, 'Sarah Jenkins', 'Senior Waiter', true, imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB11_96LrLd-lnVJpspLYmY5xd2Yiowo2-a9uSfaimc2Qim3xmpaU5FxQzb-L8_SGDUtX62d1gN4-CjqLJJL5uJmFT6YHzUyRkxqqyMt1vflh0EAq_4Yhc8bVsKQiYNfCpW6-BoUkEhpKyyGxfHgF16WZNnUF1XVjvJlWmwbtoNrCsiXeJ6rcMejkHTB03CeWc0cY-NRSbNhMULrE_GIMYiSRKuDCnF-4Dg288XRJCI48a7DFL1I3ZRA0RxaxsOIoV56Z05rYBnPtE'),
-                _buildStaffCard(context, 'Marcus Chen', 'Waiter', true, imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDOIgfQABkV8KMk64_LqHoQ7hNiO7pK3PRyL3ZlCimWFiHg2zXVjuYsZrNDe3U3bM79xy73k5inUoNkwfRxHfBLjYd11ZTQy0_Ih955z7JoxZ0zM3MTXJr2XVYIHpsVKrzz8gblY0zCPR0haV5dvftIVc7eplFc1GPBrszkAFPfbc_OSYXDkZXhc07gJY3RSgsBqqOpKRZWVaNhMgkpG0CIFeRjQqqoFOnNJqBl1UKiquiY_6WxDS0EhMC5580ZH3xtvr91kmVLSFs'),
-                _buildStaffCard(context, 'Emily Wang', 'Waiter', true, imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDEcw4M6pDTHWgpPsRLzTiQ9SbgXUHB-RT1aqDaOaVVF_kUm3EJh2Zo5VhNNkEWNz65PvQ-GGsnmKt76bumywFQHcQ23kAVKhdRJcrT4vu-TcmviqPoct5Uruy9v7aN6sT-qmlpAiMptMQF38s6TibJQLaailiueNiWfdNfRRRlqcn5HVVQjo0y_WtPFqfydF68hDrmDXW_DW8oE2c_avgVNqKIJngKER_JPdnPvy6dYiz3CG2xtfSs_cvJqI8miZMG4vKE3gRUD7Q'),
-                _buildStaffCard(context, 'Alex Rivera', 'Waiter', false),
+                _buildStaffCard(context, 'Johnathan Doe', AppLocalizations.of(context)!.roleManager, true, imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD6m8ez-DHVyccs_OxoxR319qc5ceb13z4NRaqZTILgD0T1J_vmxQZdwf8s-gTwEq-4eayKoj20_dYhPmgdD8gTcLxYaZY0mA16B0wN7f_dUspBiecoi7-t0PlTc5atulB4jcoxxbUy3y6lba3nglLYY5FW1cwveiZae3e409AVjICX_W-jkCnV2gmLI5rJou9vidL2ngpXo3jyVnKnFU4xyxSRhHMAywXO1BC3NCSmo0HhykpAY1KUhNa2B_t6iVZGHIrPtwaiT_g'),
+                _buildStaffCard(context, 'Sarah Jenkins', AppLocalizations.of(context)!.seniorWaiter, true, imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB11_96LrLd-lnVJpspLYmY5xd2Yiowo2-a9uSfaimc2Qim3xmpaU5FxQzb-L8_SGDUtX62d1gN4-CjqLJJL5uJmFT6YHzUyRkxqqyMt1vflh0EAq_4Yhc8bVsKQiYNfCpW6-BoUkEhpKyyGxfHgF16WZNnUF1XVjvJlWmwbtoNrCsiXeJ6rcMejkHTB03CeWc0cY-NRSbNhMULrE_GIMYiSRKuDCnF-4Dg288XRJCI48a7DFL1I3ZRA0RxaxsOIoV56Z05rYBnPtE'),
+                _buildStaffCard(context, 'Marcus Chen', AppLocalizations.of(context)!.waiter, true, imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDOIgfQABkV8KMk64_LqHoQ7hNiO7pK3PRyL3ZlCimWFiHg2zXVjuYsZrNDe3U3bM79xy73k5inUoNkwfRxHfBLjYd11ZTQy0_Ih955z7JoxZ0zM3MTXJr2XVYIHpsVKrzz8gblY0zCPR0haV5dvftIVc7eplFc1GPBrszkAFPfbc_OSYXDkZXhc07gJY3RSgsBqqOpKRZWVaNhMgkpG0CIFeRjQqqoFOnNJqBl1UKiquiY_6WxDS0EhMC5580ZH3xtvr91kmVLSFs'),
+                _buildStaffCard(context, 'Emily Wang', AppLocalizations.of(context)!.waiter, true, imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDEcw4M6pDTHWgpPsRLzTiQ9SbgXUHB-RT1aqDaOaVVF_kUm3EJh2Zo5VhNNkEWNz65PvQ-GGsnmKt76bumywFQHcQ23kAVKhdRJcrT4vu-TcmviqPoct5Uruy9v7aN6sT-qmlpAiMptMQF38s6TibJQLaailiueNiWfdNfRRRlqcn5HVVQjo0y_WtPFqfydF68hDrmDXW_DW8oE2c_avgVNqKIJngKER_JPdnPvy6dYiz3CG2xtfSs_cvJqI8miZMG4vKE3gRUD7Q'),
+                _buildStaffCard(context, 'Alex Rivera', AppLocalizations.of(context)!.waiter, false),
               ],
             ),
           ),
@@ -160,7 +161,7 @@ class StaffAccessScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Text(
-                        isActive ? 'ACTIVE' : 'INACTIVE',
+                        isActive ? AppLocalizations.of(context)!.activeCaps : AppLocalizations.of(context)!.inactiveCaps,
                         style: GoogleFonts.inter(
                           fontSize: 10,
                           fontWeight: FontWeight.bold,

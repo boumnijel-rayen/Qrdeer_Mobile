@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qrdeer_app/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:qrdeer_app/theme.dart';
@@ -18,12 +19,12 @@ class EditCategoryScreen extends StatelessWidget {
             }
           },
         ),
-        title: const Text('Edit Category'),
+        title: Text(AppLocalizations.of(context)!.editCategory),
         centerTitle: true,
         actions: [
           TextButton(
             onPressed: () {},
-            child: Text('Preview', style: GoogleFonts.inter(color: AppTheme.primaryColor, fontWeight: FontWeight.bold)),
+            child: Text(AppLocalizations.of(context)!.preview, style: GoogleFonts.inter(color: AppTheme.primaryColor, fontWeight: FontWeight.bold)),
           ),
         ],
       ),
@@ -36,7 +37,7 @@ class EditCategoryScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   // Form Section
-                  Text('Category Name', style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600)),
+                  Text(AppLocalizations.of(context)!.categoryName, style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600)),
                   const SizedBox(height: 8),
                   TextField(
                     controller: TextEditingController(text: 'Appetizers'),
@@ -61,7 +62,7 @@ class EditCategoryScreen extends StatelessWidget {
                   TextButton.icon(
                     onPressed: () {},
                     icon: const Icon(Icons.delete, size: 18, color: Colors.grey),
-                    label: Text('Delete Category', style: GoogleFonts.inter(color: Colors.grey, fontWeight: FontWeight.w500)),
+                    label: Text(AppLocalizations.of(context)!.deleteCategory, style: GoogleFonts.inter(color: Colors.grey, fontWeight: FontWeight.w500)),
                   ),
                   
                   const Padding(
@@ -73,14 +74,14 @@ class EditCategoryScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('Assigned Items', style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold)),
+                      Text(AppLocalizations.of(context)!.assignedItems, style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold)),
                       Container(
                         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                         decoration: BoxDecoration(
                           color: Colors.grey.withOpacity(0.1),
                           borderRadius: BorderRadius.circular(12),
                         ),
-                        child: Text('5 Items', style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.w500, color: Colors.grey)),
+                        child: Text(AppLocalizations.of(context)!.itemCount('5'), style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.w500, color: Colors.grey)),
                       ),
                     ],
                   ),
@@ -94,11 +95,11 @@ class EditCategoryScreen extends StatelessWidget {
                     ),
                     child: Column(
                       children: [
-                        _buildDraggableItem('Garlic Bread with Herbs', '8.50 TND', true),
-                        _buildDraggableItem('Crispy Calamari Rings', '14.00 TND', true),
-                        _buildDraggableItem('Tomato Bruschetta', '10.00 TND', true),
-                        _buildDraggableItem('Caesar Salad', '12.00 TND', true),
-                        _buildDraggableItem('Buffalo Wings (6pcs)', '11.50 TND', false),
+                        _buildDraggableItem(AppLocalizations.of(context)!.itemGarlicBread, AppLocalizations.of(context)!.price8_5, true),
+                        _buildDraggableItem(AppLocalizations.of(context)!.itemCalamariRings, AppLocalizations.of(context)!.price14, true),
+                        _buildDraggableItem(AppLocalizations.of(context)!.itemTomatoBruschetta, AppLocalizations.of(context)!.price10, true),
+                        _buildDraggableItem(AppLocalizations.of(context)!.itemCaesarSalad, AppLocalizations.of(context)!.price12, true),
+                        _buildDraggableItem(AppLocalizations.of(context)!.itemBuffaloWings, AppLocalizations.of(context)!.price11_5, false),
                       ],
                     ),
                   ),
@@ -124,7 +125,7 @@ class EditCategoryScreen extends StatelessWidget {
                 elevation: 4,
                 shadowColor: AppTheme.primaryColor.withOpacity(0.3),
               ),
-              child: Text('Save Changes', style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold)),
+              child: Text(AppLocalizations.of(context)!.saveChanges, style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold)),
             ),
           ),
         ],

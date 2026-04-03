@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qrdeer_app/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:qrdeer_app/theme.dart';
@@ -19,7 +20,7 @@ class OrderDetailsHistoryScreen extends StatelessWidget {
           },
         ),
         toolbarHeight: 68,
-        title: Text('Order Details #ORD-8939', style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
+        title: Text(AppLocalizations.of(context)!.orderDetailsId('#ORD-8939'), style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black)),
       ),
       body: Stack(
         children: [
@@ -44,7 +45,7 @@ class OrderDetailsHistoryScreen extends StatelessWidget {
                             Icon(Icons.check_circle, size: 16, color: Colors.green[700]),
                             const SizedBox(width: 6),
                             Text(
-                              'COMPLETED & PAID',
+                              AppLocalizations.of(context)!.completedAndPaid,
                               style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.green[700], letterSpacing: 0.5),
                             ),
                           ],
@@ -74,11 +75,11 @@ class OrderDetailsHistoryScreen extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('ORDER INFORMATION', style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.bold, color: AppTheme.secondColorLight, letterSpacing: 1)),
+                        Text(AppLocalizations.of(context)!.orderInformationUpper, style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.bold, color: AppTheme.secondColorLight, letterSpacing: 1)),
                         const SizedBox(height: 16),
-                        _buildInfoRow(Icons.table_restaurant, 'Table Number', 'Table 04'),
+                        _buildInfoRow(Icons.table_restaurant, AppLocalizations.of(context)!.tableNumber, 'Table 04'),
                         const SizedBox(height: 12),
-                        _buildInfoRow(Icons.schedule, 'Date & Time', 'Oct 24, 2023, 14:30', isNormalValue: true),
+                        _buildInfoRow(Icons.schedule, AppLocalizations.of(context)!.dateTime, 'Oct 24, 2023, 14:30', isNormalValue: true),
                       ],
                     ),
                   ),
@@ -87,7 +88,7 @@ class OrderDetailsHistoryScreen extends StatelessWidget {
                 // Itemized List
                 Padding(
                   padding: const EdgeInsets.fromLTRB(16, 24, 16, 8),
-                  child: Text('Items Ordered', style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold)),
+                  child: Text(AppLocalizations.of(context)!.itemsOrdered, style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold)),
                 ),
                 Container(
                   margin: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -98,9 +99,9 @@ class OrderDetailsHistoryScreen extends StatelessWidget {
                   ),
                   child: Column(
                     children: [
-                      _buildOrderItem('Mediterranean Salad', 'Qty: 2 x 12.500 TND', '25.000 TND', true, 'https://lh3.googleusercontent.com/aida-public/AB6AXuDb3VtPScpeH49Anx74fWdbFRLd5yu92Tf4lWmrokdgRPuZaZiI3h30BUc6uat-zh_n6l5RfZkcD7MMzStvInfSzvQNa8AKmW_6rpaQesNEyXkAb40_1ekW2iwLsnSS9PCluGgTi2yu4xsk9IjQeJCtnH-wtQ5ilUnmA4_VTG82klYRy0Y6e63LmIVSSHkHDiGuLk2TuP7rkI_2-V9YKpMbSmBJ_BGlDiXVo3Vvn7qp1ma9XiTsGG-4UOzmJoC8C-QgnwOzMEwYzz8'),
-                      _buildOrderItem('Classic Pancakes', 'Qty: 1 x 15.000 TND', '15.000 TND', true, 'https://lh3.googleusercontent.com/aida-public/AB6AXuAJIZl4v1WaF7kSyDtRGwLKeCStcQtxJbx06gGYCQrsa5N1zBkm44G_991_FbRE1KR4_-V2D4dNW-h_pn9OLMlB5J8O9MlRENxEeHIcax4KyX3Q_JX6Ir2Ks_dM2MKWDmc8RDuMkLOWoTTsHiuMuNpSNFdyp4_rSIbH3aEA8E4WbJyUh5wL2yYG19I5QFeHwQs_XgRYzGUF5q-RAHpgCgzdK0ssxuaXtoC9167_Fr6jLoU0JsJ8wLjpAGV3HaR-YaGztgkJFS6oUHE'),
-                      _buildOrderItem('Caffe Latte', 'Qty: 2 x 6.500 TND', '13.000 TND', false, 'https://lh3.googleusercontent.com/aida-public/AB6AXuDPbOlOkfGfuFFWOpJXGaovnss9ntdvV8C3z6PFmqf18QsPT1j7Qr6vd7h8_UWrLt76utaneggZn5iU1AKR17uS4roWyfD5vObTBeGwVV6FA5DcjV_9ys209PEKJfS6hbD_nSW4LK1mtN4R54TN6ZXBfV8iR9FGu8LXRetzC2Xz4MoAP0PccGyMw3UE6tD2NfIn0FcqvcKpTtFjwYzSG4V0xmO3hwIp2APPBa523lf6n0YUpnx3bxJYdXQniUB0MZ8mhhhRlknvMBU'),
+                      _buildOrderItem('Mediterranean Salad', AppLocalizations.of(context)!.qtyXPrice('2', '12.500 TND'), '25.000 TND', true, 'https://lh3.googleusercontent.com/aida-public/AB6AXuDb3VtPScpeH49Anx74fWdbFRLd5yu92Tf4lWmrokdgRPuZaZiI3h30BUc6uat-zh_n6l5RfZkcD7MMzStvInfSzvQNa8AKmW_6rpaQesNEyXkAb40_1ekW2iwLsnSS9PCluGgTi2yu4xsk9IjQeJCtnH-wtQ5ilUnmA4_VTG82klYRy0Y6e63LmIVSSHkHDiGuLk2TuP7rkI_2-V9YKpMbSmBJ_BGlDiXVo3Vvn7qp1ma9XiTsGG-4UOzmJoC8C-QgnwOzMEwYzz8'),
+                      _buildOrderItem('Classic Pancakes', AppLocalizations.of(context)!.qtyXPrice('1', '15.000 TND'), '15.000 TND', true, 'https://lh3.googleusercontent.com/aida-public/AB6AXuAJIZl4v1WaF7kSyDtRGwLKeCStcQtxJbx06gGYCQrsa5N1zBkm44G_991_FbRE1KR4_-V2D4dNW-h_pn9OLMlB5J8O9MlRENxEeHIcax4KyX3Q_JX6Ir2Ks_dM2MKWDmc8RDuMkLOWoTTsHiuMuNpSNFdyp4_rSIbH3aEA8E4WbJyUh5wL2yYG19I5QFeHwQs_XgRYzGUF5q-RAHpgCgzdK0ssxuaXtoC9167_Fr6jLoU0JsJ8wLjpAGV3HaR-YaGztgkJFS6oUHE'),
+                      _buildOrderItem('Caffe Latte', AppLocalizations.of(context)!.qtyXPrice('2', '6.500 TND'), '13.000 TND', false, 'https://lh3.googleusercontent.com/aida-public/AB6AXuDPbOlOkfGfuFFWOpJXGaovnss9ntdvV8C3z6PFmqf18QsPT1j7Qr6vd7h8_UWrLt76utaneggZn5iU1AKR17uS4roWyfD5vObTBeGwVV6FA5DcjV_9ys209PEKJfS6hbD_nSW4LK1mtN4R54TN6ZXBfV8iR9FGu8LXRetzC2Xz4MoAP0PccGyMw3UE6tD2NfIn0FcqvcKpTtFjwYzSG4V0xmO3hwIp2APPBa523lf6n0YUpnx3bxJYdXQniUB0MZ8mhhhRlknvMBU'),
                     ],
                   ),
                 ),
@@ -119,7 +120,7 @@ class OrderDetailsHistoryScreen extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text('Subtotal', style: GoogleFonts.inter(fontSize: 14, color: Colors.grey)),
+                          Text(AppLocalizations.of(context)!.subtotal, style: GoogleFonts.inter(fontSize: 14, color: Colors.grey)),
                           Text('53.000 TND', style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w500)),
                         ],
                       ),
@@ -127,7 +128,7 @@ class OrderDetailsHistoryScreen extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text('Tax (10%)', style: GoogleFonts.inter(fontSize: 14, color: Colors.grey)),
+                          Text(AppLocalizations.of(context)!.tax10, style: GoogleFonts.inter(fontSize: 14, color: Colors.grey)),
                           Text('5.300 TND', style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w500)),
                         ],
                       ),
@@ -138,7 +139,7 @@ class OrderDetailsHistoryScreen extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text('Total Amount', style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold)),
+                          Text(AppLocalizations.of(context)!.totalAmount, style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold)),
                           Text('58.300 TND', style: GoogleFonts.inter(fontSize: 20, fontWeight: FontWeight.w700, color: AppTheme.primaryColor)),
                         ],
                       ),

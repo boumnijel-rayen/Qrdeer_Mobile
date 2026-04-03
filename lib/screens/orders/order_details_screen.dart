@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qrdeer_app/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:qrdeer_app/theme.dart';
@@ -22,8 +23,8 @@ class OrderDetailsScreen extends StatelessWidget {
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Order #ORD-8942', style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold)),
-            Text('Placed at 12:45:22', style: GoogleFonts.inter(fontSize: 12, color: Colors.grey[600], fontWeight: FontWeight.w600)),
+            Text('#ORD-8942', style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.bold)),
+            Text(AppLocalizations.of(context)!.placedAt('12:45:22'), style: GoogleFonts.inter(fontSize: 12, color: Colors.grey[600], fontWeight: FontWeight.w600)),
           ],
         ),
         actions: [
@@ -36,7 +37,7 @@ class OrderDetailsScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(16),
               ),
               child: Text(
-                'NEW ORDER',
+                AppLocalizations.of(context)!.newOrderUpper,
                 style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.bold, color: Color(0xFF1E4FD8), letterSpacing: 1),
               ),
             ),
@@ -68,7 +69,7 @@ class OrderDetailsScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text('Table 04', style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold)),
-                          Text('Dining Area - Main Floor', style: GoogleFonts.inter(fontSize: 14, color: Colors.grey[600], fontWeight: FontWeight.w600)),
+                          Text(AppLocalizations.of(context)!.diningAreaMain, style: GoogleFonts.inter(fontSize: 14, color: Colors.grey[600], fontWeight: FontWeight.w600)),
                         ],
                       ),
                     ],
@@ -85,14 +86,14 @@ class OrderDetailsScreen extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text('ORDER ITEMS', style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.bold, letterSpacing: 1)),
+                          Text(AppLocalizations.of(context)!.orderItemsUpper, style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.bold, letterSpacing: 1)),
                           Text('3 items', style: GoogleFonts.inter(fontSize: 14, color: Colors.grey[600], fontWeight: FontWeight.w500)),
                         ],
                       ),
                       const SizedBox(height: 16),
-                      _buildOrderItem(context, 'Bruschetta', 'Quantity: 2x', '25.000 TND', 'https://lh3.googleusercontent.com/aida-public/AB6AXuBR7KH0_caWfuCIxkhUBxAhLjLVNWm_yBk8taKaqHKurlyLLoqrFAwF0SJkof_oRdHMi29kSnHsO2VhGAk8t6UXtB7Ux1eEe8dH6x0Nu0plab9SXeq4-llt0qU7Nqp2oHk-WrHLjbhqS-tn_ZJOugJJqv99TW7NDzYh4H6P6ozdHe2aJYjU9D0GFA5ZypUcfGh4TSvs0pfbdWBzpvXVzUU5yfKLt-k42CL6vfe8wLCAOhMeAyuOAyickemGmhPzRKlwTA3LQJQhREQ'),
-                      _buildOrderItem(context, 'Margherita Pizza', 'Quantity: 1x', '18.500 TND', 'https://lh3.googleusercontent.com/aida-public/AB6AXuCAw2GvnPImjgLZKWftFGbkCSAJ1FQUq4TlbBFdIcJZI02biwcxbGOfXE5-rcE007er-TvT7nDGVDq6LHkKUngZNg7x0Dq99epCTKjweBJVw2kwLE1txTja9LigdZvXaQ3YBvFk_AXmx2SKVq3umyH5vSUoeD6rXp1t2fBt_9SZiLw-_myDp4PEVN_wONu7GoULrJpvWC9xcVJnTNsx6B_yq1mf_exkEQihyknokTNdM0anMpa7Orp0JHjBmsbg_MvSBqbu6ogFMzk'),
-                      _buildOrderItem(context, 'Mint Lemonade', 'Quantity: 1x', '7.500 TND', 'https://lh3.googleusercontent.com/aida-public/AB6AXuDIwi2VscDFy7gnHIJaFMP4JEJN2OxMIn77zcC2dYwxDqf7pmeO7AUYwusHe6xnZ3JNf9SF1rAiVTZqEl033kEw1RScoVspWSnEmbmH_-KZeCy9XNJWxdn-Tjs_9diV4CEYBm5yjGSk15Ue6K_gQjbCTG5MOjH9nXOtTFh3TBckGGUWa8sg_cJmqD3fTXD3cIhfeUrN41bZZ5ZjjcAmSBnUhXSbIoGPFOzvNzdZ7TrvfD4PH_aySyUlgC-lIcDewv116GwYSft49_g'),
+                      _buildOrderItem(context, 'Bruschetta', AppLocalizations.of(context)!.quantityX('2'), '25.000 TND', 'https://lh3.googleusercontent.com/aida-public/AB6AXuBR7KH0_caWfuCIxkhUBxAhLjLVNWm_yBk8taKaqHKurlyLLoqrFAwF0SJkof_oRdHMi29kSnHsO2VhGAk8t6UXtB7Ux1eEe8dH6x0Nu0plab9SXeq4-llt0qU7Nqp2oHk-WrHLjbhqS-tn_ZJOugJJqv99TW7NDzYh4H6P6ozdHe2aJYjU9D0GFA5ZypUcfGh4TSvs0pfbdWBzpvXVzUU5yfKLt-k42CL6vfe8wLCAOhMeAyuOAyickemGmhPzRKlwTA3LQJQhREQ'),
+                      _buildOrderItem(context, 'Margherita Pizza', AppLocalizations.of(context)!.quantityX('1'), '18.500 TND', 'https://lh3.googleusercontent.com/aida-public/AB6AXuCAw2GvnPImjgLZKWftFGbkCSAJ1FQUq4TlbBFdIcJZI02biwcxbGOfXE5-rcE007er-TvT7nDGVDq6LHkKUngZNg7x0Dq99epCTKjweBJVw2kwLE1txTja9LigdZvXaQ3YBvFk_AXmx2SKVq3umyH5vSUoeD6rXp1t2fBt_9SZiLw-_myDp4PEVN_wONu7GoULrJpvWC9xcVJnTNsx6B_yq1mf_exkEQihyknokTNdM0anMpa7Orp0JHjBmsbg_MvSBqbu6ogFMzk'),
+                      _buildOrderItem(context, 'Mint Lemonade', AppLocalizations.of(context)!.quantityX('1'), '7.500 TND', 'https://lh3.googleusercontent.com/aida-public/AB6AXuDIwi2VscDFy7gnHIJaFMP4JEJN2OxMIn77zcC2dYwxDqf7pmeO7AUYwusHe6xnZ3JNf9SF1rAiVTZqEl033kEw1RScoVspWSnEmbmH_-KZeCy9XNJWxdn-Tjs_9diV4CEYBm5yjGSk15Ue6K_gQjbCTG5MOjH9nXOtTFh3TBckGGUWa8sg_cJmqD3fTXD3cIhfeUrN41bZZ5ZjjcAmSBnUhXSbIoGPFOzvNzdZ7TrvfD4PH_aySyUlgC-lIcDewv116GwYSft49_g'),
                     ],
                   ),
                 ),
@@ -108,9 +109,9 @@ class OrderDetailsScreen extends StatelessWidget {
                   ),
                   child: Column(
                     children: [
-                      _buildSummaryRow('Subtotal', '51.000 TND'),
+                      _buildSummaryRow(AppLocalizations.of(context)!.subtotal, '51.000 TND'),
                       const SizedBox(height: 12),
-                      _buildSummaryRow('Tax (7%)', '3.570 TND'),
+                      _buildSummaryRow(AppLocalizations.of(context)!.tax7, '3.570 TND'),
                       const Padding(
                         padding: EdgeInsets.symmetric(vertical: 12.0),
                         child: Divider(height: 0.02, color: Colors.grey),
@@ -118,7 +119,7 @@ class OrderDetailsScreen extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text('Total', style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold)),
+                          Text(AppLocalizations.of(context)!.total, style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold)),
                           Text('54.570 TND', style: GoogleFonts.inter(fontSize: 20, fontWeight: FontWeight.w800, color: AppTheme.primaryColor)),
                         ],
                       ),
@@ -132,12 +133,12 @@ class OrderDetailsScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('ORDER TIMELINE', style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.bold, letterSpacing: 1)),
+                      Text(AppLocalizations.of(context)!.orderTimelineUpper, style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.bold, letterSpacing: 1)),
                       const SizedBox(height: 16),
-                      _buildTimelineItem(Icons.check, 'Order Received', '12:45:22', true, AppTheme.primaryColor),
-                      _buildTimelineItem(Icons.restaurant, 'Preparing in Kitchen', '12:48:00', true, AppTheme.primaryColor.withOpacity(0.5)),
-                      _buildTimelineItem(Icons.delivery_dining, 'Ready for Serving', 'Pending', false, Colors.grey),
-                      _buildTimelineItem(Icons.payments, 'Paid', 'Pending', false, Colors.grey, isLast: true),
+                      _buildTimelineItem(Icons.check, AppLocalizations.of(context)!.orderReceived, '12:45:22', true, AppTheme.primaryColor),
+                      _buildTimelineItem(Icons.restaurant, AppLocalizations.of(context)!.preparingInKitchen, '12:48:00', true, AppTheme.primaryColor.withOpacity(0.5)),
+                      _buildTimelineItem(Icons.delivery_dining, AppLocalizations.of(context)!.readyForServing, AppLocalizations.of(context)!.pendingOrder, false, Colors.grey),
+                      _buildTimelineItem(Icons.payments, AppLocalizations.of(context)!.filterPaid, AppLocalizations.of(context)!.pendingOrder, false, Colors.grey, isLast: true),
                     ],
                   ),
                 ),
@@ -165,7 +166,7 @@ class OrderDetailsScreen extends StatelessWidget {
                   ElevatedButton.icon(
                     onPressed: () {},
                     icon: const Icon(Icons.play_arrow),
-                    label: Text('Next Step'),
+                    label: Text(AppLocalizations.of(context)!.nextStep),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppTheme.primaryColor,
                       foregroundColor: Colors.white,
@@ -182,7 +183,7 @@ class OrderDetailsScreen extends StatelessWidget {
                         child: OutlinedButton.icon(
                           onPressed: () {},
                           icon: const Icon(Icons.undo, size: 20),
-                          label: Text('Previous Step', style: GoogleFonts.inter(fontSize: 15, fontWeight: FontWeight.bold, color: AppTheme.thirdColorLight)),
+                          label: Text(AppLocalizations.of(context)!.previousStep, style: GoogleFonts.inter(fontSize: 15, fontWeight: FontWeight.bold, color: AppTheme.thirdColorLight), textAlign: TextAlign.center),
                           style: OutlinedButton.styleFrom(
                             foregroundColor: Colors.grey[800],
                             minimumSize: const Size(double.infinity, 48),
@@ -196,7 +197,7 @@ class OrderDetailsScreen extends StatelessWidget {
                         child: TextButton.icon(
                           onPressed: () {},
                           icon: const Icon(Icons.cancel, size: 20),
-                          label: Text('Cancel Order', style: GoogleFonts.inter(fontSize: 15, fontWeight: FontWeight.bold)),
+                          label: Text(AppLocalizations.of(context)!.cancelOrder, style: GoogleFonts.inter(fontSize: 15, fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
                           style: TextButton.styleFrom(
                             foregroundColor: Colors.red,
                             minimumSize: const Size(double.infinity, 48),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qrdeer_app/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:qrdeer_app/theme.dart';
@@ -32,7 +33,7 @@ class TablesScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Tables Management', style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
+                  Text(AppLocalizations.of(context)!.tablesManagement, style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
                   Text('Main Street Bistro', style: GoogleFonts.inter(fontSize: 12, color: Colors.grey, fontWeight: FontWeight.w700)),
                 ],
               ),
@@ -47,7 +48,7 @@ class TablesScreen extends StatelessWidget {
                 context.push('/tables/view-qr');
               },
               icon: const Icon(Icons.add, size: 16,),
-              label: const Text('Add Table'),
+              label: Text(AppLocalizations.of(context)!.addTable),
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppTheme.primaryColor,
                 foregroundColor: Colors.white,
@@ -74,9 +75,9 @@ class TablesScreen extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                _buildTab('All Tables', true),
-                _buildTab('Available', false),
-                _buildTab('Disabled', false),
+                _buildTab(AppLocalizations.of(context)!.allTables, true),
+                _buildTab(AppLocalizations.of(context)!.available, false),
+                _buildTab(AppLocalizations.of(context)!.disabled, false),
               ],
             ),
           ),
@@ -90,11 +91,11 @@ class TablesScreen extends StatelessWidget {
               mainAxisSpacing: 16,
               childAspectRatio: 0.75, // Adjust height based on content
               children: [
-                _buildTableCard(context, 'Table 01', '4 Seats', 'ID: QR_T01_NORTH', true, 'https://lh3.googleusercontent.com/aida-public/AB6AXuCM8JwlTgew9S9SpxcDQyjTeaxW17tp0HAY8a7iz-cMul_2fU4vx0GtJb3bYUbfZg6IBVSYTpNKOjkLU6ioSBt4x_SxgdvlkuAsBJOlsQc2cyvWhLaFLOHsGxKL0bOo9Ukmh_ToFPnBhxOmtxWDl8--S60UwnpSCqB7qK4865JHIysaBTq9H53nE_j04xJSk06_H-xySCWsUpT2Iiyjmradds5yO4teRAGz9VOls5VSCfqw5MzfDB8sednsz6w-75S5R_nx3Svj3lE'),
-                _buildTableCard(context, 'Table 02', '2 Seats', 'ID: QR_T02_WINDOW', false, 'https://lh3.googleusercontent.com/aida-public/AB6AXuCM8JwlTgew9S9SpxcDQyjTeaxW17tp0HAY8a7iz-cMul_2fU4vx0GtJb3bYUbfZg6IBVSYTpNKOjkLU6ioSBt4x_SxgdvlkuAsBJOlsQc2cyvWhLaFLOHsGxKL0bOo9Ukmh_ToFPnBhxOmtxWDl8--S60UwnpSCqB7qK4865JHIysaBTq9H53nE_j04xJSk06_H-xySCWsUpT2Iiyjmradds5yO4teRAGz9VOls5VSCfqw5MzfDB8sednsz6w-75S5R_nx3Svj3lE'),
-                _buildTableCard(context, 'Table 03', '6 Seats', 'ID: QR_T03_CENTER', false, 'https://lh3.googleusercontent.com/aida-public/AB6AXuCM8JwlTgew9S9SpxcDQyjTeaxW17tp0HAY8a7iz-cMul_2fU4vx0GtJb3bYUbfZg6IBVSYTpNKOjkLU6ioSBt4x_SxgdvlkuAsBJOlsQc2cyvWhLaFLOHsGxKL0bOo9Ukmh_ToFPnBhxOmtxWDl8--S60UwnpSCqB7qK4865JHIysaBTq9H53nE_j04xJSk06_H-xySCWsUpT2Iiyjmradds5yO4teRAGz9VOls5VSCfqw5MzfDB8sednsz6w-75S5R_nx3Svj3lE'),
-                _buildTableCard(context, 'Table 04', '4 Seats', 'ID: QR_T04_PATIO', true, 'https://lh3.googleusercontent.com/aida-public/AB6AXuCM8JwlTgew9S9SpxcDQyjTeaxW17tp0HAY8a7iz-cMul_2fU4vx0GtJb3bYUbfZg6IBVSYTpNKOjkLU6ioSBt4x_SxgdvlkuAsBJOlsQc2cyvWhLaFLOHsGxKL0bOo9Ukmh_ToFPnBhxOmtxWDl8--S60UwnpSCqB7qK4865JHIysaBTq9H53nE_j04xJSk06_H-xySCWsUpT2Iiyjmradds5yO4teRAGz9VOls5VSCfqw5MzfDB8sednsz6w-75S5R_nx3Svj3lE'),
-                _buildTableCard(context, 'Table 05', '2 Seats', 'ID: QR_T05_BAR', false, 'https://lh3.googleusercontent.com/aida-public/AB6AXuCM8JwlTgew9S9SpxcDQyjTeaxW17tp0HAY8a7iz-cMul_2fU4vx0GtJb3bYUbfZg6IBVSYTpNKOjkLU6ioSBt4x_SxgdvlkuAsBJOlsQc2cyvWhLaFLOHsGxKL0bOo9Ukmh_ToFPnBhxOmtxWDl8--S60UwnpSCqB7qK4865JHIysaBTq9H53nE_j04xJSk06_H-xySCWsUpT2Iiyjmradds5yO4teRAGz9VOls5VSCfqw5MzfDB8sednsz6w-75S5R_nx3Svj3lE'),
+                _buildTableCard(context, AppLocalizations.of(context)!.tableId('01'), AppLocalizations.of(context)!.seatsCount('4'), 'ID: QR_T01_NORTH', true, 'https://lh3.googleusercontent.com/aida-public/AB6AXuCM8JwlTgew9S9SpxcDQyjTeaxW17tp0HAY8a7iz-cMul_2fU4vx0GtJb3bYUbfZg6IBVSYTpNKOjkLU6ioSBt4x_SxgdvlkuAsBJOlsQc2cyvWhLaFLOHsGxKL0bOo9Ukmh_ToFPnBhxOmtxWDl8--S60UwnpSCqB7qK4865JHIysaBTq9H53nE_j04xJSk06_H-xySCWsUpT2Iiyjmradds5yO4teRAGz9VOls5VSCfqw5MzfDB8sednsz6w-75S5R_nx3Svj3lE'),
+                _buildTableCard(context, AppLocalizations.of(context)!.tableId('02'), AppLocalizations.of(context)!.seatsCount('2'), 'ID: QR_T02_WINDOW', false, 'https://lh3.googleusercontent.com/aida-public/AB6AXuCM8JwlTgew9S9SpxcDQyjTeaxW17tp0HAY8a7iz-cMul_2fU4vx0GtJb3bYUbfZg6IBVSYTpNKOjkLU6ioSBt4x_SxgdvlkuAsBJOlsQc2cyvWhLaFLOHsGxKL0bOo9Ukmh_ToFPnBhxOmtxWDl8--S60UwnpSCqB7qK4865JHIysaBTq9H53nE_j04xJSk06_H-xySCWsUpT2Iiyjmradds5yO4teRAGz9VOls5VSCfqw5MzfDB8sednsz6w-75S5R_nx3Svj3lE'),
+                _buildTableCard(context, AppLocalizations.of(context)!.tableId('03'), AppLocalizations.of(context)!.seatsCount('6'), 'ID: QR_T03_CENTER', false, 'https://lh3.googleusercontent.com/aida-public/AB6AXuCM8JwlTgew9S9SpxcDQyjTeaxW17tp0HAY8a7iz-cMul_2fU4vx0GtJb3bYUbfZg6IBVSYTpNKOjkLU6ioSBt4x_SxgdvlkuAsBJOlsQc2cyvWhLaFLOHsGxKL0bOo9Ukmh_ToFPnBhxOmtxWDl8--S60UwnpSCqB7qK4865JHIysaBTq9H53nE_j04xJSk06_H-xySCWsUpT2Iiyjmradds5yO4teRAGz9VOls5VSCfqw5MzfDB8sednsz6w-75S5R_nx3Svj3lE'),
+                _buildTableCard(context, AppLocalizations.of(context)!.tableId('04'), AppLocalizations.of(context)!.seatsCount('4'), 'ID: QR_T04_PATIO', true, 'https://lh3.googleusercontent.com/aida-public/AB6AXuCM8JwlTgew9S9SpxcDQyjTeaxW17tp0HAY8a7iz-cMul_2fU4vx0GtJb3bYUbfZg6IBVSYTpNKOjkLU6ioSBt4x_SxgdvlkuAsBJOlsQc2cyvWhLaFLOHsGxKL0bOo9Ukmh_ToFPnBhxOmtxWDl8--S60UwnpSCqB7qK4865JHIysaBTq9H53nE_j04xJSk06_H-xySCWsUpT2Iiyjmradds5yO4teRAGz9VOls5VSCfqw5MzfDB8sednsz6w-75S5R_nx3Svj3lE'),
+                _buildTableCard(context, AppLocalizations.of(context)!.tableId('05'), AppLocalizations.of(context)!.seatsCount('2'), 'ID: QR_T05_BAR', false, 'https://lh3.googleusercontent.com/aida-public/AB6AXuCM8JwlTgew9S9SpxcDQyjTeaxW17tp0HAY8a7iz-cMul_2fU4vx0GtJb3bYUbfZg6IBVSYTpNKOjkLU6ioSBt4x_SxgdvlkuAsBJOlsQc2cyvWhLaFLOHsGxKL0bOo9Ukmh_ToFPnBhxOmtxWDl8--S60UwnpSCqB7qK4865JHIysaBTq9H53nE_j04xJSk06_H-xySCWsUpT2Iiyjmradds5yO4teRAGz9VOls5VSCfqw5MzfDB8sednsz6w-75S5R_nx3Svj3lE'),
               ],
             ),
           ),
@@ -170,7 +171,7 @@ class TablesScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(4),
                     ),
                     child: Text(
-                      isAvailable ? 'AVAILABLE' : 'DISABLED',
+                      isAvailable ? AppLocalizations.of(context)!.available.toUpperCase() : AppLocalizations.of(context)!.disabled.toUpperCase(),
                       style: GoogleFonts.inter(
                         fontSize: 10,
                         fontWeight: FontWeight.w800,
@@ -206,7 +207,7 @@ class TablesScreen extends StatelessWidget {
                       elevation: 0,
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                     ),
-                    child: Text('View QR Code', style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.w700)),
+                    child: Text(AppLocalizations.of(context)!.viewQrCode, style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.w700), textAlign: TextAlign.center,),
                   ),
                 ),
               ],

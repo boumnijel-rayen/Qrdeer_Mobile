@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qrdeer_app/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:qrdeer_app/theme.dart';
@@ -25,7 +26,7 @@ class _AddCategoryScreenState extends State<AddCategoryScreen> {
             }
           },
         ),
-        title: const Text('Add New'),
+        title: Text(AppLocalizations.of(context)!.addNew),
         centerTitle: true,
       ),
       body: Column(
@@ -63,7 +64,7 @@ class _AddCategoryScreenState extends State<AddCategoryScreen> {
                                     : null,
                               ),
                               child: Text(
-                                'Item',
+                                AppLocalizations.of(context)!.item,
                                 style: GoogleFonts.inter(
                                   fontSize: 14,
                                   fontWeight: _selectedType == 'Item' ? FontWeight.bold : FontWeight.w500,
@@ -90,7 +91,7 @@ class _AddCategoryScreenState extends State<AddCategoryScreen> {
                                     : null,
                               ),
                               child: Text(
-                                'Category',
+                                AppLocalizations.of(context)!.category,
                                 style: GoogleFonts.inter(
                                   fontSize: 14,
                                   fontWeight: _selectedType == 'Category' ? FontWeight.bold : FontWeight.w500,
@@ -106,11 +107,11 @@ class _AddCategoryScreenState extends State<AddCategoryScreen> {
                   const SizedBox(height: 24),
                   
                   // Form Field
-                  Text('Category Name', style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600)),
+                  Text(AppLocalizations.of(context)!.categoryName, style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600)),
                   const SizedBox(height: 8),
                   TextField(
                     decoration: InputDecoration(
-                      hintText: 'e.g. Beverages, Main Courses',
+                      hintText: AppLocalizations.of(context)!.eGMenu,
                       filled: true,
                       fillColor: Theme.of(context).cardColor,
                       border: OutlineInputBorder(
@@ -129,7 +130,7 @@ class _AddCategoryScreenState extends State<AddCategoryScreen> {
                   ),
                   const SizedBox(height: 12),
                   Text(
-                    'This category will be visible in your digital menu and POS system.',
+                    AppLocalizations.of(context)!.categoryVisibleHint,
                     style: GoogleFonts.inter(fontSize: 12, color: Colors.grey),
                   ),
                 ],
@@ -154,7 +155,7 @@ class _AddCategoryScreenState extends State<AddCategoryScreen> {
                 elevation: 4,
                 shadowColor: AppTheme.primaryColor.withOpacity(0.3),
               ),
-              child: Text('Save Changes', style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold)),
+              child: Text(AppLocalizations.of(context)!.saveChanges, style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold)),
             ),
           ),
         ],

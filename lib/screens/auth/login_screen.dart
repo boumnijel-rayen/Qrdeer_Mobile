@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:qrdeer_app/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:qrdeer_app/main.dart';
 import 'package:qrdeer_app/theme.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -38,6 +40,49 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
           SafeArea(
+            child: Align(
+              alignment: Alignment.topRight,
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: DropdownButtonHideUnderline(
+                  child: DropdownButton<Locale>(
+                    value: appLocale.value,
+                    icon: const Icon(Icons.language, color: AppTheme.primaryColor),
+                    onChanged: (Locale? newValue) {
+                      if (newValue != null) {
+                        appLocale.value = newValue;
+                      }
+                    },
+                    items: const [
+                      DropdownMenuItem(
+                        value: Locale('fr'),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text('🇫🇷'),
+                            SizedBox(width: 8),
+                            Text('FR'),
+                          ],
+                        ),
+                      ),
+                      DropdownMenuItem(
+                        value: Locale('en'),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text('🇬🇧'),
+                            SizedBox(width: 8),
+                            Text('EN'),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+          SafeArea(
             child: Center(
               child: SingleChildScrollView(
                 padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 48.0),
@@ -62,9 +107,10 @@ class _LoginScreenState extends State<LoginScreen> {
                               fontWeight: FontWeight.bold,
                             ),
                         children: [
-                          TextSpan(text: 'Welcome to Qrdee', style: GoogleFonts.inter(color: Colors.black, fontWeight: FontWeight.w800)),
+                          TextSpan(text: AppLocalizations.of(context)!.welcomeTo, style: GoogleFonts.inter(color: Colors.black, fontWeight: FontWeight.w800)),
+                          TextSpan(text: 'Qrdee', style: GoogleFonts.inter(color: Colors.black, fontWeight: FontWeight.w800)),
                           TextSpan(
-                            text: 'r',
+                            text: AppLocalizations.of(context)!.brandName,
                             style: GoogleFonts.inter(color: AppTheme.primaryColor, fontWeight: FontWeight.w800),
                           ),
                         ],
@@ -72,7 +118,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       const SizedBox(height: 8),
                       Text(
-                        'Manage your kitchen operations and staff with ease.',
+                        AppLocalizations.of(context)!.manageKitchenDesc,
                         textAlign: TextAlign.center,
                         style: GoogleFonts.inter(
                               fontSize: 14, // BodyMedium default
@@ -83,13 +129,13 @@ class _LoginScreenState extends State<LoginScreen> {
                       const SizedBox(height: 48),
 
                       // Email
-                      _buildLabel('Email Address'),
+                      _buildLabel(AppLocalizations.of(context)!.emailAddress),
                       const SizedBox(height: 8),
                       TextField(
                         style: GoogleFonts.inter(color: Colors.black, fontWeight: FontWeight.w600),
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
-                          hintText: 'admin@qrdeer.com',
+                          hintText: AppLocalizations.of(context)!.emailHint,
                           hintStyle: GoogleFonts.inter(color: Colors.grey, fontWeight: FontWeight.w600),
                           prefixIcon: const Icon(Icons.mail, color: AppTheme.primaryColor),
                           filled: true,
@@ -114,7 +160,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          _buildLabel('Password'),
+                          _buildLabel(AppLocalizations.of(context)!.password),
                           TextButton(
                             onPressed: () {},
                             style: TextButton.styleFrom(
@@ -122,7 +168,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               padding: EdgeInsets.zero,
                               tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                             ),
-                            child: Text('Forgot Password?', style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.w800)),
+                            child: Text(AppLocalizations.of(context)!.forgotPassword, style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.w800)),
                           ),
                         ],
                       ),
@@ -179,7 +225,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text('Login to Dashboard', style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold)),
+                            Text(AppLocalizations.of(context)!.loginToDashboard, style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold)),
                             const SizedBox(width: 8),
                             const Icon(Icons.arrow_forward, size: 20),
                           ],
@@ -195,7 +241,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 16),
                             child: Text(
-                              'OR LOGIN WITH',
+                              AppLocalizations.of(context)!.orLoginWith,
                               style: GoogleFonts.inter(fontSize: 12, color: Colors.grey, fontWeight: FontWeight.bold, letterSpacing: 1.5),
                             ),
                           ),
@@ -211,7 +257,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: OutlinedButton.icon(
                             onPressed: () {},
                             icon: const Icon(Icons.fingerprint, color: AppTheme.primaryColor, size: 28),
-                            label: Text('Staff Bio-ID', style: GoogleFonts.inter(color: AppTheme.thirdColorLight, fontWeight: FontWeight.bold)),
+                            label: Text(AppLocalizations.of(context)!.staffBioId, style: GoogleFonts.inter(color: AppTheme.thirdColorLight, fontWeight: FontWeight.bold)),
                             style: OutlinedButton.styleFrom(
                               padding: const EdgeInsets.symmetric(vertical: 16),
                               shape: RoundedRectangleBorder(
@@ -228,11 +274,11 @@ class _LoginScreenState extends State<LoginScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text('New staff member? ', style: GoogleFonts.inter(color: AppTheme.secondColorLight, fontWeight: FontWeight.w600)),
+                          Text(AppLocalizations.of(context)!.newStaffMember, style: GoogleFonts.inter(color: AppTheme.secondColorLight, fontWeight: FontWeight.w600)),
                           InkWell(
                             onTap: () {},
                             child: Text(
-                              'Contact Team',
+                              AppLocalizations.of(context)!.contactTeam,
                               style: GoogleFonts.inter(color: AppTheme.primaryColor, fontWeight: FontWeight.bold),
                             ),
                           ),

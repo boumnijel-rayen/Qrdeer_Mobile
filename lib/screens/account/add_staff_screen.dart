@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:qrdeer_app/theme.dart';
+import 'package:qrdeer_app/l10n/app_localizations.dart';
 
 class AddStaffScreen extends StatefulWidget {
   const AddStaffScreen({super.key});
@@ -25,7 +26,7 @@ class _AddStaffScreenState extends State<AddStaffScreen> {
             }
           },
         ),
-        title: const Text('Add Staff Member'),
+        title: Text(AppLocalizations.of(context)!.addStaffMember),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(24.0),
@@ -33,11 +34,11 @@ class _AddStaffScreenState extends State<AddStaffScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Full Name
-            Text('Full Name', style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.black87)),
+            Text(AppLocalizations.of(context)!.fullName, style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.black87)),
             const SizedBox(height: 8),
             TextFormField(
               decoration: InputDecoration(
-                hintText: 'e.g. Ahmed Ben Ali',
+                hintText: AppLocalizations.of(context)!.egFullName,
                 filled: true,
                 fillColor: Colors.white,
                 border: OutlineInputBorder(
@@ -53,7 +54,7 @@ class _AddStaffScreenState extends State<AddStaffScreen> {
             const SizedBox(height: 24),
 
             // Role Selection
-            Text('Role', style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.black87)),
+            Text(AppLocalizations.of(context)!.role, style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.black87)),
             const SizedBox(height: 8),
             Container(
               decoration: BoxDecoration(
@@ -79,7 +80,7 @@ class _AddStaffScreenState extends State<AddStaffScreen> {
                           boxShadow: _selectedRole == 'senior_waiter' ? [BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 4)] : [],
                         ),
                         child: Text(
-                          'Senior Waiter',
+                          AppLocalizations.of(context)!.seniorWaiter,
                           style: GoogleFonts.inter(
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
@@ -105,7 +106,7 @@ class _AddStaffScreenState extends State<AddStaffScreen> {
                           boxShadow: _selectedRole == 'waiter' ? [BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 4)] : [],
                         ),
                         child: Text(
-                          'Waiter',
+                          AppLocalizations.of(context)!.waiter,
                           style: GoogleFonts.inter(
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
@@ -121,12 +122,12 @@ class _AddStaffScreenState extends State<AddStaffScreen> {
             const SizedBox(height: 24),
 
             // Email Address
-            Text('Email Address', style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.black87)),
+            Text(AppLocalizations.of(context)!.emailAddress, style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.black87)),
             const SizedBox(height: 8),
             TextFormField(
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
-                hintText: 'name@restaurant.tn',
+                hintText: AppLocalizations.of(context)!.egEmail,
                 filled: true,
                 fillColor: Colors.white,
                 border: OutlineInputBorder(
@@ -142,12 +143,12 @@ class _AddStaffScreenState extends State<AddStaffScreen> {
             const SizedBox(height: 24),
 
             // Phone Number
-            Text('Phone Number', style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.black87)),
+            Text(AppLocalizations.of(context)!.phoneNumber, style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.black87)),
             const SizedBox(height: 8),
             TextFormField(
               keyboardType: TextInputType.phone,
               decoration: InputDecoration(
-                hintText: '00 000 000',
+                hintText: AppLocalizations.of(context)!.egPhone,
                 prefixIcon: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   child: Column(
@@ -170,7 +171,7 @@ class _AddStaffScreenState extends State<AddStaffScreen> {
             const SizedBox(height: 24),
 
             // Passwords
-            Text('Password', style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.black87)),
+            Text(AppLocalizations.of(context)!.password, style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.black87)),
             const SizedBox(height: 8),
             TextFormField(
               obscureText: true,
@@ -190,7 +191,7 @@ class _AddStaffScreenState extends State<AddStaffScreen> {
             ),
             const SizedBox(height: 24),
 
-            Text('Confirm Password', style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.black87)),
+            Text(AppLocalizations.of(context)!.confirmPassword, style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.black87)),
             const SizedBox(height: 8),
             TextFormField(
               obscureText: true,
@@ -220,7 +221,7 @@ class _AddStaffScreenState extends State<AddStaffScreen> {
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                 textStyle: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold),
               ),
-              child: const Text('Add Staff Member'),
+              child: Text(AppLocalizations.of(context)!.addStaffMember),
             ),
             const SizedBox(height: 16),
             TextButton(
@@ -234,7 +235,7 @@ class _AddStaffScreenState extends State<AddStaffScreen> {
                 minimumSize: const Size(double.infinity, 56),
                 textStyle: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold),
               ),
-              child: const Text('Cancel'),
+              child: Text(AppLocalizations.of(context)!.cancel),
             ),
           ],
         ),

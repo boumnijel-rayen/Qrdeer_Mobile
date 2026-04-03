@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qrdeer_app/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:qrdeer_app/theme.dart';
@@ -32,7 +33,7 @@ class OrdersScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Orders Management', style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
+                  Text(AppLocalizations.of(context)!.ordersManagement, style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
                   Text('Main Street Bistro', style: GoogleFonts.inter(fontSize: 12, color: Colors.grey, fontWeight: FontWeight.w700)),
                 ],
               ),
@@ -76,7 +77,7 @@ class OrdersScreen extends StatelessWidget {
                   height: 42,
                   child: TextField(
                     decoration: InputDecoration(
-                      hintText: 'Search by order ID, table...',
+                      hintText: AppLocalizations.of(context)!.searchOrders,
                       hintStyle: GoogleFonts.inter(fontSize: 14, color: Colors.grey[600], fontWeight: FontWeight.w500),
                       prefixIcon: const Icon(Icons.search, color: Colors.grey),
                       filled: true,
@@ -93,12 +94,12 @@ class OrdersScreen extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
                 child: Row(
                   children: [
-                    _buildFilterChip('All', true),
-                    _buildFilterChip('New Order', false),
-                    _buildFilterChip('Preparing', false),
-                    _buildFilterChip('Ready', false),
-                    _buildFilterChip('Cancelled', false),
-                    _buildFilterChip('Paid', false),
+                    _buildFilterChip(AppLocalizations.of(context)!.filterAll, true),
+                    _buildFilterChip(AppLocalizations.of(context)!.filterNewOrder, false),
+                    _buildFilterChip(AppLocalizations.of(context)!.filterPreparing, false),
+                    _buildFilterChip(AppLocalizations.of(context)!.filterReady, false),
+                    _buildFilterChip(AppLocalizations.of(context)!.filterCancelled, false),
+                    _buildFilterChip(AppLocalizations.of(context)!.filterPaid, false),
                   ],
                 ),
               ),
@@ -115,7 +116,7 @@ class OrdersScreen extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.only(bottom: 8.0),
-                child: Text('ORDERS (4)', style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w800, color: AppTheme.secondColorLight, letterSpacing: 1.2)),
+                child: Text(AppLocalizations.of(context)!.ordersCount('4'), style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w800, color: AppTheme.secondColorLight, letterSpacing: 1.2)),
               ),
               _buildOrderCard(
                 context,
@@ -123,7 +124,7 @@ class OrdersScreen extends StatelessWidget {
                 time: '12:45:02',
                 table: 'Table 04',
                 items: '3 items',
-                status: 'Preparing',
+                status: AppLocalizations.of(context)!.filterPreparing,
                 statusColor: Color(0xFFE65B18),
                 statusBackgroundColor: Colors.orange.withOpacity(0.2),
                 total: '42.500 TND',
@@ -134,7 +135,7 @@ class OrdersScreen extends StatelessWidget {
                 time: '12:30:15',
                 table: 'Table 12',
                 items: '5 items',
-                status: 'Ready',
+                status: AppLocalizations.of(context)!.filterReady,
                 statusColor: Color(0xFF17A34B),
                 statusBackgroundColor: Colors.green.withOpacity(0.2),
                 total: '128.000 TND',
@@ -145,7 +146,7 @@ class OrdersScreen extends StatelessWidget {
                 time: '15:40:45',
                 table: 'Table 01',
                 items: '4 items',
-                status: 'New Order',
+                status: AppLocalizations.of(context)!.filterNewOrder,
                 statusColor: Color(0xFF1E4FD8),
                 statusBackgroundColor: Colors.blueAccent.withOpacity(0.2),
                 total: '55.250 TND',
@@ -156,7 +157,7 @@ class OrdersScreen extends StatelessWidget {
                 time: '12:30:15',
                 table: 'Table 12',
                 items: '5 items',
-                status: 'Cancelled',
+                status: AppLocalizations.of(context)!.filterCancelled,
                 statusColor: Color(0xFFBE123C),
                 statusBackgroundColor: Colors.red.withOpacity(0.2),
                 total: '128.000 TND',
@@ -167,7 +168,7 @@ class OrdersScreen extends StatelessWidget {
                 time: '05:55:06',
                 table: 'Table 08',
                 items: '2 items',
-                status: 'Paid',
+                status: AppLocalizations.of(context)!.filterPaid,
                 statusColor: Color(0xFF64748B),
                 statusBackgroundColor: Colors.grey.withOpacity(0.2),
                 total: '18.900 TND',
@@ -237,7 +238,7 @@ Widget _buildOrderCard(
                 children: [
                   Text(orderId, style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.bold)),
                   const SizedBox(height: 2),
-                  Text('Ordered $time', style: GoogleFonts.inter(fontSize: 12, color: AppTheme.primaryColor, fontWeight: FontWeight.w600)),
+                  Text(AppLocalizations.of(context)!.orderedAt(time), style: GoogleFonts.inter(fontSize: 12, color: AppTheme.primaryColor, fontWeight: FontWeight.w600)),
                 ],
               ),
               Container(
@@ -265,7 +266,7 @@ Widget _buildOrderCard(
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('TABLE', style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.grey, letterSpacing: 1)),
+                      Text(AppLocalizations.of(context)!.tableUpper, style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.grey, letterSpacing: 1)),
                       Text(table, style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.bold)),
                     ],
                   ),
@@ -273,7 +274,7 @@ Widget _buildOrderCard(
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('ITEMS', style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.grey, letterSpacing: 1)),
+                      Text(AppLocalizations.of(context)!.itemsUpper, style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.grey, letterSpacing: 1)),
                       Text(items, style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.bold)),
                     ],
                   ),
@@ -282,7 +283,7 @@ Widget _buildOrderCard(
               Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Text('TOTAL', style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.grey, letterSpacing: 1)),
+                  Text(AppLocalizations.of(context)!.totalUpper, style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.grey, letterSpacing: 1)),
                   Text(total, style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black)),
                 ],
               ),

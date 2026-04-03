@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:qrdeer_app/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:qrdeer_app/main.dart';
 import 'package:qrdeer_app/theme.dart';
 
 class AccountScreen extends StatelessWidget {
@@ -32,7 +34,7 @@ class AccountScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Settings', style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
+                  Text(AppLocalizations.of(context)!.settings, style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
                   Text('Main Street Bistro', style: GoogleFonts.inter(fontSize: 12, color: Colors.grey, fontWeight: FontWeight.w700)),
                 ],
               ),
@@ -104,7 +106,7 @@ class AccountScreen extends StatelessWidget {
                                 color: AppTheme.primaryColor.withOpacity(0.1),
                                 borderRadius: BorderRadius.circular(12),
                               ),
-                              child: Text('ADMIN ACCESS', style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.bold, color: AppTheme.primaryColor, letterSpacing: 0.5)),
+                              child: Text(AppLocalizations.of(context)!.adminAccess, style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.bold, color: AppTheme.primaryColor, letterSpacing: 0.5)),
                             ),
                           ],
                         ),
@@ -124,7 +126,7 @@ class AccountScreen extends StatelessWidget {
                       onPressed: () {
                         context.push('/account/edit-profile');
                       },
-                      child: Text('Edit Profile Details', style: GoogleFonts.inter(fontWeight: FontWeight.bold)),
+                      child: Text(AppLocalizations.of(context)!.editProfileDetails, style: GoogleFonts.inter(fontWeight: FontWeight.bold)),
                     ),
                   ),
                 ],
@@ -133,7 +135,7 @@ class AccountScreen extends StatelessWidget {
             const SizedBox(height: 24),
 
             // Restaurant Details
-            _buildSectionTitle('RESTAURANT DETAILS'),
+            _buildSectionTitle(AppLocalizations.of(context)!.restaurantDetailsTitle),
             Container(
               decoration: BoxDecoration(
                 color: Theme.of(context).cardColor,
@@ -147,7 +149,7 @@ class AccountScreen extends StatelessWidget {
                 children: [
                   _buildListTile(
                     icon: Icons.restaurant,
-                    title: 'Restaurant Name',
+                    title: AppLocalizations.of(context)!.restaurantName,
                     subtitle: 'The Golden Grill',
                     onTap: () {
                       context.push('/account/edit-restaurant');
@@ -156,7 +158,7 @@ class AccountScreen extends StatelessWidget {
                   Divider(height: 1, color: AppTheme.primaryColor.withOpacity(0.05)),
                   _buildListTile(
                     icon: Icons.location_on,
-                    title: 'Address',
+                    title: AppLocalizations.of(context)!.address,
                     subtitle: '123 Culinary Ave, San Francisco, CA',
                     onTap: () {},
                   ),
@@ -166,7 +168,7 @@ class AccountScreen extends StatelessWidget {
             const SizedBox(height: 24),
 
             // Subscription & Plan
-            _buildSectionTitle('SUBSCRIPTION'),
+            _buildSectionTitle(AppLocalizations.of(context)!.subscriptionTitle),
             Container(
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
@@ -183,7 +185,7 @@ class AccountScreen extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('CURRENT PLAN', style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.w500, color: Colors.white.withOpacity(0.6), letterSpacing: 1)),
+                          Text(AppLocalizations.of(context)!.currentPlan, style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.w500, color: Colors.white.withOpacity(0.6), letterSpacing: 1)),
                           Text('Premium Pro', style: GoogleFonts.inter(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white)),
                         ],
                       ),
@@ -193,19 +195,19 @@ class AccountScreen extends StatelessWidget {
                           color: Colors.white.withOpacity(0.2),
                           borderRadius: BorderRadius.circular(16),
                         ),
-                        child: Text('Active', style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.white)),
+                        child: Text(AppLocalizations.of(context)!.activeStatus, style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.white)),
                       ),
                     ],
                   ),
                   const SizedBox(height: 16),
-                  Text('Next billing cycle: Oct 12, 2023', style: GoogleFonts.inter(fontSize: 14, color: Colors.white.withOpacity(0.8))),
+                  Text(AppLocalizations.of(context)!.nextBillingCycle('Oct 12, 2023'), style: GoogleFonts.inter(fontSize: 14, color: Colors.white.withOpacity(0.8))),
                 ],
               ),
             ),
             const SizedBox(height: 24),
 
             // General Settings List
-            _buildSectionTitle('GENERAL SETTINGS'),
+            _buildSectionTitle(AppLocalizations.of(context)!.generalSettingsTitle),
             Container(
               decoration: BoxDecoration(
                 color: Theme.of(context).cardColor,
@@ -219,8 +221,8 @@ class AccountScreen extends StatelessWidget {
                 children: [
                   _buildSettingTile(
                     icon: Icons.restaurant_menu,
-                    title: 'Menu Management',
-                    subtitle: 'Update items, prices, and categories',
+                    title: AppLocalizations.of(context)!.menuManagement,
+                    subtitle: AppLocalizations.of(context)!.menuManagementDesc,
                     onTap: () {
                       context.push('/menu');
                     },
@@ -228,8 +230,8 @@ class AccountScreen extends StatelessWidget {
                   Divider(height: 1, color: AppTheme.primaryColor.withOpacity(0.05)),
                   _buildSettingTile(
                     icon: Icons.group,
-                    title: 'Staff Access',
-                    subtitle: 'Manage roles and permissions',
+                    title: AppLocalizations.of(context)!.staffAccess,
+                    subtitle: AppLocalizations.of(context)!.staffAccessDesc,
                     onTap: () {
                       context.push('/account/staff');
                     },
@@ -237,8 +239,8 @@ class AccountScreen extends StatelessWidget {
                   Divider(height: 1, color: AppTheme.primaryColor.withOpacity(0.05)),
                   _buildSettingTile(
                     icon: Icons.payments,
-                    title: 'Billing & Invoices',
-                    subtitle: 'View history and payment methods',
+                    title: AppLocalizations.of(context)!.billingInvoices,
+                    subtitle: AppLocalizations.of(context)!.billingInvoicesDesc,
                     onTap: () {
                       context.push('/account/billing');
                     },
@@ -246,8 +248,8 @@ class AccountScreen extends StatelessWidget {
                   Divider(height: 1, color: AppTheme.primaryColor.withOpacity(0.05)),
                   _buildSettingTile(
                     icon: Icons.contact_support,
-                    title: 'Claiming / Support',
-                    subtitle: 'Get help with your restaurant profile',
+                    title: AppLocalizations.of(context)!.claimingSupport,
+                    subtitle: AppLocalizations.of(context)!.claimingSupportDesc,
                     onTap: () {
                       context.push('/account/contact');
                     },
@@ -257,13 +259,52 @@ class AccountScreen extends StatelessWidget {
             ),
             const SizedBox(height: 32),
 
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Language / Langue', style: GoogleFonts.inter(fontWeight: FontWeight.bold)),
+                DropdownButton<Locale>(
+                  value: appLocale.value,
+                  icon: const Icon(Icons.language, color: AppTheme.primaryColor),
+                  onChanged: (Locale? newValue) {
+                    if (newValue != null) {
+                      appLocale.value = newValue;
+                    }
+                  },
+                  items: const [
+                    DropdownMenuItem(
+                      value: Locale('fr'),
+                      child: Row(
+                        children: [
+                          Text('🇫🇷'),
+                          SizedBox(width: 8),
+                          Text('Français'),
+                        ],
+                      ),
+                    ),
+                    DropdownMenuItem(
+                      value: Locale('en'),
+                      child: Row(
+                        children: [
+                          Text('🇬🇧'),
+                          SizedBox(width: 8),
+                          Text('English'),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            const SizedBox(height: 16),
+
             // Logout
             OutlinedButton.icon(
               onPressed: () {
                 context.go('/login');
               },
               icon: const Icon(Icons.logout),
-              label: const Text('Logout'),
+              label: Text(AppLocalizations.of(context)!.logout),
               style: OutlinedButton.styleFrom(
                 foregroundColor: AppTheme.primaryColor,
                 side: BorderSide(color: AppTheme.primaryColor.withOpacity(0.2)),
@@ -277,7 +318,7 @@ class AccountScreen extends StatelessWidget {
             // App Version
             Center(
               child: Text(
-                'APP VERSION 2.4.0',
+                AppLocalizations.of(context)!.appVersion('2.4.0'),
                 style: GoogleFonts.inter(fontSize: 10, color: Colors.grey[400], letterSpacing: 2, fontWeight: FontWeight.bold),
               ),
             ),

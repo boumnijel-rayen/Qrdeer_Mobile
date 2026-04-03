@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qrdeer_app/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:qrdeer_app/theme.dart';
@@ -20,7 +21,7 @@ class MenuManagementScreen extends StatelessWidget {
             }
           },
         ),
-        title: const Text('Menu Management'),
+        title: Text(AppLocalizations.of(context)!.menuManagementTitle),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 16.0),
@@ -29,7 +30,7 @@ class MenuManagementScreen extends StatelessWidget {
                 context.push('/menu/add-item');
               },
               icon: const Icon(Icons.add, size: 16),
-              label: Text('New Item', style: GoogleFonts.inter(fontWeight: FontWeight.bold)),
+              label: Text(AppLocalizations.of(context)!.newItem, style: GoogleFonts.inter(fontWeight: FontWeight.bold)),
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppTheme.primaryColor,
                 foregroundColor: Colors.white,
@@ -55,10 +56,10 @@ class MenuManagementScreen extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                  _buildTab('Categories', true),
-                  _buildTab('All Items', false),
-                  _buildTab('Availability', false),
-                  _buildTab('Menu Settings', false),
+                  _buildTab(AppLocalizations.of(context)!.tabCategories, true),
+                  _buildTab(AppLocalizations.of(context)!.tabAllItems, false),
+                  _buildTab(AppLocalizations.of(context)!.tabAvailability, false),
+                  _buildTab(AppLocalizations.of(context)!.tabMenuSettings, false),
                 ],
               ),
             ),
@@ -72,30 +73,30 @@ class MenuManagementScreen extends StatelessWidget {
                 children: [
                   _buildCategorySection(
                     context: context,
-                    title: 'Appetizers',
+                    title: AppLocalizations.of(context)!.categoryAppetizers,
                     itemCount: 4,
                     items: [
-                  _buildMenuItem(context, 'Bruschetta Classica', 'Toasted rustic bread, vine-ripened tomatoes, garlic, basil', '12.500 TND', true, 'https://lh3.googleusercontent.com/aida-public/AB6AXuDPrMwVgrjocHkQiS_mL7ke5s-g6wO85pOXbacy68XUWHBEJ4OVdhxDCfT4roJUXr1aVFH8v5MxUZTwcmscI69kt1X2tK_E4wshoUIqO5jT6OHiYaSvm7BwQWHDyVlYJ6zGRZfpIo291cwopGpkShP-sj-q4YkCCLmKiEQMbAQity2HUQPuK8oGmWypQwZzj--vFQpyqIg3gO92x_kmFTt94PEPT-gBSjEUfHSeDd1EE8OhVRbApXjesilqI6aooiM_eyhEQkiMYDs'),
-                      _buildMenuItem(context, 'Crispy Calamari', 'Golden fried squid rings with spicy marinara sauce', '18.000 TND', false, 'https://lh3.googleusercontent.com/aida-public/AB6AXuCblIwUuWczi1CtrehwTIbQpSx_9mTs8mP05Tp4dwj426C22AiFO6Cne6nePCtSyx9xj-HK_RWk_1Mo7Um_W180JN8WxwODFgAEG9eXcQj9byViEnQf8zhbwDZHeSxsQ9vzc6xWS-gqk6yNMqmYDXmJwnyZEOSPpzOP9l_5Jpc5KfnGAaHLT9iqAHVp11iOrmbdF6KIvgiR5CCyfbjdYc9QtH0QJ2F7-4PB_qT9fkNWelwPnUKOyFjsFRWnS6XLLi18byTW5gJwebo'),
+                  _buildMenuItem(context, AppLocalizations.of(context)!.itemBruschetta, AppLocalizations.of(context)!.descBruschetta, AppLocalizations.of(context)!.price12_5, true, 'https://lh3.googleusercontent.com/aida-public/AB6AXuDPrMwVgrjocHkQiS_mL7ke5s-g6wO85pOXbacy68XUWHBEJ4OVdhxDCfT4roJUXr1aVFH8v5MxUZTwcmscI69kt1X2tK_E4wshoUIqO5jT6OHiYaSvm7BwQWHDyVlYJ6zGRZfpIo291cwopGpkShP-sj-q4YkCCLmKiEQMbAQity2HUQPuK8oGmWypQwZzj--vFQpyqIg3gO92x_kmFTt94PEPT-gBSjEUfHSeDd1EE8OhVRbApXjesilqI6aooiM_eyhEQkiMYDs'),
+                      _buildMenuItem(context, AppLocalizations.of(context)!.itemCalamari, AppLocalizations.of(context)!.descCalamari, AppLocalizations.of(context)!.price18, false, 'https://lh3.googleusercontent.com/aida-public/AB6AXuCblIwUuWczi1CtrehwTIbQpSx_9mTs8mP05Tp4dwj426C22AiFO6Cne6nePCtSyx9xj-HK_RWk_1Mo7Um_W180JN8WxwODFgAEG9eXcQj9byViEnQf8zhbwDZHeSxsQ9vzc6xWS-gqk6yNMqmYDXmJwnyZEOSPpzOP9l_5Jpc5KfnGAaHLT9iqAHVp11iOrmbdF6KIvgiR5CCyfbjdYc9QtH0QJ2F7-4PB_qT9fkNWelwPnUKOyFjsFRWnS6XLLi18byTW5gJwebo'),
                     ],
                   ),
                   const SizedBox(height: 32),
                   _buildCategorySection(
                     context: context,
-                    title: 'Main Course',
+                    title: AppLocalizations.of(context)!.categoryMainCourse,
                     itemCount: 8,
                     items: [
-                      _buildMenuItem(context, 'Grilled Atlantic Salmon', 'With seasonal grilled vegetables and lemon butter sauce', '42.000 TND', false, 'https://lh3.googleusercontent.com/aida-public/AB6AXuDXpBY-UoTf-869lPZ-LGLag6HeZS8cSaMuQTWJuMt-ZPvMBmWqX8HJ1pUMZWCaPTgDpftIiKn44fipYjzN_FB2Wnfig6dJUr2roreIzQJ0CW5hQEIJnHf1r1DxyAH5QhSTVXp9alGxdaloUscoFSeqVa6Zhtok9YiLcNrRKrDTMSu-kp71epIpUeZHZhbhl2ZLc1IsEsbWsyAOjaxaaJJcrefVhn3Tz6CXY_7zDWa-t72kf1C51Br-sF3y0VXcB3JKB4LcHfPoW1I'),
-                      _buildMenuItem(context, 'Beef Tenderloin Steak', '250g Prime beef, roasted potatoes, peppercorn sauce', '55.000 TND', false, 'https://lh3.googleusercontent.com/aida-public/AB6AXuAm0sGX0kVlpSYXrHWW3_RJjbOf8WsE_hxmpPxI7NvWlZDMHBNGZZEYY1f4T2Jfreek2dCOh2-8BoHaJAYJ9IHQfP1UdwRYHfEcULyzRGIV_InVmONd9w_vFqt7W3b5WHb9ClypnzB_3IMU3Zb6mOUrWWpJTvsU1uebYe64NJB5DLl193CV_qZ64QCphjlMOtKDM4QuMDsFt5hFqyrqtx383NfLL-qTHuayb9J3SsXSWORvJ5-7FTG-df2QnQLd4qrrhr7kBkwhhpQ', highlightPrice: true),
+                      _buildMenuItem(context, AppLocalizations.of(context)!.itemSalmon, AppLocalizations.of(context)!.descSalmon, AppLocalizations.of(context)!.price42, false, 'https://lh3.googleusercontent.com/aida-public/AB6AXuDXpBY-UoTf-869lPZ-LGLag6HeZS8cSaMuQTWJuMt-ZPvMBmWqX8HJ1pUMZWCaPTgDpftIiKn44fipYjzN_FB2Wnfig6dJUr2roreIzQJ0CW5hQEIJnHf1r1DxyAH5QhSTVXp9alGxdaloUscoFSeqVa6Zhtok9YiLcNrRKrDTMSu-kp71epIpUeZHZhbhl2ZLc1IsEsbWsyAOjaxaaJJcrefVhn3Tz6CXY_7zDWa-t72kf1C51Br-sF3y0VXcB3JKB4LcHfPoW1I'),
+                      _buildMenuItem(context, AppLocalizations.of(context)!.itemSteak, AppLocalizations.of(context)!.descSteak, AppLocalizations.of(context)!.price55, false, 'https://lh3.googleusercontent.com/aida-public/AB6AXuAm0sGX0kVlpSYXrHWW3_RJjbOf8WsE_hxmpPxI7NvWlZDMHBNGZZEYY1f4T2Jfreek2dCOh2-8BoHaJAYJ9IHQfP1UdwRYHfEcULyzRGIV_InVmONd9w_vFqt7W3b5WHb9ClypnzB_3IMU3Zb6mOUrWWpJTvsU1uebYe64NJB5DLl193CV_qZ64QCphjlMOtKDM4QuMDsFt5hFqyrqtx383NfLL-qTHuayb9J3SsXSWORvJ5-7FTG-df2QnQLd4qrrhr7kBkwhhpQ', highlightPrice: true),
                     ],
                   ),
                   const SizedBox(height: 32),
                   _buildCategorySection(
                     context: context,
-                    title: 'Drinks',
+                    title: AppLocalizations.of(context)!.categoryDrinks,
                     itemCount: 12,
                     items: [
-                      _buildMenuItem(context, 'Fresh Orange Juice', '100% freshly squeezed local oranges', 'From 8.500 TND', false, 'https://lh3.googleusercontent.com/aida-public/AB6AXuAE8pIKvaqptzfqP8UsQWyTDnmINzswPC_WrZfILUhOqMHsAqUv6MehPt3BvSoAFEbYffPaI3o4aQ1hi4bD6Ldf6DkF2vmma4FCnP9J1it5kveqUvKFYxvkJzTmwzBxOX_RqN8PGj1rKN89Wur8-RwPIRFqsA9iKhDSD72CXGiTyb3sCEpDMiWAGCiGcrSoaKDWA2nfJhBdcCcZO5EWmjahNBYxIQQ7tQPLSbApguJMN9FJ4mxtEi9FoUSrPY7vcc3ofHvvckMXr48'),
+                      _buildMenuItem(context, AppLocalizations.of(context)!.itemOrangeJuice, AppLocalizations.of(context)!.descOrangeJuice, AppLocalizations.of(context)!.priceFrom8_5, false, 'https://lh3.googleusercontent.com/aida-public/AB6AXuAE8pIKvaqptzfqP8UsQWyTDnmINzswPC_WrZfILUhOqMHsAqUv6MehPt3BvSoAFEbYffPaI3o4aQ1hi4bD6Ldf6DkF2vmma4FCnP9J1it5kveqUvKFYxvkJzTmwzBxOX_RqN8PGj1rKN89Wur8-RwPIRFqsA9iKhDSD72CXGiTyb3sCEpDMiWAGCiGcrSoaKDWA2nfJhBdcCcZO5EWmjahNBYxIQQ7tQPLSbApguJMN9FJ4mxtEi9FoUSrPY7vcc3ofHvvckMXr48'),
                     ],
                   ),
                   const SizedBox(height: 32), // Padding for bottom nav overlap space if any
@@ -152,7 +153,7 @@ class MenuManagementScreen extends StatelessWidget {
                     color: AppTheme.primaryColor.withOpacity(0.1),
                     borderRadius: BorderRadius.circular(12),
                   ),
-                  child: Text('$itemCount Items', style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.bold, color: AppTheme.primaryColor)),
+                  child: Text(AppLocalizations.of(context)!.itemCount(itemCount.toString()), style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.bold, color: AppTheme.primaryColor)),
                 ),
               ],
             ),
@@ -160,7 +161,7 @@ class MenuManagementScreen extends StatelessWidget {
               onPressed: () {
                 context.push('/menu/edit-category');
               },
-              child: Text('Edit Category', style: GoogleFonts.inter(color: AppTheme.primaryColor, fontWeight: FontWeight.bold)),
+              child: Text(AppLocalizations.of(context)!.editCategory, style: GoogleFonts.inter(color: AppTheme.primaryColor, fontWeight: FontWeight.bold)),
             ),
           ],
         ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:qrdeer_app/l10n/app_localizations.dart';
 import 'package:qrdeer_app/theme.dart';
 
 class EmailVerificationScreen extends StatelessWidget {
@@ -19,7 +20,7 @@ class EmailVerificationScreen extends StatelessWidget {
           },
         ),
         toolbarHeight: 68,
-        title: Text('Verify Email', style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
+        title: Text(AppLocalizations.of(context)!.verifyEmail, style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -45,7 +46,7 @@ class EmailVerificationScreen extends StatelessWidget {
 
               // Title and Description
               Text(
-                'Enter 6-digit code',
+                AppLocalizations.of(context)!.enter6DigitCode,
                 style: GoogleFonts.inter(
                       fontSize: 24, // HeadlineSmall default
                       fontWeight: FontWeight.bold,
@@ -60,7 +61,7 @@ class EmailVerificationScreen extends StatelessWidget {
                         color: Colors.grey[600],
                       ),
                   children: [
-                    TextSpan(text: 'We\'ve sent a verification code to\n',
+                    TextSpan(text: AppLocalizations.of(context)!.codeSentTo,
                     style: GoogleFonts.inter(fontWeight: FontWeight.w500, color: AppTheme.secondColorLight)),
                     TextSpan(
                       text: 'admin@restaurant-app.com',
@@ -122,17 +123,17 @@ class EmailVerificationScreen extends StatelessWidget {
                   elevation: 4,
                   shadowColor: AppTheme.primaryColor.withOpacity(0.3),
                 ),
-                child: Text('Verify Code', style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold)),
+                child: Text(AppLocalizations.of(context)!.verifyCode, style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold)),
               ),
               const SizedBox(height: 24),
 
               // Resend Code
-              Text('Didn\'t receive the code?', style: GoogleFonts.inter(color: Colors.grey[600], fontSize: 14, fontWeight: FontWeight.w500)),
+              Text(AppLocalizations.of(context)!.didntReceiveCode, style: GoogleFonts.inter(color: Colors.grey[600], fontSize: 14, fontWeight: FontWeight.w500)),
               const SizedBox(height: 8),
               TextButton.icon(
                 onPressed: () {},
                 icon: const Icon(Icons.refresh, size: 16, color: AppTheme.primaryColor),
-                label: Text('Resend Code', style: GoogleFonts.inter(color: AppTheme.primaryColor, fontWeight: FontWeight.bold)),
+                label: Text(AppLocalizations.of(context)!.resendCode, style: GoogleFonts.inter(color: AppTheme.primaryColor, fontWeight: FontWeight.bold)),
               ),
             ],
           ),

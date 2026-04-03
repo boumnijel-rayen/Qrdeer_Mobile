@@ -1,0 +1,368 @@
+{
+  "@@locale": "fr",
+  "appTitle": "Qrdeer",
+  "welcomeTo": "Bienvenue sur ",
+  "brandName": "r",
+  "manageKitchenDesc": "Gérez facilement vos opérations en cuisine et votre personnel.",
+  "emailAddress": "Adresse e-mail",
+  "emailHint": "admin@qrdeer.com",
+  "password": "Mot de passe",
+  "forgotPassword": "Mot de passe oublié ?",
+  "loginToDashboard": "Connexion au tableau de bord",
+  "orLoginWith": "OU CONNECTEZ-VOUS AVEC",
+  "staffBioId": "Bio-ID personnel",
+  "newStaffMember": "Nouveau membre ? ",
+  "contactTeam": "Contacter l'équipe",
+  "settings": "Paramètres",
+  "adminAccess": "ACCÈS ADMIN",
+  "editProfileDetails": "Modifier le profil",
+  "restaurantDetailsTitle": "DÉTAILS DU RESTAURANT",
+  "restaurantName": "Nom du restaurant",
+  "address": "Adresse",
+  "subscriptionTitle": "ABONNEMENT",
+  "currentPlan": "FORFAIT ACTUEL",
+  "activeStatus": "Actif",
+  "nextBillingCycle": "Prochain cycle de facturation : {date}",
+  "@nextBillingCycle": {
+    "placeholders": {
+        "date": {
+            "type": "String"
+        }
+    }
+  },
+  "generalSettingsTitle": "PARAMÈTRES GÉNÉRAUX",
+  "menuManagement": "Gestion du menu",
+  "menuManagementDesc": "Mettre à jour les articles, prix et catégories",
+  "staffAccess": "Accès du personnel",
+  "staffAccessDesc": "Gérer les rôles et permissions",
+  "billingInvoices": "Facturation & Factures",
+  "billingInvoicesDesc": "Voir l'historique et les méthodes de paiement",
+  "claimingSupport": "Support / Réclamation",
+  "claimingSupportDesc": "Obtenir de l'aide avec le profil de votre restaurant",
+  "logout": "Déconnexion",
+  "appVersion": "VERSION DE L'APP {version}",
+  "@appVersion": {
+    "placeholders": {
+        "version": {
+            "type": "String"
+        }
+    }
+  },
+  "dashboard": "Tableau de bord",
+  "weeklyRevenue": "Revenus hebdomadaires",
+  "last7Days": "7 derniers jours vs Période précédente",
+  "mon": "LUN",
+  "tue": "MAR",
+  "wed": "MER",
+  "thu": "JEU",
+  "fri": "VEN",
+  "sat": "SAM",
+  "sun": "DIM",
+  "peakHourStats": "Statistiques des heures de pointe",
+  "live": "EN DIRECT",
+  "busiestHour": "HEURE LA PLUS CHARGÉE",
+  "kitchenLoad": "CHARGE CUISINE",
+  "dailyRevenue": "Revenu quotidien",
+  "totalOrders": "Total commandes",
+  "activeTables": "Tables actives",
+  "liveStatus": "Statut en direct",
+  "refresh": "Actualiser",
+  "currentActiveOrders": "Commandes actives actuelles",
+  "ordersInPrep": "{count} commandes sont en cours de préparation.",
+  "@ordersInPrep": {
+    "placeholders": {
+        "count": {
+            "type": "String"
+        }
+    }
+  },
+  "preparing": "En préparation",
+  "ready": "Prêt",
+  "viewKitchenDisplay": "Voir l'écran cuisine",
+  "efficiency": "Efficacité",
+  "recentActivity": "Activité récente",
+  "tableAction": "Action sur table",
+  "recentNotifications": "Notifications récentes",
+  "viewAllActivity": "Voir toute l'activité",
+  "navHome": "Accueil",
+  "navOrders": "Commandes",
+  "navTables": "Tables",
+  "navSales": "Ventes",
+  "navAccount": "Compte",
+  "menuManagementTitle": "Gestion du menu",
+  "newItem": "Ajouter",
+  "tabCategories": "Catégories",
+  "tabAllItems": "Tous les articles",
+  "tabAvailability": "Disponibilité",
+  "tabMenuSettings": "Paramètres du menu",
+  "categoryAppetizers": "Entrées",
+  "itemBruschetta": "Bruschetta Classica",
+  "descBruschetta": "Pain rustique grillé, tomates mûries sur vigne, ail, basilic",
+  "price12_5": "12.500 TND",
+  "itemCalamari": "Calamars croustillants",
+  "descCalamari": "Anneaux de calmars frits dorés avec sauce marinara épicée",
+  "price18": "18.000 TND",
+  "categoryMainCourse": "Plats principaux",
+  "itemSalmon": "Saumon de l'Atlantique grillé",
+  "descSalmon": "Avec légumes grillés de saison et sauce au beurre citronné",
+  "price42": "42.000 TND",
+  "itemSteak": "Steak de filet de bœuf",
+  "descSteak": "250g de bœuf de première qualité, pommes de terre rôties, sauce au poivre vert",
+  "price55": "55.000 TND",
+  "categoryDrinks": "Boissons",
+  "itemOrangeJuice": "Jus d'orange frais",
+  "descOrangeJuice": "Oranges locales 100% fraîchement pressées",
+  "priceFrom8_5": "À partir de 8.500 TND",
+  "itemCount": "{count} Articles",
+  "@itemCount": {
+    "placeholders": {
+        "count": {
+            "type": "String"
+        }
+    }
+  },
+  "editCategory": "Modifier",
+  "addNew": "Ajouter nouveau",
+  "item": "Article",
+  "category": "Catégorie",
+  "categoryName": "Nom de la catégorie",
+  "eGMenu": "ex. Boissons, Plats principaux",
+  "categoryVisibleHint": "Cette catégorie sera visible dans votre menu numérique et système POS.",
+  "saveChanges": "Enregistrer les modifications",
+  "preview": "Aperçu",
+  "deleteCategory": "Supprimer la catégorie",
+  "assignedItems": "Articles assignés",
+  "itemGarlicBread": "Pain à l'ail aux herbes",
+  "price8_5": "8.50 TND",
+  "itemCalamariRings": "Anneaux de calmars croustillants",
+  "price14": "14.00 TND",
+  "itemTomatoBruschetta": "Bruschetta aux tomates",
+  "price10": "10.00 TND",
+  "itemCaesarSalad": "Salade César",
+  "price12": "12.00 TND",
+  "itemBuffaloWings": "Ailes Buffalo (6pcs)",
+  "price11_5": "11.50 TND",
+  "uploadDishImage": "Télécharger l'image du plat",
+  "jpgOrPng": "JPG ou PNG, max 5MB",
+  "selectImage": "Sélectionner l'image",
+  "itemName": "Nom de l'article",
+  "eGGrilledSeaBass": "ex. Bar grillé",
+  "selectCategory": "Sélectionner une catégorie",
+  "categoryDesserts": "Desserts",
+  "hasMultipleSizes": "A plusieurs tailles ?",
+  "priceTnd": "Prix (TND)",
+  "available": "Disponible",
+  "sizes": "Tailles",
+  "addSize": "Ajouter une taille",
+  "sizeEgSmall": "Taille (ex. Petit)",
+  "price": "Prix",
+  "description": "Description",
+  "describeIngredients": "Décrivez les ingrédients et la préparation...",
+  "eGBreakfast": "ex. Spécialités du petit-déjeuner",
+  "assignExistingItems": "Assigner des articles existants",
+  "itemGrilledChicken": "Poulet grillé",
+  "itemClassicBurger": "Burger classique",
+  "displayOrder": "Ordre d'affichage",
+  "eG1": "ex. 1",
+  "ordersManagement": "Gestion des commandes",
+  "searchOrders": "Rechercher par ID de commande, table...",
+  "filterAll": "Tous",
+  "filterNewOrder": "Nouvelle commande",
+  "filterPreparing": "En préparation",
+  "filterReady": "Prêt",
+  "filterCancelled": "Annulé",
+  "filterPaid": "Payé",
+  "filterCompleted": "Terminé",
+  "ordersCount": "COMMANDES ({count})",
+  "@ordersCount": {
+    "placeholders": {
+        "count": {
+            "type": "String"
+        }
+    }
+  },
+  "orderedAt": "Commandé à {time}",
+  "@orderedAt": {
+    "placeholders": {
+        "time": {
+            "type": "String"
+        }
+    }
+  },
+  "tableUpper": "TABLE",
+  "itemsUpper": "ARTICLES",
+  "totalUpper": "TOTAL",
+  "orderId": "Commande {id}",
+  "@orderId": {
+    "placeholders": {
+        "id": {
+            "type": "String"
+        }
+    }
+  },
+  "placedAt": "Passée à {time}",
+  "@placedAt": {
+    "placeholders": {
+        "time": {
+            "type": "String"
+        }
+    }
+  },
+  "newOrderUpper": "NOUVELLE",
+  "diningAreaMain": "Espace repas - Rez-de-chaussée",
+  "orderItemsUpper": "ARTICLES DE LA COMMANDE",
+  "orderTimelineUpper": "CHRONOLOGIE DE LA COMMANDE",
+  "orderReceived": "Commande reçue",
+  "preparingInKitchen": "Préparation en cuisine",
+  "readyForServing": "Prêt à servir",
+  "pendingOrder": "En attente",
+  "nextStep": "Étape suivante",
+  "previousStep": "Étape précédente",
+  "cancelOrder": "Annuler la commande",
+  "quantityX": "Quantité : {qty}x",
+  "@quantityX": {
+    "placeholders": {
+        "qty": {
+            "type": "String"
+        }
+    }
+  },
+  "subtotal": "Sous-total",
+  "tax7": "Taxe (7%)",
+  "tax10": "Taxe (10%)",
+  "total": "Total",
+  "totalAmount": "Montant total",
+  "ordersHistory": "Historique des commandes",
+  "totalSalesToday": "VENTES TOTALES AUJOURD'HUI",
+  "vsYest": "+8% vs hier",
+  "avgOrderValue": "VALEUR MOYENNE COMMANDE",
+  "stable": "Stable",
+  "filterToday": "Aujourd'hui",
+  "filterYesterday": "Hier",
+  "filterLast7Days": "7 derniers jours",
+  "filters": "Filtres",
+  "recentOrdersUpper": "COMMANDES RÉCENTES",
+  "ordersFound": "{count} commandes trouvées",
+  "@ordersFound": {
+    "placeholders": {
+        "count": {
+            "type": "String"
+        }
+    }
+  },
+  "orderDetailsId": "Détails de la commande {id}",
+  "@orderDetailsId": {
+    "placeholders": {
+        "id": {
+            "type": "String"
+        }
+    }
+  },
+  "completedAndPaid": "TERMINÉ & PAYÉ",
+  "orderInformationUpper": "INFORMATIONS SUR LA COMMANDE",
+  "tableNumber": "Numéro de table",
+  "dateTime": "Date et heure",
+  "itemsOrdered": "Articles commandés",
+  "qtyXPrice": "Qté : {qty} x {price}",
+  "@qtyXPrice": {
+    "placeholders": {
+        "qty": {
+            "type": "String"
+        },
+        "price": {
+            "type": "String"
+        }
+    }
+  },
+  "tablesManagement": "Gestion des tables",
+  "addTable": "Ajouter",
+  "allTables": "Toutes les tables",
+  "disabled": "Désactivé",
+  "viewQrCode": "Voir le code QR",
+  "seatsCount": "{count} Places",
+  "@seatsCount": {
+    "placeholders": {
+        "count": {
+            "type": "String"
+        }
+    }
+  },
+  "tableId": "Table {id}",
+  "@tableId": {
+    "placeholders": {
+        "id": {
+            "type": "String"
+        }
+    }
+  },
+  "whenDisabledDesc": "Lorsqu'il est désactivé, les clients ne peuvent pas scanner pour commander.",
+  "presentCodeDesc": "Présentez ce code aux clients pour une commande instantanée et un paiement sans contact.",
+  "downloadQrCode": "Télécharger le code QR",
+  "verifyEmail": "Vérifier l'e-mail",
+  "enter6DigitCode": "Entrez le code à 6 chiffres",
+  "codeSentTo": "Nous avons envoyé un code de vérification à\n",
+  "verifyCode": "Vérifier le code",
+  "didntReceiveCode": "Vous n'avez pas reçu le code ?",
+  "resendCode": "Renvoyer le code",
+  "changePasswordTitle": "Changer le mot de passe",
+  "updateSecurity": "Mettre à jour la sécurité",
+  "changePasswordDesc": "Veuillez entrer votre mot de passe actuel pour vérifier votre identité, puis choisissez un nouveau mot de passe fort.",
+  "currentPassword": "Mot de passe actuel",
+  "newPassword": "Nouveau mot de passe",
+  "atLeast8Chars": "Au moins 8 caractères",
+  "includeNumbersSymbols": "Incluez des chiffres et des symboles pour une meilleure sécurité.",
+  "confirmNewPassword": "Confirmer le nouveau mot de passe",
+  "repeatNewPassword": "Répéter le nouveau mot de passe",
+  "savePassword": "Enregistrer le mot de passe",
+  "forgotYourPassword": "Mot de passe oublié ? ",
+  "resetItViaEmail": "Le réinitialiser par e-mail",
+  "addStaffMember": "Ajouter un membre",
+  "fullName": "Nom complet",
+  "egFullName": "ex. Ahmed Ben Ali",
+  "role": "Rôle",
+  "seniorWaiter": "Serveur principal",
+  "waiter": "Serveur",
+  "egEmail": "nom@restaurant.tn",
+  "phoneNumber": "Numéro de téléphone",
+  "egPhone": "00 000 000",
+  "confirmPassword": "Confirmer le mot de passe",
+  "cancel": "Annuler",
+  "editProfileTitle": "Modifier le profil",
+  "adminAccount": "Compte administrateur",
+  "updateProfileSettings": "Mettre à jour vos paramètres de profil",
+  "restaurantRole": "Rôle dans le restaurant",
+  "security": "Sécurité",
+  "lastUpdated3MonthsAgo": "Dernière mise à jour il y a 3 mois",
+  "billingInvoicesTitle": "Facturation & Factures",
+  "invoiceHistory": "Historique des factures",
+  "paid": "PAYÉ",
+  "pending": "EN ATTENTE",
+  "contactSupportTitle": "Contacter le support",
+  "haveAQuestion": "Vous avez une question ?",
+  "contactDesc": "Envoyez-nous un message et notre équipe vous répondra dans les plus brefs délais.",
+  "subject": "Sujet",
+  "subjectHint": "De quoi s'agit-il ?",
+  "message": "Message",
+  "messageHint": "Expliquez votre problème ou question en détail...",
+  "sendMessage": "Envoyer le message",
+  "expectedResponseTime": "Temps de réponse estimé : ",
+  "within24Hours": "dans les 24 heures",
+  "editRestaurantName": "Modifier le nom du restaurant",
+  "editRestaurantNameDesc": "Mettez à jour votre identité commerciale publique. Ce nom apparaîtra sur les reçus et l'application client.",
+  "egRestaurantName": "ex. La Fourchette d'Or",
+  "needHelp": "Besoin d'aide ?",
+  "changingNameHelp": "Changer fréquemment de nom peut affecter votre classement de recherche dans les applications de livraison.",
+  "addStaff": "Ajouter",
+  "filterAll": "Tous",
+  "roleManager": "Gérant",
+  "activeMembersCount": "{count} membres actifs",
+  "@activeMembersCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "activeCaps": "ACTIF",
+  "inactiveCaps": "INACTIF"
+}

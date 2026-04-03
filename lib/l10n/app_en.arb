@@ -1,0 +1,368 @@
+{
+  "@@locale": "en",
+  "appTitle": "Qrdeer",
+  "welcomeTo": "Welcome to ",
+  "brandName": "r",
+  "manageKitchenDesc": "Manage your kitchen operations and staff with ease.",
+  "emailAddress": "Email Address",
+  "emailHint": "admin@qrdeer.com",
+  "password": "Password",
+  "forgotPassword": "Forgot Password?",
+  "loginToDashboard": "Login to Dashboard",
+  "orLoginWith": "OR LOGIN WITH",
+  "staffBioId": "Staff Bio-ID",
+  "newStaffMember": "New staff member? ",
+  "contactTeam": "Contact Team",
+  "settings": "Settings",
+  "adminAccess": "ADMIN ACCESS",
+  "editProfileDetails": "Edit Profile Details",
+  "restaurantDetailsTitle": "RESTAURANT DETAILS",
+  "restaurantName": "Restaurant Name",
+  "address": "Address",
+  "subscriptionTitle": "SUBSCRIPTION",
+  "currentPlan": "CURRENT PLAN",
+  "activeStatus": "Active",
+  "nextBillingCycle": "Next billing cycle: {date}",
+  "@nextBillingCycle": {
+    "placeholders": {
+        "date": {
+            "type": "String"
+        }
+    }
+  },
+  "generalSettingsTitle": "GENERAL SETTINGS",
+  "menuManagement": "Menu Management",
+  "menuManagementDesc": "Update items, prices, and categories",
+  "staffAccess": "Staff Access",
+  "staffAccessDesc": "Manage roles and permissions",
+  "billingInvoices": "Billing & Invoices",
+  "billingInvoicesDesc": "View history and payment methods",
+  "claimingSupport": "Claiming / Support",
+  "claimingSupportDesc": "Get help with your restaurant profile",
+  "logout": "Logout",
+  "appVersion": "APP VERSION {version}",
+  "@appVersion": {
+    "placeholders": {
+        "version": {
+            "type": "String"
+        }
+    }
+  },
+  "dashboard": "Dashboard",
+  "weeklyRevenue": "Weekly Revenue",
+  "last7Days": "Last 7 Days vs Previous Period",
+  "mon": "MON",
+  "tue": "TUE",
+  "wed": "WED",
+  "thu": "THU",
+  "fri": "FRI",
+  "sat": "SAT",
+  "sun": "SUN",
+  "peakHourStats": "Peak Hour Statistics",
+  "live": "LIVE",
+  "busiestHour": "BUSIEST HOUR",
+  "kitchenLoad": "KITCHEN LOAD",
+  "dailyRevenue": "Daily Revenue",
+  "totalOrders": "Total Orders",
+  "activeTables": "Active Tables",
+  "liveStatus": "Live Status",
+  "refresh": "Refresh",
+  "currentActiveOrders": "Current Active Orders",
+  "ordersInPrep": "{count} orders are currently in preparation.",
+  "@ordersInPrep": {
+    "placeholders": {
+        "count": {
+            "type": "String"
+        }
+    }
+  },
+  "preparing": "Preparing",
+  "ready": "Ready",
+  "viewKitchenDisplay": "View Kitchen Display",
+  "efficiency": "Efficiency",
+  "recentActivity": "Recent Activity",
+  "tableAction": "Table Action",
+  "recentNotifications": "Recent Notifications",
+  "viewAllActivity": "View All Activity",
+  "navHome": "Home",
+  "navOrders": "Orders",
+  "navTables": "Tables",
+  "navSales": "Sales",
+  "navAccount": "Account",
+  "menuManagementTitle": "Menu Management",
+  "newItem": "New Item",
+  "tabCategories": "Categories",
+  "tabAllItems": "All Items",
+  "tabAvailability": "Availability",
+  "tabMenuSettings": "Menu Settings",
+  "categoryAppetizers": "Appetizers",
+  "itemBruschetta": "Bruschetta Classica",
+  "descBruschetta": "Toasted rustic bread, vine-ripened tomatoes, garlic, basil",
+  "price12_5": "12.500 TND",
+  "itemCalamari": "Crispy Calamari",
+  "descCalamari": "Golden fried squid rings with spicy marinara sauce",
+  "price18": "18.000 TND",
+  "categoryMainCourse": "Main Course",
+  "itemSalmon": "Grilled Atlantic Salmon",
+  "descSalmon": "With seasonal grilled vegetables and lemon butter sauce",
+  "price42": "42.000 TND",
+  "itemSteak": "Beef Tenderloin Steak",
+  "descSteak": "250g Prime beef, roasted potatoes, peppercorn sauce",
+  "price55": "55.000 TND",
+  "categoryDrinks": "Drinks",
+  "itemOrangeJuice": "Fresh Orange Juice",
+  "descOrangeJuice": "100% freshly squeezed local oranges",
+  "priceFrom8_5": "From 8.500 TND",
+  "itemCount": "{count} Items",
+  "@itemCount": {
+    "placeholders": {
+        "count": {
+            "type": "String"
+        }
+    }
+  },
+  "editCategory": "Edit Category",
+  "addNew": "Add New",
+  "item": "Item",
+  "category": "Category",
+  "categoryName": "Category Name",
+  "eGMenu": "e.g. Beverages, Main Courses",
+  "categoryVisibleHint": "This category will be visible in your digital menu and POS system.",
+  "saveChanges": "Save Changes",
+  "preview": "Preview",
+  "deleteCategory": "Delete Category",
+  "assignedItems": "Assigned Items",
+  "itemGarlicBread": "Garlic Bread with Herbs",
+  "price8_5": "8.50 TND",
+  "itemCalamariRings": "Crispy Calamari Rings",
+  "price14": "14.00 TND",
+  "itemTomatoBruschetta": "Tomato Bruschetta",
+  "price10": "10.00 TND",
+  "itemCaesarSalad": "Caesar Salad",
+  "price12": "12.00 TND",
+  "itemBuffaloWings": "Buffalo Wings (6pcs)",
+  "price11_5": "11.50 TND",
+  "uploadDishImage": "Upload Dish Image",
+  "jpgOrPng": "JPG or PNG, max 5MB",
+  "selectImage": "Select Image",
+  "itemName": "Item Name",
+  "eGGrilledSeaBass": "e.g. Grilled Sea Bass",
+  "selectCategory": "Select Category",
+  "categoryDesserts": "Desserts",
+  "hasMultipleSizes": "Has multiple sizes?",
+  "priceTnd": "Price (TND)",
+  "available": "Available",
+  "sizes": "Sizes",
+  "addSize": "Add Size",
+  "sizeEgSmall": "Size (e.g. Small)",
+  "price": "Price",
+  "description": "Description",
+  "describeIngredients": "Describe the ingredients and preparation...",
+  "eGBreakfast": "e.g. Breakfast Specialties",
+  "assignExistingItems": "Assign Existing Items",
+  "itemGrilledChicken": "Grilled Chicken",
+  "itemClassicBurger": "Classic Burger",
+  "displayOrder": "Display Order",
+  "eG1": "e.g. 1",
+  "ordersManagement": "Orders Management",
+  "searchOrders": "Search by order ID, table...",
+  "filterAll": "All",
+  "filterNewOrder": "New Order",
+  "filterPreparing": "Preparing",
+  "filterReady": "Ready",
+  "filterCancelled": "Cancelled",
+  "filterPaid": "Paid",
+  "filterCompleted": "Completed",
+  "ordersCount": "ORDERS ({count})",
+  "@ordersCount": {
+    "placeholders": {
+        "count": {
+            "type": "String"
+        }
+    }
+  },
+  "orderedAt": "Ordered {time}",
+  "@orderedAt": {
+    "placeholders": {
+        "time": {
+            "type": "String"
+        }
+    }
+  },
+  "tableUpper": "TABLE",
+  "itemsUpper": "ITEMS",
+  "totalUpper": "TOTAL",
+  "orderId": "Order {id}",
+  "@orderId": {
+    "placeholders": {
+        "id": {
+            "type": "String"
+        }
+    }
+  },
+  "placedAt": "Placed at {time}",
+  "@placedAt": {
+    "placeholders": {
+        "time": {
+            "type": "String"
+        }
+    }
+  },
+  "newOrderUpper": "NEW ORDER",
+  "diningAreaMain": "Dining Area - Main Floor",
+  "orderItemsUpper": "ORDER ITEMS",
+  "orderTimelineUpper": "ORDER TIMELINE",
+  "orderReceived": "Order Received",
+  "preparingInKitchen": "Preparing in Kitchen",
+  "readyForServing": "Ready for Serving",
+  "nextStep": "Next Step",
+  "pendingOrder": "Pending",
+  "previousStep": "Previous Step",
+  "cancelOrder": "Cancel Order",
+  "quantityX": "Quantity: {qty}x",
+  "@quantityX": {
+    "placeholders": {
+        "qty": {
+            "type": "String"
+        }
+    }
+  },
+  "subtotal": "Subtotal",
+  "tax7": "Tax (7%)",
+  "tax10": "Tax (10%)",
+  "total": "Total",
+  "totalAmount": "Total Amount",
+  "ordersHistory": "Orders History",
+  "totalSalesToday": "TOTAL SALES TODAY",
+  "vsYest": "+8% vs yest.",
+  "avgOrderValue": "AVG ORDER VALUE",
+  "stable": "Stable",
+  "filterToday": "Today",
+  "filterYesterday": "Yesterday",
+  "filterLast7Days": "Last 7 Days",
+  "filters": "Filters",
+  "recentOrdersUpper": "RECENT ORDERS",
+  "ordersFound": "{count} orders found",
+  "@ordersFound": {
+    "placeholders": {
+        "count": {
+            "type": "String"
+        }
+    }
+  },
+  "orderDetailsId": "Order Details {id}",
+  "@orderDetailsId": {
+    "placeholders": {
+        "id": {
+            "type": "String"
+        }
+    }
+  },
+  "completedAndPaid": "COMPLETED & PAID",
+  "orderInformationUpper": "ORDER INFORMATION",
+  "tableNumber": "Table Number",
+  "dateTime": "Date & Time",
+  "itemsOrdered": "Items Ordered",
+  "qtyXPrice": "Qty: {qty} x {price}",
+  "@qtyXPrice": {
+    "placeholders": {
+        "qty": {
+            "type": "String"
+        },
+        "price": {
+            "type": "String"
+        }
+    }
+  },
+  "tablesManagement": "Tables Management",
+  "addTable": "Add Table",
+  "allTables": "All Tables",
+  "disabled": "Disabled",
+  "viewQrCode": "View QR Code",
+  "seatsCount": "{count} Seats",
+  "@seatsCount": {
+    "placeholders": {
+        "count": {
+            "type": "String"
+        }
+    }
+  },
+  "tableId": "Table {id}",
+  "@tableId": {
+    "placeholders": {
+        "id": {
+            "type": "String"
+        }
+    }
+  },
+  "whenDisabledDesc": "When disabled, customers cannot scan to order.",
+  "presentCodeDesc": "Present this code to customers for instant ordering and contactless payment.",
+  "downloadQrCode": "Download QR Code",
+  "verifyEmail": "Verify Email",
+  "enter6DigitCode": "Enter 6-digit code",
+  "codeSentTo": "We've sent a verification code to\n",
+  "verifyCode": "Verify Code",
+  "didntReceiveCode": "Didn't receive the code?",
+  "resendCode": "Resend Code",
+  "changePasswordTitle": "Change Password",
+  "updateSecurity": "Update Security",
+  "changePasswordDesc": "Please enter your current password to verify your identity, then choose a new strong password.",
+  "currentPassword": "Current Password",
+  "newPassword": "New Password",
+  "atLeast8Chars": "At least 8 characters",
+  "includeNumbersSymbols": "Include numbers and symbols for better security.",
+  "confirmNewPassword": "Confirm New Password",
+  "repeatNewPassword": "Repeat new password",
+  "savePassword": "Save Password",
+  "forgotYourPassword": "Forgot your password? ",
+  "resetItViaEmail": "Reset it via email",
+  "addStaffMember": "Add Staff Member",
+  "fullName": "Full Name",
+  "egFullName": "e.g. Ahmed Ben Ali",
+  "role": "Role",
+  "seniorWaiter": "Senior Waiter",
+  "waiter": "Waiter",
+  "egEmail": "name@restaurant.tn",
+  "phoneNumber": "Phone Number",
+  "egPhone": "00 000 000",
+  "confirmPassword": "Confirm Password",
+  "cancel": "Cancel",
+  "editProfileTitle": "Edit Profile",
+  "adminAccount": "Admin Account",
+  "updateProfileSettings": "Update your profile settings",
+  "restaurantRole": "Restaurant Role",
+  "security": "Security",
+  "lastUpdated3MonthsAgo": "Last updated 3 months ago",
+  "billingInvoicesTitle": "Billing & Invoices",
+  "invoiceHistory": "Invoice History",
+  "paid": "PAID",
+  "pending": "PENDING",
+  "contactSupportTitle": "Contact Support",
+  "haveAQuestion": "Have a question?",
+  "contactDesc": "Send us a message and our team will get back to you as soon as possible.",
+  "subject": "Subject",
+  "subjectHint": "What is this regarding?",
+  "message": "Message",
+  "messageHint": "Explain your issue or question in detail...",
+  "sendMessage": "Send Message",
+  "expectedResponseTime": "Expected response time: ",
+  "within24Hours": "within 24 hours",
+  "editRestaurantName": "Edit Restaurant Name",
+  "editRestaurantNameDesc": "Update your public-facing business identity. This name will appear on receipts and the customer app.",
+  "egRestaurantName": "e.g. The Golden Fork",
+  "needHelp": "Need help?",
+  "changingNameHelp": "Changing your name frequently might affect your search rankings in delivery apps.",
+  "addStaff": "Add Staff",
+  "filterAll": "All",
+  "roleManager": "Manager",
+  "activeMembersCount": "{count} Active members",
+  "@activeMembersCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "activeCaps": "ACTIVE",
+  "inactiveCaps": "INACTIVE"
+}

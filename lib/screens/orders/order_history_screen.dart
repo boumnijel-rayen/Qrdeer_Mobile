@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qrdeer_app/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:qrdeer_app/theme.dart';
@@ -32,7 +33,7 @@ class OrderHistoryScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Orders History', style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
+                  Text(AppLocalizations.of(context)!.ordersHistory, style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
                   Text('Main Street Bistro', style: GoogleFonts.inter(fontSize: 12, color: Colors.grey, fontWeight: FontWeight.w700)),
                 ],
               ),
@@ -51,7 +52,7 @@ class OrderHistoryScreen extends StatelessWidget {
                   height: 42,
                   child: TextField(
                     decoration: InputDecoration(
-                      hintText: 'Search by order ID, table...',
+                      hintText: AppLocalizations.of(context)!.searchOrders,
                       hintStyle: GoogleFonts.inter(fontSize: 14, color: Colors.grey[600], fontWeight: FontWeight.w500),
                       prefixIcon: const Icon(Icons.search, color: Colors.grey),
                       filled: true,
@@ -85,7 +86,7 @@ class OrderHistoryScreen extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('TOTAL SALES TODAY', style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.grey, letterSpacing: 1)),
+                        Text(AppLocalizations.of(context)!.totalSalesToday, style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.grey, letterSpacing: 1)),
                         const SizedBox(height: 4),
                         Text('2,842.50 TND', style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold)),
                         const SizedBox(height: 4),
@@ -93,7 +94,7 @@ class OrderHistoryScreen extends StatelessWidget {
                           children: [
                             const Icon(Icons.trending_up, color: Colors.green, size: 12),
                             const SizedBox(width: 4),
-                            Text('+8% vs yest.', style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.green[700])),
+                            Text(AppLocalizations.of(context)!.vsYest, style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.green[700])),
                           ],
                         ),
                       ],
@@ -112,7 +113,7 @@ class OrderHistoryScreen extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('AVG ORDER VALUE', style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.grey, letterSpacing: 1)),
+                        Text(AppLocalizations.of(context)!.avgOrderValue, style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.grey, letterSpacing: 1)),
                         const SizedBox(height: 4),
                         Text('38.90 TND', style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold)),
                         const SizedBox(height: 4),
@@ -120,7 +121,7 @@ class OrderHistoryScreen extends StatelessWidget {
                           children: [
                             const Icon(Icons.horizontal_rule, color: Colors.grey, size: 12),
                             const SizedBox(width: 4),
-                            Text('Stable', style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.grey)),
+                            Text(AppLocalizations.of(context)!.stable, style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.grey)),
                           ],
                         ),
                       ],
@@ -137,10 +138,10 @@ class OrderHistoryScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Row(
               children: [
-                _buildFilterChip(context, 'Today', Icons.calendar_month, true),
-                _buildFilterChip(context, 'Yesterday', null, false),
-                _buildFilterChip(context, 'Last 7 Days', null, false),
-                _buildFilterChip(context, 'Filters', Icons.filter_list, false),
+                _buildFilterChip(context, AppLocalizations.of(context)!.filterToday, Icons.calendar_month, true),
+                _buildFilterChip(context, AppLocalizations.of(context)!.filterYesterday, null, false),
+                _buildFilterChip(context, AppLocalizations.of(context)!.filterLast7Days, null, false),
+                _buildFilterChip(context, AppLocalizations.of(context)!.filters, Icons.filter_list, false),
               ],
             ),
           ),
@@ -155,8 +156,8 @@ class OrderHistoryScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('RECENT ORDERS', style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.grey, letterSpacing: 1)),
-                    Text('42 orders found', style: GoogleFonts.inter(fontSize: 12, color: Colors.grey[500], fontWeight: FontWeight.w500)),
+                    Text(AppLocalizations.of(context)!.recentOrdersUpper, style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.grey, letterSpacing: 1)),
+                    Text(AppLocalizations.of(context)!.ordersFound('42'), style: GoogleFonts.inter(fontSize: 12, color: Colors.grey[500], fontWeight: FontWeight.w500)),
                   ],
                 ),
                 const SizedBox(height: 12),
@@ -166,7 +167,7 @@ class OrderHistoryScreen extends StatelessWidget {
                   time: '12:30:15',
                   table: 'Table 12',
                   items: '5 items',
-                  status: 'Completed',
+                  status: AppLocalizations.of(context)!.filterCompleted,
                   statusColor: Color(0xFF17A34B),
                   statusBackgroundColor: Colors.green.withOpacity(0.2),
                   total: '128.000 TND',
@@ -177,7 +178,7 @@ class OrderHistoryScreen extends StatelessWidget {
                   time: '12:30:15',
                   table: 'Table 12',
                   items: '5 items',
-                  status: 'Cancelled',
+                  status: AppLocalizations.of(context)!.filterCancelled,
                   statusColor: Color(0xFFBE123C),
                   statusBackgroundColor: Colors.red.withOpacity(0.2),
                   total: '128.000 TND',
@@ -188,7 +189,7 @@ class OrderHistoryScreen extends StatelessWidget {
                   time: '12:30:15',
                   table: 'Table 12',
                   items: '5 items',
-                  status: 'Completed',
+                  status: AppLocalizations.of(context)!.filterCompleted,
                   statusColor: Color(0xFF17A34B),
                   statusBackgroundColor: Colors.green.withOpacity(0.2),
                   total: '128.000 TND',
@@ -199,7 +200,7 @@ class OrderHistoryScreen extends StatelessWidget {
                   time: '12:30:15',
                   table: 'Table 12',
                   items: '5 items',
-                  status: 'Cancelled',
+                  status: AppLocalizations.of(context)!.filterCancelled,
                   statusColor: Color(0xFFBE123C),
                   statusBackgroundColor: Colors.red.withOpacity(0.2),
                   total: '128.000 TND',
@@ -278,7 +279,7 @@ class OrderHistoryScreen extends StatelessWidget {
                   children: [
                     Text(orderId, style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.bold)),
                     const SizedBox(height: 2),
-                    Text('Ordered $time', style: GoogleFonts.inter(fontSize: 12, color: AppTheme.primaryColor, fontWeight: FontWeight.w600)),
+                    Text(AppLocalizations.of(context)!.orderedAt(time), style: GoogleFonts.inter(fontSize: 12, color: AppTheme.primaryColor, fontWeight: FontWeight.w600)),
                   ],
                 ),
                 Container(
@@ -306,7 +307,7 @@ class OrderHistoryScreen extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('TABLE', style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.grey, letterSpacing: 1)),
+                        Text(AppLocalizations.of(context)!.tableUpper, style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.grey, letterSpacing: 1)),
                         Text(table, style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.bold)),
                       ],
                     ),
@@ -314,7 +315,7 @@ class OrderHistoryScreen extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('ITEMS', style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.grey, letterSpacing: 1)),
+                        Text(AppLocalizations.of(context)!.itemsUpper, style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.grey, letterSpacing: 1)),
                         Text(items, style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.bold)),
                       ],
                     ),
@@ -323,7 +324,7 @@ class OrderHistoryScreen extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    Text('TOTAL', style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.grey, letterSpacing: 1)),
+                    Text(AppLocalizations.of(context)!.totalUpper, style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.grey, letterSpacing: 1)),
                     Text(total, style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black)),
                   ],
                 ),

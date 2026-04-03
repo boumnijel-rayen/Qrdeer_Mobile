@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:qrdeer_app/theme.dart';
+import 'package:qrdeer_app/l10n/app_localizations.dart';
 
 class ContactScreen extends StatelessWidget {
   const ContactScreen({super.key});
@@ -19,7 +20,7 @@ class ContactScreen extends StatelessWidget {
           },
         ),
         toolbarHeight: 68,
-        title: Text('Contact Support', style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
+        title: Text(AppLocalizations.of(context)!.contactSupportTitle, style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 16.0),
@@ -43,20 +44,20 @@ class ContactScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Have a question?', style: GoogleFonts.inter(fontSize: 24, fontWeight: FontWeight.bold)),
+              Text(AppLocalizations.of(context)!.haveAQuestion, style: GoogleFonts.inter(fontSize: 24, fontWeight: FontWeight.bold)),
               const SizedBox(height: 8),
               Text(
-                'Send us a message and our team will get back to you as soon as possible.',
+                AppLocalizations.of(context)!.contactDesc,
                 style: GoogleFonts.inter(fontSize: 14, color: AppTheme.secondColorLight, height: 1.5, fontWeight: FontWeight.w500),
               ),
               const SizedBox(height: 32),
 
               // Subject Field
-              Text('Subject', style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.black)),
+              Text(AppLocalizations.of(context)!.subject, style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.black)),
               const SizedBox(height: 8),
               TextFormField(
                 decoration: InputDecoration(
-                  hintText: 'What is this regarding?',
+                  hintText: AppLocalizations.of(context)!.subjectHint,
                   hintStyle: GoogleFonts.inter(fontSize: 16, color: Colors.grey),
                   filled: true,
                   fillColor: Colors.white,
@@ -73,12 +74,12 @@ class ContactScreen extends StatelessWidget {
               const SizedBox(height: 24),
 
               // Message Field
-              Text('Message', style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.black)),
+              Text(AppLocalizations.of(context)!.message, style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.black)),
               const SizedBox(height: 8),
               TextFormField(
                 maxLines: 6,
                 decoration: InputDecoration(
-                  hintText: 'Explain your issue or question in detail...',
+                  hintText: AppLocalizations.of(context)!.messageHint,
                   hintStyle: GoogleFonts.inter(fontSize: 16, color: Colors.grey),
                   filled: true,
                   fillColor: Colors.white,
@@ -98,7 +99,7 @@ class ContactScreen extends StatelessWidget {
               ElevatedButton.icon(
                 onPressed: () {},
                 icon: const Icon(Icons.send, size: 20),
-                label: const Text('Send Message'),
+                label: Text(AppLocalizations.of(context)!.sendMessage),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: AppTheme.primaryColor,
                   foregroundColor: Colors.white,
@@ -113,11 +114,11 @@ class ContactScreen extends StatelessWidget {
               Center(
                 child: Text.rich(
                   TextSpan(
-                    text: 'Expected response time: ',
+                    text: AppLocalizations.of(context)!.expectedResponseTime,
                     style: GoogleFonts.inter(fontSize: 14, color: Colors.grey[600], fontWeight: FontWeight.w500),
                     children: [
                       TextSpan(
-                        text: 'within 24 hours',
+                        text: AppLocalizations.of(context)!.within24Hours,
                         style: GoogleFonts.inter(fontWeight: FontWeight.w600, color: Colors.black),
                       ),
                     ],

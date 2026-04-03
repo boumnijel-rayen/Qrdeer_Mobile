@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:qrdeer_app/theme.dart';
+import 'package:qrdeer_app/l10n/app_localizations.dart';
 
 class BillingInvoicesScreen extends StatelessWidget {
   const BillingInvoicesScreen({super.key});
@@ -19,7 +20,7 @@ class BillingInvoicesScreen extends StatelessWidget {
           },
         ),
         toolbarHeight: 68,
-        title: Text('Billing & Invoices', style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
+        title: Text(AppLocalizations.of(context)!.billingInvoicesTitle, style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
       ),
       body: Column(
         children: [
@@ -29,7 +30,7 @@ class BillingInvoicesScreen extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Invoice History', style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold)),
+                Text(AppLocalizations.of(context)!.invoiceHistory, style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold)),
                 const SizedBox(height: 50),
               ],
             ),
@@ -39,10 +40,10 @@ class BillingInvoicesScreen extends StatelessWidget {
           Expanded(
             child: ListView(
               children: [
-                _buildInvoiceItem('INV-2023-012', 'Oct 12, 2023 • 450 TND', true),
-                _buildInvoiceItem('INV-2023-011', 'Sep 15, 2023 • 800 TND', true),
-                _buildInvoiceItem('INV-2023-010', 'Aug 20, 2023 • 1,200 TND', true),
-                _buildInvoiceItem('INV-2023-009', 'Jul 10, 2023 • 0 TND', true),
+                _buildInvoiceItem(context, 'INV-2023-012', 'Oct 12, 2023 • 450 TND', true),
+                _buildInvoiceItem(context, 'INV-2023-011', 'Sep 15, 2023 • 800 TND', true),
+                _buildInvoiceItem(context, 'INV-2023-010', 'Aug 20, 2023 • 1,200 TND', true),
+                _buildInvoiceItem(context, 'INV-2023-009', 'Jul 10, 2023 • 0 TND', true),
               ],
             ),
           ),
@@ -51,7 +52,7 @@ class BillingInvoicesScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildInvoiceItem(String id, String details, bool isPaid) {
+  Widget _buildInvoiceItem(BuildContext context, String id, String details, bool isPaid) {
     return InkWell(
       onTap: () {},
       child: Container(
@@ -87,7 +88,7 @@ class BillingInvoicesScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(12),
                         ),
                         child: Text(
-                          isPaid ? 'PAID' : 'PENDING',
+                          isPaid ? AppLocalizations.of(context)!.paid : AppLocalizations.of(context)!.pending,
                           style: GoogleFonts.inter(
                             fontSize: 10,
                             fontWeight: FontWeight.bold,

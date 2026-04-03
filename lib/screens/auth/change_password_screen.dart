@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:qrdeer_app/theme.dart';
+import 'package:qrdeer_app/l10n/app_localizations.dart';
 
 class ChangePasswordScreen extends StatefulWidget {
   const ChangePasswordScreen({super.key});
@@ -28,7 +29,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
           },
         ),
         toolbarHeight: 68,
-        title: Text('Change Password', style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
+        title: Text(AppLocalizations.of(context)!.changePasswordTitle, style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -38,7 +39,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
             children: [
               // Intro
               Text(
-                'Update Security',
+                AppLocalizations.of(context)!.updateSecurity,
                 style: GoogleFonts.inter(
                       fontSize: 18, // TitleLarge default
                       fontWeight: FontWeight.bold,
@@ -46,7 +47,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
               ),
               const SizedBox(height: 4),
               Text(
-                'Please enter your current password to verify your identity, then choose a new strong password.',
+                AppLocalizations.of(context)!.changePasswordDesc,
                 style: GoogleFonts.inter(
                       fontSize: 14, // BodyMedium default
                       color: AppTheme.secondColorLight,
@@ -56,7 +57,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
               const SizedBox(height: 32),
 
               // Current Password Field
-              _buildLabel('Current Password'),
+              _buildLabel(AppLocalizations.of(context)!.currentPassword),
               const SizedBox(height: 6),
               _buildPasswordField(
                 hint: '••••••••',
@@ -72,10 +73,10 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
               const SizedBox(height: 16),
 
               // New Password Field
-              _buildLabel('New Password'),
+              _buildLabel(AppLocalizations.of(context)!.newPassword),
               const SizedBox(height: 6),
               _buildPasswordField(
-                hint: 'At least 8 characters',
+                hint: AppLocalizations.of(context)!.atLeast8Chars,
                 obscureText: _obscureNew,
                 onToggle: () {
                   setState(() {
@@ -85,16 +86,16 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
               ),
               const SizedBox(height: 8),
               Text(
-                'Include numbers and symbols for better security.',
+                AppLocalizations.of(context)!.includeNumbersSymbols,
                 style: GoogleFonts.inter(fontSize: 12, color: Colors.grey[600], fontWeight: FontWeight.w500),
               ),
               const SizedBox(height: 24),
 
               // Confirm Password Field
-              _buildLabel('Confirm New Password'),
+              _buildLabel(AppLocalizations.of(context)!.confirmNewPassword),
               const SizedBox(height: 6),
               _buildPasswordField(
-                hint: 'Repeat new password',
+                hint: AppLocalizations.of(context)!.repeatNewPassword,
                 obscureText: _obscureConfirm,
                 onToggle: () {
                   setState(() {
@@ -117,7 +118,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                     borderRadius: BorderRadius.circular(12),
                   ),
                 ),
-                child: Text('Save Password', style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold)),
+                child: Text(AppLocalizations.of(context)!.savePassword, style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold)),
               ),
               const SizedBox(height: 48),
 
@@ -125,10 +126,10 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Forgot your password? ', style: GoogleFonts.inter(color: AppTheme.secondColorLight, fontWeight: FontWeight.w600)),
+                  Text(AppLocalizations.of(context)!.forgotYourPassword, style: GoogleFonts.inter(color: AppTheme.secondColorLight, fontWeight: FontWeight.w600)),
                   InkWell(
                     onTap: () {},
-                    child: Text('Reset it via email', style: GoogleFonts.inter(color: AppTheme.primaryColor, fontWeight: FontWeight.w500, fontSize: 14)),
+                    child: Text(AppLocalizations.of(context)!.resetItViaEmail, style: GoogleFonts.inter(color: AppTheme.primaryColor, fontWeight: FontWeight.w500, fontSize: 14)),
                   ),
                 ],
               ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qrdeer_app/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:qrdeer_app/theme.dart';
@@ -26,7 +27,7 @@ class _ViewQrCodeScreenState extends State<ViewQrCodeScreen> {
           },
         ),
         toolbarHeight: 68,
-        title: Text('Table 04', style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
+        title: Text(AppLocalizations.of(context)!.tableId('04'), style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
       ),
       body: Column(
         children: [
@@ -62,7 +63,7 @@ class _ViewQrCodeScreenState extends State<ViewQrCodeScreen> {
                                   boxShadow: _isAvailable ? [BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 4)] : [],
                                 ),
                                 child: Text(
-                                  'Available',
+                                  AppLocalizations.of(context)!.available,
                                   style: GoogleFonts.inter(
                                     fontSize: 14,
                                     fontWeight: _isAvailable ? FontWeight.bold : FontWeight.w500,
@@ -88,7 +89,7 @@ class _ViewQrCodeScreenState extends State<ViewQrCodeScreen> {
                                   boxShadow: !_isAvailable ? [BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 4)] : [],
                                 ),
                                 child: Text(
-                                  'Disabled',
+                                  AppLocalizations.of(context)!.disabled,
                                   style: GoogleFonts.inter(
                                     fontSize: 14,
                                     fontWeight: !_isAvailable ? FontWeight.bold : FontWeight.w500,
@@ -105,7 +106,7 @@ class _ViewQrCodeScreenState extends State<ViewQrCodeScreen> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 24.0),
                     child: Text(
-                      'When disabled, customers cannot scan to order.',
+                      AppLocalizations.of(context)!.whenDisabledDesc,
                       textAlign: TextAlign.center,
                       style: GoogleFonts.inter(fontSize: 12, color: AppTheme.secondColorLight, fontWeight: FontWeight.w600),
                     ),
@@ -161,7 +162,7 @@ class _ViewQrCodeScreenState extends State<ViewQrCodeScreen> {
                   ),
 
                   // Table Info
-                  Text('Table 04', style: GoogleFonts.inter(fontSize: 32, fontWeight: FontWeight.w800)),
+                  Text(AppLocalizations.of(context)!.tableId('04'), style: GoogleFonts.inter(fontSize: 32, fontWeight: FontWeight.w800)),
                   Container(
                     margin: const EdgeInsets.all(24),
                     padding: const EdgeInsets.all(16),
@@ -176,7 +177,7 @@ class _ViewQrCodeScreenState extends State<ViewQrCodeScreen> {
                         const SizedBox(width: 8),
                         Expanded(
                           child: Text(
-                            'Present this code to customers for instant ordering and contactless payment.',
+                            AppLocalizations.of(context)!.presentCodeDesc,
                             style: GoogleFonts.inter(fontSize: 14, color: AppTheme.thirdColorLight, fontWeight: FontWeight.w600),
                           ),
                         ),
@@ -196,7 +197,7 @@ class _ViewQrCodeScreenState extends State<ViewQrCodeScreen> {
                 ElevatedButton.icon(
                   onPressed: () {},
                   icon: const Icon(Icons.download),
-                  label: const Text('Download QR Code'),
+                  label: Text(AppLocalizations.of(context)!.downloadQrCode),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppTheme.primaryColor,
                     foregroundColor: Colors.white,

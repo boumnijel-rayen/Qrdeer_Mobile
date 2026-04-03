@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:qrdeer_app/theme.dart';
+import 'package:qrdeer_app/l10n/app_localizations.dart';
 
 class EditRestaurantScreen extends StatelessWidget {
   const EditRestaurantScreen({super.key});
@@ -19,7 +20,7 @@ class EditRestaurantScreen extends StatelessWidget {
           },
         ),
         toolbarHeight: 68,
-        title: Text('Settings', style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
+        title: Text(AppLocalizations.of(context)!.settings, style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
       ),
       body: Column(
         children: [
@@ -29,21 +30,21 @@ class EditRestaurantScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Edit Restaurant Name', style: GoogleFonts.inter(fontSize: 24, fontWeight: FontWeight.bold)),
+                  Text(AppLocalizations.of(context)!.editRestaurantName, style: GoogleFonts.inter(fontSize: 24, fontWeight: FontWeight.bold)),
                   const SizedBox(height: 8),
                   Text(
-                    'Update your public-facing business identity. This name will appear on receipts and the customer app.',
+                    AppLocalizations.of(context)!.editRestaurantNameDesc,
                     style: GoogleFonts.inter(fontSize: 14, color: AppTheme.secondColorLight, fontWeight: FontWeight.w500),
                   ),
                   const SizedBox(height: 32),
 
                   // Form Section
-                  Text('Restaurant Name', style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.black)),
+                  Text(AppLocalizations.of(context)!.restaurantName, style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.black)),
                   const SizedBox(height: 8),
                   TextFormField(
                     initialValue: 'The Golden Fork',
                     decoration: InputDecoration(
-                      hintText: 'e.g. The Golden Fork',
+                      hintText: AppLocalizations.of(context)!.egRestaurantName,
                       hintStyle: GoogleFonts.inter(fontSize: 16, color: Colors.grey),
                       filled: true,
                       fillColor: Colors.white,
@@ -73,7 +74,7 @@ class EditRestaurantScreen extends StatelessWidget {
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                       textStyle: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold),
                     ),
-                    child: const Text('Save Changes'),
+                    child: Text(AppLocalizations.of(context)!.saveChanges),
                   ),
 
                   const SizedBox(height: 48),
@@ -95,10 +96,10 @@ class EditRestaurantScreen extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text('Need help?', style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600)),
+                              Text(AppLocalizations.of(context)!.needHelp, style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600)),
                               const SizedBox(height: 4),
                               Text(
-                                'Changing your name frequently might affect your search rankings in delivery apps.',
+                                AppLocalizations.of(context)!.changingNameHelp,
                                 style: GoogleFonts.inter(fontSize: 12, color: Colors.grey[600]),
                               ),
                             ],

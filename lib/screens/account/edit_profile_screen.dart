@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:qrdeer_app/theme.dart';
+import 'package:qrdeer_app/l10n/app_localizations.dart';
 
 class EditProfileScreen extends StatelessWidget {
   const EditProfileScreen({super.key});
@@ -19,7 +20,7 @@ class EditProfileScreen extends StatelessWidget {
           },
         ),
         toolbarHeight: 68,
-        title: Text('Edit Profile', style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
+        title: Text(AppLocalizations.of(context)!.editProfileTitle, style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.only(bottom: 24),
@@ -65,9 +66,9 @@ class EditProfileScreen extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 16),
-                  Text('Admin Account', style: GoogleFonts.inter(fontSize: 22, fontWeight: FontWeight.bold)),
+                  Text(AppLocalizations.of(context)!.adminAccount, style: GoogleFonts.inter(fontSize: 22, fontWeight: FontWeight.bold)),
                   const SizedBox(height: 4),
-                  Text('Update your profile settings', style: GoogleFonts.inter(fontSize: 16, color: AppTheme.secondColorLight, fontWeight: FontWeight.w600)),
+                  Text(AppLocalizations.of(context)!.updateProfileSettings, style: GoogleFonts.inter(fontSize: 16, color: AppTheme.secondColorLight, fontWeight: FontWeight.w600)),
                 ],
               ),
             ),
@@ -78,13 +79,13 @@ class EditProfileScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  _buildInputField('Full Name', Icons.person, 'Julian Alexander', TextInputType.name),
+                  _buildInputField(AppLocalizations.of(context)!.fullName, Icons.person, 'Julian Alexander', TextInputType.name),
                   const SizedBox(height: 16),
-                  _buildInputField('Email Address', Icons.mail, 'admin@bistrodelight.com', TextInputType.emailAddress),
+                  _buildInputField(AppLocalizations.of(context)!.emailAddress, Icons.mail, 'admin@bistrodelight.com', TextInputType.emailAddress),
                   const SizedBox(height: 16),
-                  _buildInputField('Phone Number', Icons.call, '+1 (555) 902-1234', TextInputType.phone),
+                  _buildInputField(AppLocalizations.of(context)!.phoneNumber, Icons.call, '+1 (555) 902-1234', TextInputType.phone),
                   const SizedBox(height: 16),
-                  _buildInputField('Restaurant Role', Icons.badge, 'General Manager', TextInputType.text, isDisabled: true),
+                  _buildInputField(AppLocalizations.of(context)!.restaurantRole, Icons.badge, 'General Manager', TextInputType.text, isDisabled: true),
                 ],
               ),
             ),
@@ -103,7 +104,7 @@ class EditProfileScreen extends StatelessWidget {
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                       textStyle: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold),
                     ),
-                    child: const Text('Save Changes'),
+                    child: Text(AppLocalizations.of(context)!.saveChanges),
                   ),
                   const SizedBox(height: 12),
                   OutlinedButton(
@@ -119,7 +120,7 @@ class EditProfileScreen extends StatelessWidget {
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                       textStyle: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold),
                     ),
-                    child: const Text('Cancel'),
+                    child: Text(AppLocalizations.of(context)!.cancel),
                   ),
                 ],
               ),
@@ -132,7 +133,7 @@ class EditProfileScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Divider(height: 32),
-                  Text('Security', style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold)),
+                  Text(AppLocalizations.of(context)!.security, style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold)),
                   const SizedBox(height: 16),
                   InkWell(
                     onTap: () {
@@ -154,8 +155,8 @@ class EditProfileScreen extends StatelessWidget {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text('Change Password', style: GoogleFonts.inter(fontSize: 15, fontWeight: FontWeight.bold)),
-                                Text('Last updated 3 months ago', style: GoogleFonts.inter(fontSize: 12, color: AppTheme.secondColorLight, fontWeight: FontWeight.w500)),
+                                Text(AppLocalizations.of(context)!.changePasswordTitle, style: GoogleFonts.inter(fontSize: 15, fontWeight: FontWeight.bold)),
+                                Text(AppLocalizations.of(context)!.lastUpdated3MonthsAgo, style: GoogleFonts.inter(fontSize: 12, color: AppTheme.secondColorLight, fontWeight: FontWeight.w500)),
                               ],
                             ),
                           ),

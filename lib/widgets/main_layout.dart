@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qrdeer_app/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:qrdeer_app/theme.dart';
@@ -32,11 +33,11 @@ class MainLayout extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                _buildNavItem(context, icon: Icons.home, label: 'Home', route: '/home', isSelected: _isRouteSelected(context, '/home')),
-                _buildNavItem(context, icon: Icons.receipt_long, label: 'Orders', route: '/orders', isSelected: _isRouteSelected(context, '/orders')),
-                _buildNavItem(context, icon: Icons.table_restaurant, label: 'Tables', route: '/tables', isSelected: _isRouteSelected(context, '/tables')),
-                _buildNavItem(context, icon: Icons.query_stats, label: 'Sales', route: '/sales', isSelected: _isRouteSelected(context, '/sales')),
-                _buildNavItem(context, icon: Icons.account_circle, label: 'Account', route: '/account', isSelected: _isRouteSelected(context, '/account')),
+                _buildNavItem(context, icon: Icons.home, label: AppLocalizations.of(context)!.navHome, route: '/home', isSelected: _isRouteSelected(context, '/home')),
+                _buildNavItem(context, icon: Icons.receipt_long, label: AppLocalizations.of(context)!.navOrders, route: '/orders', isSelected: _isRouteSelected(context, '/orders')),
+                _buildNavItem(context, icon: Icons.table_restaurant, label: AppLocalizations.of(context)!.navTables, route: '/tables', isSelected: _isRouteSelected(context, '/tables')),
+                _buildNavItem(context, icon: Icons.query_stats, label: AppLocalizations.of(context)!.navSales, route: '/sales', isSelected: _isRouteSelected(context, '/sales')),
+                _buildNavItem(context, icon: Icons.account_circle, label: AppLocalizations.of(context)!.navAccount, route: '/account', isSelected: _isRouteSelected(context, '/account')),
               ],
             ),
           ),

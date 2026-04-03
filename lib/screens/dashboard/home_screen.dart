@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qrdeer_app/l10n/app_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:qrdeer_app/theme.dart';
 
@@ -31,7 +32,7 @@ class HomeScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Dashboard', style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
+                  Text(AppLocalizations.of(context)!.dashboard, style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
                   Text('Main Street Bistro', style: GoogleFonts.inter(fontSize: 12, color: Colors.grey, fontWeight: FontWeight.w700)),
                 ],
               ),
@@ -110,11 +111,11 @@ class HomeScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Weekly Revenue', style: GoogleFonts.inter(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.grey[600])),
+                    Text(AppLocalizations.of(context)!.weeklyRevenue, style: GoogleFonts.inter(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.grey[600])),
                     const SizedBox(height: 4),
                     Text('12,450 TND', style: GoogleFonts.inter(fontSize: 24, fontWeight: FontWeight.w800)),
                     const SizedBox(height: 4),
-                    Text('Last 7 Days vs Previous Period', style: GoogleFonts.inter(fontSize: 12, color: Colors.grey, fontWeight: FontWeight.w600)),
+                    Text(AppLocalizations.of(context)!.last7Days, style: GoogleFonts.inter(fontSize: 12, color: Colors.grey, fontWeight: FontWeight.w600)),
                   ],
                 ),
               ),
@@ -144,7 +145,15 @@ class HomeScreen extends StatelessWidget {
           const SizedBox(height: 16),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN']
+            children: [
+              AppLocalizations.of(context)!.mon,
+              AppLocalizations.of(context)!.tue,
+              AppLocalizations.of(context)!.wed,
+              AppLocalizations.of(context)!.thu,
+              AppLocalizations.of(context)!.fri,
+              AppLocalizations.of(context)!.sat,
+              AppLocalizations.of(context)!.sun
+            ]
                 .map((d) => Text(d, style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.grey[600])))
                 .toList(),
           ),
@@ -188,14 +197,14 @@ class HomeScreen extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('Peak Hour Statistics', style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold)),
+              Text(AppLocalizations.of(context)!.peakHourStats, style: GoogleFonts.inter(fontSize: Localizations.localeOf(context).languageCode == "fr" ? 12 : 16, fontWeight: FontWeight.bold)),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2.5),
                 decoration: BoxDecoration(
                   color: AppTheme.primaryColor.withOpacity(0.1),
                   borderRadius: BorderRadius.circular(4),
                 ),
-                child: Text('LIVE', style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.w800, color: AppTheme.primaryColor)),
+                child: Text(AppLocalizations.of(context)!.live, style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.w800, color: AppTheme.primaryColor)),
               ),
             ],
           ),
@@ -235,7 +244,7 @@ class HomeScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('BUSIEST HOUR', style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.grey[600])),
+                      Text(AppLocalizations.of(context)!.busiestHour, style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.grey[600])),
                       const SizedBox(height: 4),
                       Text('14:00 - 15:00', style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.w800)),
                     ],
@@ -261,7 +270,7 @@ class HomeScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('KITCHEN LOAD', style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.grey[600])),
+                      Text(AppLocalizations.of(context)!.kitchenLoad, style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.grey[600])),
                       const SizedBox(height: 4),
                       Text('82% High', style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.w800, color: AppTheme.primaryColor)),
                     ],
@@ -306,9 +315,9 @@ class HomeScreen extends StatelessWidget {
           spacing: 12,
           runSpacing: 12,
           children: [
-            _buildStatCard(context, 'Daily Revenue', '+12.5%', '1,240.50 TND', 0.7, constraints.maxWidth),
-            _buildStatCard(context, 'Total Orders', '+5.2%', '48', 0.45, constraints.maxWidth),
-            _buildStatCard(context, 'Active Tables', 'LIVE', '12/20', 0.6, constraints.maxWidth, isLive: true),
+            _buildStatCard(context, AppLocalizations.of(context)!.dailyRevenue, '+12.5%', '1,240.50 TND', 0.7, constraints.maxWidth),
+            _buildStatCard(context, AppLocalizations.of(context)!.totalOrders, '+5.2%', '48', 0.45, constraints.maxWidth),
+            _buildStatCard(context, AppLocalizations.of(context)!.activeTables, AppLocalizations.of(context)!.live, '12/20', 0.6, constraints.maxWidth, isLive: true),
           ],
         );
       },
@@ -387,10 +396,10 @@ class HomeScreen extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text('Live Status', style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold)),
+            Text(AppLocalizations.of(context)!.liveStatus, style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold)),
             TextButton(
               onPressed: () {},
-              child: Text('Refresh', style: GoogleFonts.inter(color: AppTheme.primaryColor, fontWeight: FontWeight.bold)),
+              child: Text(AppLocalizations.of(context)!.refresh, style: GoogleFonts.inter(color: AppTheme.primaryColor, fontWeight: FontWeight.bold)),
             ),
           ],
         ),
@@ -461,7 +470,7 @@ class HomeScreen extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text('75%', style: GoogleFonts.inter(fontSize: 24, fontWeight: FontWeight.bold)),
-                              Text('Efficiency', style: GoogleFonts.inter(fontSize: 10, color: Colors.grey[600], fontWeight: FontWeight.w600)),
+                              Text(AppLocalizations.of(context)!.efficiency, style: GoogleFonts.inter(fontSize: 10, color: Colors.grey[600], fontWeight: FontWeight.w600)),
                             ],
                           ),
                         ],
@@ -498,7 +507,7 @@ class HomeScreen extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Recent Activity', style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold)),
+        Text(AppLocalizations.of(context)!.recentActivity, style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold)),
         const SizedBox(height: 12),
         Container(
           decoration: BoxDecoration(
@@ -615,7 +624,7 @@ class HomeScreen extends StatelessWidget {
                         children: [
                           const Icon(Icons.notifications_active, color: AppTheme.primaryColor),
                           const SizedBox(width: 8),
-                          Text('Recent Notifications', style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold)),
+                          Text(AppLocalizations.of(context)!.recentNotifications, style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold)),
                         ],
                       ),
                       IconButton(
@@ -657,7 +666,7 @@ class HomeScreen extends StatelessWidget {
                 Divider(height: 1, color: Colors.grey.withOpacity(0.1)),
                 TextButton(
                   onPressed: () {},
-                  child: Text('View All Activity', style: GoogleFonts.inter(fontWeight: FontWeight.bold, color: AppTheme.primaryColor)),
+                  child: Text(AppLocalizations.of(context)!.viewAllActivity, style: GoogleFonts.inter(fontWeight: FontWeight.bold, color: AppTheme.primaryColor)),
                 ),
               ],
             ),
